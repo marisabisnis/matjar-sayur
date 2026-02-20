@@ -15,6 +15,56 @@
 
 const SPREADSHEET_ID = '1HHVN9Fn6wHb0xGbHsHAqFrqAxklNinJjpKyvqZTAYQg';
 
+/**
+ * Vercel Deploy Hook URL
+ * Dapatkan dari: Vercel → Settings → Git → Deploy Hooks
+ * Ganti URL di bawah dengan URL deploy hook kamu
+ */
+const VERCEL_DEPLOY_HOOK_URL = 'https://api.vercel.com/v1/integrations/deploy/prj_tjyhjeQ4LU2i02FcDU9J91VhvY2x/e12nHdk6Pm';
+
+/**
+ * Menu kustom di Google Sheets
+ */
+function onOpen() {
+  SpreadsheetApp.getUi()
+    .createMenu('🛒 Pesan Sayur')
+    .addItem('🔄 Update Website', 'rebuildWebsite')
+    .addSeparator()
+    .addItem('📊 Setup Headers', 'setupHeaders')
+    .addToUi();
+}
+
+/**
+ * Trigger rebuild website di Vercel
+ */
+function rebuildWebsite() {
+  const ui = SpreadsheetApp.getUi();
+  
+  if (VERCEL_DEPLOY_HOOK_URL === 'PASTE_DEPLOY_HOOK_URL_DISINI') {
+    ui.alert('⚠️ Deploy Hook belum diatur!\n\nBuka Vercel → Settings → Git → Deploy Hooks\nBuat hook baru, lalu paste URL-nya di Code.gs baris VERCEL_DEPLOY_HOOK_URL');
+    return;
+  }
+  
+  const confirm = ui.alert(
+    '🔄 Update Website',
+    'Apakah Anda yakin ingin update website dengan data terbaru dari spreadsheet?\n\nProses ini membutuhkan ~1 menit.',
+    ui.ButtonSet.YES_NO
+  );
+  
+  if (confirm !== ui.Button.YES) return;
+  
+  try {
+    const response = UrlFetchApp.fetch(VERCEL_DEPLOY_HOOK_URL, { method: 'POST' });
+    if (response.getResponseCode() === 200 || response.getResponseCode() === 201) {
+      ui.alert('✅ Website sedang di-update!\n\nPerubahan akan muncul dalam ~1 menit.\nCek status di dashboard Vercel.');
+    } else {
+      ui.alert('❌ Gagal: ' + response.getContentText());
+    }
+  } catch (e) {
+    ui.alert('❌ Error: ' + e.message);
+  }
+}
+
 function getSheet(name) {
   return SpreadsheetApp.openById(SPREADSHEET_ID).getSheetByName(name);
 }
@@ -134,6 +184,7 @@ function parsePayments(raw) {
       atas_nama: r.atas_nama || '',
       logo_url: r.logo_url || '',
       instruksi: r.instruksi || '',
+      qris_url: r.qris_url || '',
       aktif: r.aktif === true || r.aktif === 'TRUE' || r.aktif === 'true',
     }));
 }
@@ -485,7 +536,7 @@ function setupHeaders() {
     ]);
     stores.appendRow([
       '1', 'Pesan Sayur Pusat', 'Jl. Pasar Baru No. 1, Jakarta',
-      -6.17, 106.83, '081234567890', '6281234567890',
+      -6.17, 106.83, '081219199323', '6281219199323',
       '06:00 - 20:00', 3000, 25000, 10, 100000, '', '', true
     ]);
   }
@@ -493,10 +544,12 @@ function setupHeaders() {
   // ===== PAYMENT METHODS HEADERS + DATA =====
   const payments = ss.getSheetByName('payment_methods');
   if (payments && payments.getLastRow() < 1) {
-    payments.appendRow(['tipe', 'provider', 'no_rekening', 'atas_nama', 'logo_url', 'instruksi', 'aktif']);
-    payments.appendRow(['transfer', 'BCA', '1234567890', 'Pesan Sayur', '', 'Transfer ke BCA 1234567890 a.n. Pesan Sayur', true]);
-    payments.appendRow(['qris', 'QRIS', '', 'Pesan Sayur', '', 'Scan QR Code yang dikirim via WhatsApp', true]);
-    payments.appendRow(['cod', 'COD', '', '', '', 'Bayar tunai saat pesanan tiba', true]);
+    payments.appendRow(['tipe', 'provider', 'no_rekening', 'atas_nama', 'logo_url', 'instruksi', 'qris_url', 'aktif']);
+    payments.appendRow(['transfer', 'BSI', '1234567890', 'Pesan Sayur', '', 'Transfer ke BSI', '', true]);
+    payments.appendRow(['transfer', 'Mandiri', '1234567890', 'Pesan Sayur', '', 'Transfer ke Mandiri', '', true]);
+    payments.appendRow(['transfer', 'JAGO', '1234567890', 'Pesan Sayur', '', 'Transfer ke JAGO', '', true]);
+    payments.appendRow(['qris', 'QRIS', '', 'Pesan Sayur', '', 'Scan QR Code untuk bayar', '', true]);
+    payments.appendRow(['cod', 'COD', '', '', '', 'Bayar tunai saat pesanan tiba', '', true]);
   }
   
   // ===== ORDERS HEADERS =====

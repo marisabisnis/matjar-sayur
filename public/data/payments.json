@@ -3,37 +3,36 @@
     "tipe": "transfer",
     "provider": "BSI",
     "no_rekening": "1234567890",
-    "atas_nama": "Pesan Sayur",
+    "atas_nama": "Jeffri Pamungkas Setiawan",
     "logo_url": "",
-    "instruksi": "Transfer ke BSI",
-    "aktif": true
-  },
-  {
-    "tipe": "transfer",
-    "provider": "Mandiri",
-    "no_rekening": "1234567890",
-    "atas_nama": "Pesan Sayur",
-    "logo_url": "",
-    "instruksi": "Transfer ke Mandiri",
+    "instruksi": "Transfer ke BCA 1234567890 a.n. Jeffri Pamungkas Setiawan",
     "aktif": true
   },
   {
     "tipe": "transfer",
     "provider": "JAGO",
     "no_rekening": "1234567890",
-    "atas_nama": "Pesan Sayur",
+    "atas_nama": "Jeffri Pamungkas Setiawan",
     "logo_url": "",
-    "instruksi": "Transfer ke JAGO",
+    "instruksi": "Transfer ke BCA 1234567890 a.n. Jeffri Pamungkas Setiawan",
+    "aktif": true
+  },
+  {
+    "tipe": "transfer",
+    "provider": "Mandiri",
+    "no_rekening": "1234567890",
+    "atas_nama": "Jeffri Pamungkas Setiawan",
+    "logo_url": "",
+    "instruksi": "Transfer ke BCA 1234567890 a.n. Jeffri Pamungkas Setiawan",
     "aktif": true
   },
   {
     "tipe": "qris",
     "provider": "QRIS",
     "no_rekening": "",
-    "atas_nama": "Pesan Sayur",
+    "atas_nama": "Jeffri Pamungkas Setiawan",
     "logo_url": "",
-    "instruksi": "Scan QR Code di bawah ini untuk pembayaran",
-    "qris_url": "",
+    "instruksi": "Scan QR Code yang dikirim via WhatsApp",
     "aktif": true
   },
   {

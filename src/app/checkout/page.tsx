@@ -427,14 +427,14 @@ export default function CheckoutPage() {
                         {pembayaran === 'qris' && (
                             <div className={styles.paymentDetail}>
                                 <p className={styles.paymentDetailTitle}>📱 Scan QR Code untuk bayar:</p>
-                                {qrisData && (qrisData as { qris_url?: string }).qris_url ? (
+                                {qrisData && 'qris_url' in qrisData && qrisData.qris_url ? (
                                     <div className={styles.qrisImageWrap}>
-                                        <Image
-                                            src={(qrisData as { qris_url: string }).qris_url}
+                                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                                        <img
+                                            src={qrisData.qris_url as string}
                                             alt="QRIS Payment"
-                                            width={280}
-                                            height={280}
                                             className={styles.qrisImage}
+                                            style={{ maxWidth: '280px', width: '100%' }}
                                         />
                                     </div>
                                 ) : (
