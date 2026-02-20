@@ -38,8 +38,11 @@ function loadEnv() {
 }
 
 async function fetchEndpoint(baseUrl, action) {
-    const url = `${baseUrl}?action=${action}`;
+    const cleanUrl = baseUrl.trim().replace(/\/+$/, '');
+    const url = `${cleanUrl}?action=${action}`;
     console.log(`  📡 Fetching ${action}...`);
+    console.log(`  🔗 Full URL: ${url}`);
+    console.log(`  🔗 URL length: ${url.length}`);
 
     const res = await fetch(url, {
         redirect: 'follow',
@@ -47,6 +50,10 @@ async function fetchEndpoint(baseUrl, action) {
     });
 
     if (!res.ok) {
+        const body = await res.text().catch(() => '(no body)');
+        console.error(`  ❌ Status: ${res.status} ${res.statusText}`);
+        console.error(`  ❌ Final URL: ${res.url}`);
+        console.error(`  ❌ Response body: ${body.substring(0, 500)}`);
         throw new Error(`Failed to fetch ${action}: ${res.status} ${res.statusText}`);
     }
 
