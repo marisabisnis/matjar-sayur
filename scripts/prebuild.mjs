@@ -15,11 +15,17 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..');
 const DATA_DIR = resolve(ROOT, 'public', 'data');
 
-// Load .env.local
+// Load GAS URL — check process.env first (Vercel), then .env.local (local dev)
 function loadEnv() {
+    // On Vercel, env vars are injected into process.env directly
+    if (process.env.NEXT_PUBLIC_GAS_URL) {
+        return process.env.NEXT_PUBLIC_GAS_URL;
+    }
+
+    // Local dev: read from .env.local file
     const envPath = resolve(ROOT, '.env.local');
     if (!existsSync(envPath)) {
-        console.warn('⚠️  .env.local not found. Using existing local data.');
+        console.warn('⚠️  .env.local not found and NEXT_PUBLIC_GAS_URL not set.');
         return null;
     }
     const content = readFileSync(envPath, 'utf-8');
