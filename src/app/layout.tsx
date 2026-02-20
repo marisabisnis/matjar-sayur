@@ -3,7 +3,6 @@ import { Inter } from 'next/font/google';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import BottomNav from '@/components/layout/BottomNav';
-import InstallPrompt from '@/components/pwa/InstallPrompt';
 import './globals.css';
 
 const inter = Inter({
@@ -78,7 +77,6 @@ export default function RootLayout({
         {children}
         <Footer />
         <BottomNav />
-        <InstallPrompt />
         <script
           dangerouslySetInnerHTML={{
             __html: `

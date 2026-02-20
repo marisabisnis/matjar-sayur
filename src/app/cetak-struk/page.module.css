@@ -1,0 +1,389 @@
+/* ===== CETAK STRUK BATCH PAGE ===== */
+
+.page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: var(--space-lg) var(--space-md);
+    min-height: 70vh;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: var(--space-xl);
+}
+
+.title {
+    font-size: var(--font-size-2xl);
+    font-weight: 800;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+}
+
+.subtitle {
+    color: var(--text-secondary);
+    font-size: var(--font-size-sm);
+    margin-top: var(--space-xs);
+}
+
+/* ===== SEARCH ===== */
+.searchCard {
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+    padding: var(--space-md);
+    margin-bottom: var(--space-lg);
+    border: 1px solid var(--border-color);
+}
+
+.searchRow {
+    display: flex;
+    gap: var(--space-sm);
+}
+
+.searchInput {
+    flex: 1;
+    padding: 10px 14px;
+    border: 1.5px solid var(--border-color);
+    border-radius: var(--radius);
+    font-size: var(--font-size-sm);
+    background: white;
+    color: var(--text-primary);
+    outline: none;
+    transition: var(--transition);
+}
+
+.searchInput:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.1);
+}
+
+.searchBtn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 20px;
+    background: var(--color-primary);
+    color: white;
+    border: none;
+    border-radius: var(--radius);
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    white-space: nowrap;
+}
+
+.searchBtn:hover:not(:disabled) {
+    background: var(--color-primary-dark);
+}
+
+.searchBtn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.errorText {
+    color: #ef4444;
+    font-size: var(--font-size-sm);
+    margin-top: var(--space-sm);
+}
+
+/* ===== EMPTY STATE ===== */
+.emptyState {
+    text-align: center;
+    padding: var(--space-3xl) var(--space-lg);
+    color: var(--text-muted);
+}
+
+/* ===== TOOLBAR ===== */
+.toolbar {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    margin-bottom: var(--space-md);
+}
+
+.filterGroup {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.filterBtn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    border: 1.5px solid var(--border-color);
+    border-radius: var(--radius);
+    background: white;
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.filterBtn:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+}
+
+.filterBtnActive {
+    background: var(--color-primary);
+    color: white;
+    border-color: var(--color-primary);
+}
+
+.filterBtnActive:hover {
+    color: white;
+}
+
+.filterCount {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 1px 6px;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.filterBtnActive .filterCount {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.actionGroup {
+    display: flex;
+    gap: var(--space-sm);
+    flex-wrap: wrap;
+}
+
+.selectAllBtn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    border: 1.5px solid var(--border-color);
+    border-radius: var(--radius);
+    background: white;
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.selectAllBtn:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+}
+
+.printBtn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 20px;
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+    color: white;
+    border: none;
+    border-radius: var(--radius);
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.printBtn:hover {
+    transform: scale(1.02);
+}
+
+/* ===== ORDER LIST ===== */
+.orderList {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.orderCard {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-md);
+    padding: var(--space-md);
+    border: 1.5px solid var(--border-color);
+    border-radius: var(--radius);
+    background: white;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.orderCard:hover {
+    border-color: var(--color-primary-light);
+    background: var(--bg-green-soft);
+}
+
+.orderCardSelected {
+    border-color: var(--color-primary);
+    background: var(--bg-green-soft);
+    box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.15);
+}
+
+.checkbox {
+    margin-top: 4px;
+    width: 18px;
+    height: 18px;
+    accent-color: var(--color-primary);
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+.orderInfo {
+    flex: 1;
+    min-width: 0;
+}
+
+.orderTop {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    margin-bottom: 4px;
+}
+
+.orderIdBadge {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--color-primary);
+    background: var(--bg-green-soft);
+    padding: 2px 8px;
+    border-radius: var(--radius-sm);
+}
+
+.orderBayar {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    padding: 2px 8px;
+    border-radius: var(--radius-sm);
+    background: var(--bg-secondary);
+}
+
+.orderNama {
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    color: var(--text-primary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.orderBottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 6px;
+    font-size: 11px;
+    color: var(--text-muted);
+}
+
+.orderTotal {
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+/* ===== PRINT AREA (hidden on screen) ===== */
+.printArea {
+    display: none;
+}
+
+/* ===== PRINT STYLES ===== */
+
+@media print {
+    :global(*) {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    :global(body) {
+        background: white !important;
+        font-size: 11px !important;
+    }
+
+    .header,
+    .searchCard,
+    .toolbar,
+    .orderList,
+    .emptyState {
+        display: none !important;
+    }
+
+    .printArea {
+        display: block !important;
+    }
+
+    .page {
+        padding: 0 !important;
+        max-width: 100% !important;
+    }
+
+    .printReceipt {
+        border: 1px solid #ccc;
+        padding: 12px;
+        margin-bottom: 16px;
+        break-inside: avoid;
+        page-break-inside: avoid;
+        font-size: 11px;
+    }
+
+    .printReceiptHeader {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 8px;
+    }
+
+    .printTitle {
+        font-size: 14px;
+        font-weight: 800;
+    }
+
+    .printBrand {
+        font-size: 10px;
+        color: #666;
+    }
+
+    .printMeta {
+        text-align: right;
+    }
+
+    .printOrderId {
+        font-size: 11px;
+        font-weight: 700;
+        display: block;
+    }
+
+    .printDate {
+        font-size: 10px;
+        color: #666;
+    }
+
+    .printDivider {
+        border-top: 1px dashed #ccc;
+        margin: 6px 0;
+    }
+
+    .printSection {
+        margin: 6px 0;
+    }
+
+    .printSectionTitle {
+        font-size: 11px;
+        font-weight: 700;
+        margin-bottom: 4px;
+    }
+
+    .printSectionText {
+        margin: 2px 0;
+        font-size: 11px;
+        line-height: 1.4;
+    }
+}

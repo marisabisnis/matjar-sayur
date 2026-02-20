@@ -70,6 +70,16 @@ function getSheet(name) {
 }
 
 /**
+ * Jalankan fungsi ini dari Apps Script Editor (▶ Run) untuk otorisasi.
+ * Setelah otorisasi berhasil, tombol menu di Sheets akan berfungsi.
+ */
+function authorizeAndRebuild() {
+  const response = UrlFetchApp.fetch(VERCEL_DEPLOY_HOOK_URL, { method: 'POST' });
+  Logger.log('Status: ' + response.getResponseCode());
+  Logger.log('✅ Rebuild triggered! Website akan update dalam ~1 menit.');
+}
+
+/**
  * Convert sheet data to array of objects using header row
  */
 function sheetToJSON(sheetName) {

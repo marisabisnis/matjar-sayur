@@ -8,7 +8,17 @@ import { useCartStore } from '@/stores/cart-store';
 import { fetchOrder, type GASOrder } from '@/lib/api';
 import { formatHarga, formatTanggal } from '@/lib/utils';
 import { generateWALink, DEFAULT_WA_NUMBER } from '@/lib/whatsapp';
+import storesData from '../../../../public/data/stores.json';
 import styles from './page.module.css';
+
+const store = storesData[0] as {
+    nama: string;
+    alamat: string;
+    telepon: string;
+    whatsapp: string;
+    lat: number;
+    lng: number;
+};
 
 function gasToLocal(g: GASOrder): LocalOrder {
     return {
@@ -40,6 +50,8 @@ function gasToLocal(g: GASOrder): LocalOrder {
     };
 }
 
+type StrukMode = 'pembeli' | 'kurir';
+
 export default function StrukPage({ params }: { params: Promise<{ orderId: string }> }) {
     const { orderId } = use(params);
     const router = useRouter();
@@ -50,9 +62,9 @@ export default function StrukPage({ params }: { params: Promise<{ orderId: strin
     const [order, setOrder] = useState<LocalOrder | null>(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState('');
+    const [mode, setMode] = useState<StrukMode>('pembeli');
 
     useEffect(() => {
-        // Try localStorage first (instant)
         const local = getOrder(orderId);
         if (local) {
             setOrder(local);
@@ -60,11 +72,10 @@ export default function StrukPage({ params }: { params: Promise<{ orderId: strin
             return;
         }
 
-        // Fallback: fetch from GAS
         fetchOrder(orderId).then(res => {
             if (res.success && res.order) {
                 const converted = gasToLocal(res.order);
-                addOrder(converted); // Cache locally
+                addOrder(converted);
                 setOrder(converted);
             } else {
                 setError(res.error || 'Order tidak ditemukan');
@@ -88,6 +99,16 @@ export default function StrukPage({ params }: { params: Promise<{ orderId: strin
         const text = `🧾 Struk Belanja Pesan Sayur\nID: ${orderId}\n${url}`;
         const waUrl = generateWALink(DEFAULT_WA_NUMBER, text);
         window.open(waUrl, '_blank');
+    };
+
+    // Build route link from store to customer
+    const getRouteLink = () => {
+        if (!order?.linkMaps) return null;
+        const match = order.linkMaps.match(/q=([-\d.]+),([-\d.]+)/);
+        if (!match) return order.linkMaps;
+        const custLat = match[1];
+        const custLng = match[2];
+        return `https://www.google.com/maps/dir/${store.lat},${store.lng}/${custLat},${custLng}`;
     };
 
     if (loading) {
@@ -125,6 +146,8 @@ export default function StrukPage({ params }: { params: Promise<{ orderId: strin
         );
     }
 
+    const routeLink = getRouteLink();
+
     return (
         <main className={styles.page}>
             {/* Success Header */}
@@ -136,12 +159,32 @@ export default function StrukPage({ params }: { params: Promise<{ orderId: strin
                 <p className={styles.successDesc}>Pesananmu sudah dikirim via WhatsApp</p>
             </div>
 
+            {/* Mode Toggle */}
+            <div className={styles.modeToggle}>
+                <button
+                    className={`${styles.modeBtn} ${mode === 'pembeli' ? styles.modeBtnActive : ''}`}
+                    onClick={() => setMode('pembeli')}
+                >
+                    <span className="material-symbols-outlined" style={{ fontSize: '18px' }}>person</span>
+                    Struk Pembeli
+                </button>
+                <button
+                    className={`${styles.modeBtn} ${mode === 'kurir' ? styles.modeBtnActive : ''}`}
+                    onClick={() => setMode('kurir')}
+                >
+                    <span className="material-symbols-outlined" style={{ fontSize: '18px' }}>local_shipping</span>
+                    Struk Kurir
+                </button>
+            </div>
+
             {/* Receipt Card */}
             <div className={styles.receipt} id="struk-cetak">
                 {/* Receipt Header */}
                 <div className={styles.receiptHeader}>
                     <div>
-                        <h2 className={styles.receiptTitle}>🧾 Struk Belanja</h2>
+                        <h2 className={styles.receiptTitle}>
+                            {mode === 'kurir' ? '🚚 Struk Pengiriman' : '🧾 Struk Belanja'}
+                        </h2>
                         <p className={styles.receiptBrand}>Pesan Sayur</p>
                     </div>
                     <div className={styles.receiptMeta}>
@@ -151,6 +194,33 @@ export default function StrukPage({ params }: { params: Promise<{ orderId: strin
                 </div>
 
                 <div className={styles.divider} />
+
+                {/* === KURIR MODE: Store info === */}
+                {mode === 'kurir' && (
+                    <>
+                        <div className={styles.section}>
+                            <h3 className={styles.sectionTitle}>
+                                <span className="material-symbols-outlined">store</span>
+                                Asal Toko
+                            </h3>
+                            <div className={styles.infoGrid}>
+                                <div className={styles.infoRow}>
+                                    <span className={styles.infoLabel}>Toko</span>
+                                    <span className={styles.infoValue}>{store.nama}</span>
+                                </div>
+                                <div className={styles.infoRow}>
+                                    <span className={styles.infoLabel}>Alamat</span>
+                                    <span className={styles.infoValue}>{store.alamat}</span>
+                                </div>
+                                <div className={styles.infoRow}>
+                                    <span className={styles.infoLabel}>Telepon</span>
+                                    <span className={styles.infoValue}>{store.telepon}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div className={styles.divider} />
+                    </>
+                )}
 
                 {/* Customer Info */}
                 <div className={styles.section}>
@@ -179,12 +249,21 @@ export default function StrukPage({ params }: { params: Promise<{ orderId: strin
                                 </a>
                             </div>
                         )}
+                        {/* Kurir: add route link */}
+                        {mode === 'kurir' && routeLink && (
+                            <div className={styles.infoRow}>
+                                <span className={styles.infoLabel}>Rute</span>
+                                <a href={routeLink} target="_blank" rel="noopener noreferrer" className={styles.routeLink}>
+                                    🗺️ Navigasi ke Penerima
+                                </a>
+                            </div>
+                        )}
                     </div>
                 </div>
 
                 <div className={styles.divider} />
 
-                {/* Items Table */}
+                {/* Items */}
                 <div className={styles.section}>
                     <h3 className={styles.sectionTitle}>
                         <span className="material-symbols-outlined">shopping_bag</span>
@@ -208,8 +287,14 @@ export default function StrukPage({ params }: { params: Promise<{ orderId: strin
                                         </div>
                                     </div>
                                     <div className={styles.itemPrice}>
-                                        <span className={styles.itemQty}>{item.qty}x {formatHarga(harga)}</span>
-                                        <span className={styles.itemSubtotal}>{formatHarga(harga * item.qty)}</span>
+                                        {mode === 'pembeli' ? (
+                                            <>
+                                                <span className={styles.itemQty}>{item.qty}x {formatHarga(harga)}</span>
+                                                <span className={styles.itemSubtotal}>{formatHarga(harga * item.qty)}</span>
+                                            </>
+                                        ) : (
+                                            <span className={styles.itemQty}>× {item.qty}</span>
+                                        )}
                                     </div>
                                 </div>
                             );
@@ -221,20 +306,24 @@ export default function StrukPage({ params }: { params: Promise<{ orderId: strin
 
                 {/* Summary */}
                 <div className={styles.summary}>
-                    <div className={styles.summaryRow}>
-                        <span>Subtotal</span>
-                        <span>{formatHarga(order.subtotal)}</span>
-                    </div>
-                    {order.diskon > 0 && (
-                        <div className={`${styles.summaryRow} ${styles.summaryDiskon}`}>
-                            <span>Diskon{order.kupon ? ` (${order.kupon})` : ''}</span>
-                            <span>-{formatHarga(order.diskon)}</span>
-                        </div>
+                    {mode === 'pembeli' && (
+                        <>
+                            <div className={styles.summaryRow}>
+                                <span>Subtotal</span>
+                                <span>{formatHarga(order.subtotal)}</span>
+                            </div>
+                            {order.diskon > 0 && (
+                                <div className={`${styles.summaryRow} ${styles.summaryDiskon}`}>
+                                    <span>Diskon{order.kupon ? ` (${order.kupon})` : ''}</span>
+                                    <span>-{formatHarga(order.diskon)}</span>
+                                </div>
+                            )}
+                            <div className={styles.summaryRow}>
+                                <span>Ongkir</span>
+                                <span>{order.ongkir === 0 ? 'GRATIS 🎉' : formatHarga(order.ongkir)}</span>
+                            </div>
+                        </>
                     )}
-                    <div className={styles.summaryRow}>
-                        <span>Ongkir</span>
-                        <span>{order.ongkir === 0 ? 'GRATIS 🎉' : formatHarga(order.ongkir)}</span>
-                    </div>
                     <div className={`${styles.summaryRow} ${styles.summaryTotal}`}>
                         <span>Total</span>
                         <span>{formatHarga(order.total)}</span>

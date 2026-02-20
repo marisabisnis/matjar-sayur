@@ -39,6 +39,52 @@
     color: var(--text-primary);
 }
 
+/* ===== PWA INSTALL SECTION ===== */
+.installSection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-md);
+    padding: var(--space-md) var(--space-lg);
+    border-radius: var(--radius);
+    border: 1.5px solid var(--color-primary-light);
+    background: var(--bg-green-soft);
+    width: 100%;
+    max-width: 420px;
+}
+
+.installInfo {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    flex: 1;
+    min-width: 0;
+}
+
+.installText {
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.installBtn {
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+    border: none;
+    color: white;
+    font-size: var(--font-size-sm);
+    font-weight: 700;
+    padding: 8px 20px;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: transform 0.15s;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.installBtn:hover {
+    transform: scale(1.05);
+}
+
 .footerCopy {
     font-size: var(--font-size-sm);
     color: var(--text-muted);
@@ -48,6 +94,12 @@
 @media (min-width: 768px) {
     .footerInner {
         flex-direction: row;
+        flex-wrap: wrap;
         padding: 0 var(--space-lg);
+    }
+
+    .installSection {
+        order: 3;
+        width: auto;
     }
 }

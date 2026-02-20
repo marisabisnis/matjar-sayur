@@ -306,6 +306,18 @@ export default function CheckoutPage() {
                             <span className="material-symbols-outlined" style={{ color: 'var(--color-primary)' }}>location_on</span>
                             Alamat Pengiriman
                         </h2>
+                        {store && (
+                            <div style={{
+                                display: 'flex', alignItems: 'center', gap: '8px',
+                                padding: '8px 12px', marginBottom: 'var(--space-md)',
+                                borderRadius: 'var(--radius)', background: 'var(--bg-green-soft)',
+                                border: '1px solid var(--color-primary-light)',
+                                fontSize: 'var(--font-size-xs)', color: 'var(--text-secondary)'
+                            }}>
+                                <span className="material-symbols-outlined" style={{ fontSize: '16px', color: 'var(--color-primary)' }}>store</span>
+                                <span>Toko: <strong>{store.nama}</strong> — {store.alamat}</span>
+                            </div>
+                        )}
                         <div className={styles.formGroup}>
                             <label htmlFor="alamat" className={styles.formLabel}>
                                 Alamat Lengkap <span className={styles.formRequired}>*</span>
