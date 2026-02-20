@@ -1,0 +1,29 @@
+[
+  {
+    "tipe": "transfer",
+    "provider": "BCA",
+    "no_rekening": "1234567890",
+    "atas_nama": "Pesan Sayur",
+    "logo_url": "",
+    "instruksi": "Transfer ke BCA 1234567890 a.n. Pesan Sayur",
+    "aktif": true
+  },
+  {
+    "tipe": "qris",
+    "provider": "QRIS",
+    "no_rekening": "",
+    "atas_nama": "Pesan Sayur",
+    "logo_url": "",
+    "instruksi": "Scan QR Code yang dikirim via WhatsApp",
+    "aktif": true
+  },
+  {
+    "tipe": "cod",
+    "provider": "COD",
+    "no_rekening": "",
+    "atas_nama": "",
+    "logo_url": "",
+    "instruksi": "Bayar tunai saat pesanan tiba",
+    "aktif": true
+  }
+]

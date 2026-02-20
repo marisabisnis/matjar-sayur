@@ -1,0 +1,32 @@
+[
+    {
+        "id": "1",
+        "gambar_url": "https://lh3.googleusercontent.com/aida-public/AB6AXuA2WxZz_fwmZTgqB3sA-ZAfoxdMarzWeLh1xAOzx1bVQ5gL81GyZnVSrU2MzmY6_HOnK0OxBUbKpwPbfRdAAoDLZignyD65JZ-ZdaykzSnGtiOdl0Iio65_UGOG7AUOAoDEUy7FZrmI6cQgtGSVWaohgvEVHv-z__vb_Q6V4a9XUK-RrUgcfgUfDAT1RielLExIHFdlZbHFTZzwVYLfCQESzQnQS11WTgbDmUh9al2EE2HIjmvLzI9OmXL7Ekdoy69VVelvRxNML2g",
+        "judul": "Belanja Segar Setiap Hari",
+        "deskripsi": "Gratis ongkir untuk pembelian minimal Rp100rb",
+        "tipe_link": "kategori",
+        "link_tujuan": "/kategori/sayuran-segar",
+        "urutan": 1,
+        "aktif": true
+    },
+    {
+        "id": "2",
+        "gambar_url": "https://lh3.googleusercontent.com/aida-public/AB6AXuBeQbBmT83x9oFZN8EIsUuZFDvGE8w5jklGO-0ZBumOcSeJuW1KUfVk7g8TANAlM10taLujfDOr-hJlb2C7TK9R3AbBJpIWbGPI9gLnDikmzbH7daBKI1gJ7aQZNbTEgPI6gLncdBu23PPg6TluhA5UEcOfb7Fd5WAZxd5h4Y32X0sO4QURrGc0_yFZlrr1JFKX_h_u0sjvuNnnBvyCwqOPayPA1KJ_tTnTTIvmNDleW9ni0LGeamIp_Zx-FcRM5I_08uEt9E0X8gA",
+        "judul": "Promo Lauk Pauk",
+        "deskripsi": "Tempe & tahu segar harga spesial minggu ini!",
+        "tipe_link": "kategori",
+        "link_tujuan": "/kategori/lauk-pauk",
+        "urutan": 2,
+        "aktif": true
+    },
+    {
+        "id": "3",
+        "gambar_url": "https://lh3.googleusercontent.com/aida-public/AB6AXuDbCbYolh3O__CW37-ggBn3_2vLWoFgDuiyB8B9X9r0wCwSF5qa3POikfr0frBw_pkAyNsXDHp_Cq733zzg6MlIVjkX0v9Cw3MvWcYSBt32ze267NDEZopjBZD8FdO2qBGCoM5IgMCq2gDrYQ44tZSr6SY24wFug_nMl0S7ajSxNOfzff_iFu0scZzLrddbqo9zwdUM5OaTzrq0DO_UIojHToq-4gxPRyIAXzrebrWPjSIF5F_a8iW9ekK6RmR57ijgXI2eaLNERBQ",
+        "judul": "Bumbu Segar Pilihan",
+        "deskripsi": "Cabai, bawang, lengkap! Bikin masakan makin sedap",
+        "tipe_link": "kategori",
+        "link_tujuan": "/kategori/bumbu-dapur",
+        "urutan": 3,
+        "aktif": true
+    }
+]

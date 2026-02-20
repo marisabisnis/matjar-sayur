@@ -1,0 +1,53 @@
+.footer {
+    margin-top: auto;
+    border-top: 1px solid var(--border-color);
+    background: var(--bg-primary);
+    padding: var(--space-2xl) 0;
+}
+
+.footerInner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 var(--space-md);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-lg);
+}
+
+.footerBrand {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.footerLogoIcon {
+    width: 32px;
+    height: 32px;
+    border-radius: var(--radius);
+    background: var(--color-primary);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footerLogoText {
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.footerCopy {
+    font-size: var(--font-size-sm);
+    color: var(--text-muted);
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .footerInner {
+        flex-direction: row;
+        padding: 0 var(--space-lg);
+    }
+}

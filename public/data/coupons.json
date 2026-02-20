@@ -1,0 +1,38 @@
+[
+    {
+        "kode": "HEMAT10",
+        "tipe": "persen",
+        "nilai": 10,
+        "min_order": 50000,
+        "max_diskon": 15000,
+        "batas_pakai": 100,
+        "sudah_dipakai": 0,
+        "berlaku_dari": "2026-01-01",
+        "berlaku_sampai": "2026-12-31",
+        "aktif": true
+    },
+    {
+        "kode": "DISKON5K",
+        "tipe": "nominal",
+        "nilai": 5000,
+        "min_order": 30000,
+        "max_diskon": 0,
+        "batas_pakai": 50,
+        "sudah_dipakai": 0,
+        "berlaku_dari": "2026-01-01",
+        "berlaku_sampai": "2026-12-31",
+        "aktif": true
+    },
+    {
+        "kode": "FREEONGKIR",
+        "tipe": "gratis_ongkir",
+        "nilai": 0,
+        "min_order": 75000,
+        "max_diskon": 0,
+        "batas_pakai": 200,
+        "sudah_dipakai": 0,
+        "berlaku_dari": "2026-01-01",
+        "berlaku_sampai": "2026-12-31",
+        "aktif": true
+    }
+]

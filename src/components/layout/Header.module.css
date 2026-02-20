@@ -1,0 +1,212 @@
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border-color);
+    padding: var(--space-md) 0;
+}
+
+.headerInner {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-xl);
+    padding: 0 var(--space-md);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.logoIcon {
+    background: rgba(22, 163, 74, 0.1);
+    padding: var(--space-sm);
+    border-radius: var(--radius);
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo:hover .logoIcon {
+    background: rgba(22, 163, 74, 0.2);
+}
+
+.logoIcon .material-symbols-outlined {
+    color: var(--color-primary);
+    font-size: 28px;
+}
+
+.logoText {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+}
+
+.logoAccent {
+    color: var(--color-primary);
+}
+
+.searchBar {
+    display: none;
+    flex: 1;
+    max-width: 600px;
+}
+
+.searchWrapper {
+    position: relative;
+    width: 100%;
+}
+
+.searchIcon {
+    position: absolute;
+    top: 50%;
+    left: var(--space-md);
+    transform: translateY(-50%);
+    color: var(--text-muted);
+    pointer-events: none;
+    transition: var(--transition);
+}
+
+.searchInput {
+    width: 100%;
+    padding: 12px 16px 12px 44px;
+    background: #f1f5f9;
+    border: 2px solid transparent;
+    border-radius: var(--radius-full);
+    font-size: var(--font-size-sm);
+    color: var(--text-primary);
+    transition: var(--transition);
+    outline: none;
+}
+
+.searchInput::placeholder {
+    color: var(--text-muted);
+}
+
+.searchInput:focus {
+    background: var(--bg-primary);
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.1);
+}
+
+.searchInput:focus+.searchIcon,
+.searchWrapper:focus-within .searchIcon {
+    color: var(--color-primary);
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+}
+
+.cartButton {
+    position: relative;
+    padding: var(--space-sm);
+    color: var(--text-secondary);
+    border-radius: var(--radius-full);
+    transition: var(--transition);
+}
+
+.cartButton:hover {
+    color: var(--color-primary);
+    background: #f1f5f9;
+}
+
+.cartBadge {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    border-radius: var(--radius-full);
+    background: var(--color-danger);
+    color: var(--text-white);
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 1;
+    border: 2px solid white;
+}
+
+.userButton {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: 4px 12px 4px 4px;
+    border-radius: var(--radius-full);
+    transition: var(--transition);
+    border: 1px solid transparent;
+}
+
+.userButton:hover {
+    background: #f1f5f9;
+    border-color: var(--border-color);
+}
+
+.userAvatar {
+    width: 32px;
+    height: 32px;
+    border-radius: var(--radius-full);
+    background: #e2e8f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.userName {
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    display: none;
+}
+
+@media (min-width: 640px) {
+    .userName {
+        display: block;
+    }
+
+    .headerInner {
+        padding: 0 var(--space-lg);
+    }
+}
+
+.mobileSearchBtn {
+    padding: var(--space-sm);
+    color: var(--text-secondary);
+    border-radius: var(--radius-full);
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.mobileSearchBtn:hover {
+    color: var(--color-primary);
+    background: #f1f5f9;
+}
+
+@media (min-width: 768px) {
+    .searchBar {
+        display: flex;
+    }
+
+    .mobileSearchBtn {
+        display: none;
+    }
+}
+
+@media (min-width: 1024px) {
+    .headerInner {
+        padding: 0 var(--space-xl);
+    }
+}
