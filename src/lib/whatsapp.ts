@@ -90,4 +90,4 @@ export function generateWALink(phone: string, message: string): string {
 /**
  * Default store WhatsApp number
  */
-export const DEFAULT_WA_NUMBER = '6281234567890';
+export const DEFAULT_WA_NUMBER = '6281219199323';

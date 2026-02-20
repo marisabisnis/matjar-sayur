@@ -12,6 +12,7 @@ import { generateWAMessage, generateWALink, DEFAULT_WA_NUMBER } from '@/lib/what
 import { submitOrder } from '@/lib/api';
 import { calculateDiscount, type CouponData } from '@/lib/coupon';
 import storesData from '../../../public/data/stores.json';
+import paymentsData from '../../../public/data/payments.json';
 import styles from './page.module.css';
 
 const MapPicker = dynamic(() => import('@/components/checkout/MapPicker'), { ssr: false });
@@ -34,7 +35,9 @@ export default function CheckoutPage() {
     const [alamat, setAlamat] = useState('');
     const [catatan, setCatatan] = useState('');
     const [jadwal, setJadwal] = useState<Jadwal>('hari-ini');
+    const [tanggalPilih, setTanggalPilih] = useState('');
     const [pembayaran, setPembayaran] = useState<Pembayaran>('transfer');
+    const [copied, setCopied] = useState('');
 
     // Location state from map
     const [lokasi, setLokasi] = useState<{ lat: number; lng: number; jarak: number } | null>(null);
@@ -113,10 +116,30 @@ export default function CheckoutPage() {
     const total = subtotal - diskon + ongkir;
     const itemCount = getItemCount();
 
+    // Date picker helpers
+    const today = new Date();
+    const todayStr = today.toISOString().split('T')[0];
+    const maxDate = new Date(today);
+    maxDate.setDate(maxDate.getDate() + 7);
+    const maxDateStr = maxDate.toISOString().split('T')[0];
+
     const jadwalLabel: Record<Jadwal, string> = {
         'hari-ini': 'Hari Ini',
         'besok': 'Besok Pagi',
-        'pilih': 'Dijadwalkan',
+        'pilih': tanggalPilih
+            ? new Date(tanggalPilih).toLocaleDateString('id-ID', { weekday: 'long', day: 'numeric', month: 'long' })
+            : 'Dijadwalkan',
+    };
+
+    // Payment data
+    const bankAccounts = paymentsData.filter((p: { tipe: string }) => p.tipe === 'transfer');
+    const qrisData = paymentsData.find((p: { tipe: string }) => p.tipe === 'qris');
+
+    const copyToClipboard = (text: string, id: string) => {
+        navigator.clipboard.writeText(text).then(() => {
+            setCopied(id);
+            setTimeout(() => setCopied(''), 2000);
+        });
     };
 
     const bayarLabel: Record<Pembayaran, string> = {
@@ -327,6 +350,22 @@ export default function CheckoutPage() {
                                 </button>
                             ))}
                         </div>
+                        {jadwal === 'pilih' && (
+                            <div style={{ marginTop: 'var(--space-md)' }}>
+                                <input
+                                    type="date"
+                                    className={styles.formInput}
+                                    value={tanggalPilih}
+                                    onChange={e => setTanggalPilih(e.target.value)}
+                                    min={todayStr}
+                                    max={maxDateStr}
+                                    required
+                                />
+                                <p style={{ fontSize: 'var(--font-size-xs)', color: 'var(--text-muted)', marginTop: '6px' }}>
+                                    📅 Pilih tanggal dalam 7 hari ke depan
+                                </p>
+                            </div>
+                        )}
                     </div>
 
                     {/* Metode Pembayaran */}
@@ -337,8 +376,8 @@ export default function CheckoutPage() {
                         </h2>
                         <div className={styles.paymentOptions}>
                             {([
-                                { key: 'transfer' as Pembayaran, icon: 'account_balance', color: '#3b82f6', bg: '#eff6ff', name: 'Transfer Bank', desc: 'BCA, BNI, Mandiri, BRI' },
-                                { key: 'qris' as Pembayaran, icon: 'qr_code_2', color: '#a855f7', bg: '#faf5ff', name: 'QRIS', desc: 'GoPay, OVO, DANA, dll' },
+                                { key: 'transfer' as Pembayaran, icon: 'account_balance', color: '#3b82f6', bg: '#eff6ff', name: 'Transfer Bank', desc: 'BSI, Mandiri, JAGO' },
+                                { key: 'qris' as Pembayaran, icon: 'qr_code_2', color: '#a855f7', bg: '#faf5ff', name: 'QRIS', desc: 'Scan QR untuk bayar' },
                                 { key: 'cod' as Pembayaran, icon: 'payments', color: '#16a34a', bg: '#f0fdf4', name: 'Bayar di Tempat (COD)', desc: 'Bayar saat pesanan tiba' },
                             ]).map((opt) => (
                                 <label
@@ -359,6 +398,62 @@ export default function CheckoutPage() {
                                 </label>
                             ))}
                         </div>
+
+                        {/* Payment Detail Panel */}
+                        {pembayaran === 'transfer' && bankAccounts.length > 0 && (
+                            <div className={styles.paymentDetail}>
+                                <p className={styles.paymentDetailTitle}>💳 Pilih rekening tujuan:</p>
+                                {bankAccounts.map((bank: { provider: string; no_rekening: string; atas_nama: string }, idx: number) => (
+                                    <div key={idx} className={styles.bankCard}>
+                                        <div className={styles.bankInfo}>
+                                            <span className={styles.bankProvider}>{bank.provider}</span>
+                                            <span className={styles.bankNumber}>{bank.no_rekening}</span>
+                                            <span className={styles.bankName}>a.n. {bank.atas_nama}</span>
+                                        </div>
+                                        <button
+                                            className={styles.copyBtn}
+                                            onClick={() => copyToClipboard(bank.no_rekening, `bank-${idx}`)}
+                                        >
+                                            <span className="material-symbols-outlined" style={{ fontSize: '16px' }}>
+                                                {copied === `bank-${idx}` ? 'check' : 'content_copy'}
+                                            </span>
+                                            {copied === `bank-${idx}` ? 'Tersalin!' : 'Salin'}
+                                        </button>
+                                    </div>
+                                ))}
+                            </div>
+                        )}
+
+                        {pembayaran === 'qris' && (
+                            <div className={styles.paymentDetail}>
+                                <p className={styles.paymentDetailTitle}>📱 Scan QR Code untuk bayar:</p>
+                                {qrisData && (qrisData as { qris_url?: string }).qris_url ? (
+                                    <div className={styles.qrisImageWrap}>
+                                        <Image
+                                            src={(qrisData as { qris_url: string }).qris_url}
+                                            alt="QRIS Payment"
+                                            width={280}
+                                            height={280}
+                                            className={styles.qrisImage}
+                                        />
+                                    </div>
+                                ) : (
+                                    <div className={styles.qrisPlaceholder}>
+                                        <span className="material-symbols-outlined" style={{ fontSize: '48px', color: 'var(--text-muted)' }}>qr_code_2</span>
+                                        <p>QR Code akan dikirim via WhatsApp setelah checkout</p>
+                                    </div>
+                                )}
+                            </div>
+                        )}
+
+                        {pembayaran === 'cod' && (
+                            <div className={styles.paymentDetail}>
+                                <div className={styles.codInfo}>
+                                    <span className="material-symbols-outlined" style={{ fontSize: '20px', color: '#f59e0b' }}>info</span>
+                                    <p>💵 Gunakan uang pas agar memudahkan kurir. Terima kasih!</p>
+                                </div>
+                            </div>
+                        )}
                     </div>
 
                     {/* Catatan */}

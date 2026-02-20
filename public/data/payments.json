@@ -1,11 +1,29 @@
 [
   {
     "tipe": "transfer",
-    "provider": "BCA",
+    "provider": "BSI",
     "no_rekening": "1234567890",
     "atas_nama": "Pesan Sayur",
     "logo_url": "",
-    "instruksi": "Transfer ke BCA 1234567890 a.n. Pesan Sayur",
+    "instruksi": "Transfer ke BSI",
+    "aktif": true
+  },
+  {
+    "tipe": "transfer",
+    "provider": "Mandiri",
+    "no_rekening": "1234567890",
+    "atas_nama": "Pesan Sayur",
+    "logo_url": "",
+    "instruksi": "Transfer ke Mandiri",
+    "aktif": true
+  },
+  {
+    "tipe": "transfer",
+    "provider": "JAGO",
+    "no_rekening": "1234567890",
+    "atas_nama": "Pesan Sayur",
+    "logo_url": "",
+    "instruksi": "Transfer ke JAGO",
     "aktif": true
   },
   {
@@ -14,7 +32,8 @@
     "no_rekening": "",
     "atas_nama": "Pesan Sayur",
     "logo_url": "",
-    "instruksi": "Scan QR Code yang dikirim via WhatsApp",
+    "instruksi": "Scan QR Code di bawah ini untuk pembayaran",
+    "qris_url": "",
     "aktif": true
   },
   {

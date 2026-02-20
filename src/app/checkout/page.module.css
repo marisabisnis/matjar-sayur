@@ -295,6 +295,122 @@
     color: var(--color-primary);
 }
 
+/* ===== PAYMENT DETAIL PANEL ===== */
+.paymentDetail {
+    margin-top: var(--space-lg);
+    padding: var(--space-lg);
+    background: #f8fafc;
+    border-radius: var(--radius);
+    border: 1px solid var(--border-light);
+}
+
+.paymentDetailTitle {
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: var(--space-md);
+}
+
+.bankCard {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px;
+    background: white;
+    border-radius: var(--radius);
+    border: 1px solid var(--border-light);
+    margin-bottom: var(--space-sm);
+}
+
+.bankCard:last-child {
+    margin-bottom: 0;
+}
+
+.bankInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.bankProvider {
+    font-size: var(--font-size-sm);
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.bankNumber {
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    color: var(--color-primary);
+    font-family: monospace;
+    letter-spacing: 0.5px;
+}
+
+.bankName {
+    font-size: var(--font-size-xs);
+    color: var(--text-muted);
+}
+
+.copyBtn {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 6px 12px;
+    border-radius: var(--radius);
+    background: var(--color-primary-light);
+    color: var(--color-primary);
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    border: none;
+    white-space: nowrap;
+}
+
+.copyBtn:hover {
+    background: var(--color-primary);
+    color: white;
+}
+
+.qrisImageWrap {
+    display: flex;
+    justify-content: center;
+    padding: var(--space-md);
+    background: white;
+    border-radius: var(--radius);
+    border: 1px solid var(--border-light);
+}
+
+.qrisImage {
+    border-radius: var(--radius);
+    max-width: 100%;
+    height: auto;
+}
+
+.qrisPlaceholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-xl);
+    text-align: center;
+    color: var(--text-muted);
+    font-size: var(--font-size-sm);
+}
+
+.codInfo {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-sm);
+    padding: 12px;
+    background: #fffbeb;
+    border-radius: var(--radius);
+    border: 1px solid #fde68a;
+    font-size: var(--font-size-sm);
+    color: #92400e;
+    line-height: 1.5;
+}
+
 /* ===== ORDER SUMMARY (SIDEBAR) ===== */
 .summaryCard {
     background: var(--bg-card);
