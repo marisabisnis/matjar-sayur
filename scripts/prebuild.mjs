@@ -19,15 +19,19 @@ const DATA_DIR = resolve(ROOT, 'public', 'data');
 function loadEnv() {
     // On Vercel, env vars are injected into process.env directly
     if (process.env.NEXT_PUBLIC_GAS_URL) {
+        console.log('  ✅ Found GAS URL from process.env (Vercel)');
         return process.env.NEXT_PUBLIC_GAS_URL;
     }
+
+    console.log('  ⚠️  NEXT_PUBLIC_GAS_URL not in process.env, checking .env.local...');
 
     // Local dev: read from .env.local file
     const envPath = resolve(ROOT, '.env.local');
     if (!existsSync(envPath)) {
-        console.warn('⚠️  .env.local not found and NEXT_PUBLIC_GAS_URL not set.');
+        console.warn('  ❌ .env.local not found and NEXT_PUBLIC_GAS_URL not set.');
         return null;
     }
+    console.log('  ✅ Found GAS URL from .env.local');
     const content = readFileSync(envPath, 'utf-8');
     const match = content.match(/NEXT_PUBLIC_GAS_URL\s*=\s*(.+)/);
     return match ? match[1].trim() : null;
