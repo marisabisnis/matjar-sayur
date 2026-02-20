@@ -5,7 +5,8 @@
     "no_rekening": "1234567890",
     "atas_nama": "Jeffri Pamungkas Setiawan",
     "logo_url": "",
-    "instruksi": "Transfer ke BCA 1234567890 a.n. Jeffri Pamungkas Setiawan",
+    "instruksi": "Transfer ke BSI 1234567890 a.n. Jeffri Pamungkas Setiawan",
+    "qris_url": "",
     "aktif": true
   },
   {
@@ -14,7 +15,8 @@
     "no_rekening": "1234567890",
     "atas_nama": "Jeffri Pamungkas Setiawan",
     "logo_url": "",
-    "instruksi": "Transfer ke BCA 1234567890 a.n. Jeffri Pamungkas Setiawan",
+    "instruksi": "Transfer ke JAGO 1234567890 a.n. Jeffri Pamungkas Setiawan",
+    "qris_url": "",
     "aktif": true
   },
   {
@@ -23,7 +25,8 @@
     "no_rekening": "1234567890",
     "atas_nama": "Jeffri Pamungkas Setiawan",
     "logo_url": "",
-    "instruksi": "Transfer ke BCA 1234567890 a.n. Jeffri Pamungkas Setiawan",
+    "instruksi": "Transfer ke Mandiri 1234567890 a.n. Jeffri Pamungkas Setiawan",
+    "qris_url": "",
     "aktif": true
   },
   {
@@ -33,6 +36,7 @@
     "atas_nama": "Jeffri Pamungkas Setiawan",
     "logo_url": "",
     "instruksi": "Scan QR Code yang dikirim via WhatsApp",
+    "qris_url": "",
     "aktif": true
   },
   {
@@ -42,6 +46,7 @@
     "atas_nama": "",
     "logo_url": "",
     "instruksi": "Bayar tunai saat pesanan tiba",
+    "qris_url": "",
     "aktif": true
   }
 ]
