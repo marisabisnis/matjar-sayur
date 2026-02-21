@@ -4,6 +4,9 @@
     border-radius: var(--radius-lg);
     overflow: hidden;
     transition: var(--transition-slow);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .card:hover {
@@ -83,6 +86,9 @@
 
 .info {
     padding: var(--space-md);
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
 
 .category {
@@ -111,6 +117,7 @@
     align-items: baseline;
     gap: var(--space-sm);
     margin-bottom: var(--space-md);
+    margin-top: auto;
 }
 
 .priceOld {

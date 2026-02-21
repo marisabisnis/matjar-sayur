@@ -1,5 +1,6 @@
 .page {
     max-width: 1280px;
+    width: 100%;
     margin: 0 auto;
     padding: var(--space-xl) var(--space-md);
     overflow-x: hidden;
@@ -34,6 +35,7 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: var(--space-2xl);
+    min-width: 0;
 }
 
 /* ===== IMAGE GALLERY ===== */
@@ -124,8 +126,10 @@
 .details {
     display: flex;
     flex-direction: column;
+    min-width: 0;
     max-width: 100%;
     overflow: hidden;
+    word-break: break-word;
 }
 
 .badges {
@@ -161,6 +165,8 @@
     color: var(--text-primary);
     margin-bottom: var(--space-md);
     line-height: 1.2;
+    word-break: break-word;
+    overflow-wrap: break-word;
 }
 
 .priceBlock {
@@ -193,6 +199,8 @@
     color: var(--text-secondary);
     line-height: 1.7;
     margin-bottom: var(--space-xl);
+    word-break: break-word;
+    overflow-wrap: break-word;
 }
 
 .divider {
