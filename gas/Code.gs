@@ -762,16 +762,22 @@ function generateWALinksForRow(sheet, row, d) {
   var waNum = formatWANumber(d.telepon);
   var baseUrl = 'https://wa.me/' + waNum + '?text=';
 
-  // Items summary
+  // Items summary — max 5 items agar URL tidak terlalu panjang
   var itemsText = '';
   try {
     var items = (typeof d.items === 'string') ? JSON.parse(d.items) : d.items;
-    itemsText = items.map(function(item, i) {
+    var maxShow = 5;
+    var shown = items.slice(0, maxShow);
+    itemsText = shown.map(function(item, i) {
       return (i + 1) + '. ' + item.nama + ' x' + item.qty;
     }).join('\n');
+    if (items.length > maxShow) {
+      itemsText += '\n...dan ' + (items.length - maxShow) + ' item lainnya';
+    }
   } catch(e) { itemsText = '(detail pesanan)'; }
 
   var totalText = 'Rp' + Number(d.total).toLocaleString('id-ID');
+  var strukUrl = 'https://pesan-sayur.vercel.app/struk/' + d.orderId;
 
   // Template 1: Konfirmasi
   var msgKonfirmasi = "Assalamu'alaikum " + d.nama + " \ud83d\ude4f\n\n"
@@ -784,7 +790,8 @@ function generateWALinksForRow(sheet, row, d) {
     + "\ud83d\udcb0 *Total: " + totalText + "*\n"
     + "\ud83d\ude9a Jadwal: " + d.jadwal + "\n"
     + "\ud83d\udcb3 Bayar: " + d.metodeBayar + "\n\n"
-    + "Pesanan sedang kami siapkan ya! \ud83e\udd6c";
+    + "Pesanan sedang kami siapkan ya! \ud83e\udd6c\n"
+    + "\ud83d\udcc4 Detail: " + strukUrl;
 
   // Template 2: Reminder (skip jika COD)
   var isCOD = String(d.metodeBayar).toLowerCase().indexOf('cod') >= 0;

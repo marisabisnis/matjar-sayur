@@ -80,10 +80,15 @@ export function generateWAMessage(data: CheckoutData): string {
  * Generate WhatsApp click-to-chat URL
  */
 export function generateWALink(phone: string, message: string): string {
+    // Strip everything except digits
     const cleanPhone = phone.replace(/[^0-9]/g, '');
-    const formatted = cleanPhone.startsWith('0')
-        ? '62' + cleanPhone.slice(1)
-        : cleanPhone;
+    // Normalize: 08xx → 628xx, already 62 → keep, other → prepend 62
+    let formatted = cleanPhone;
+    if (formatted.startsWith('0')) {
+        formatted = '62' + formatted.slice(1);
+    } else if (!formatted.startsWith('62')) {
+        formatted = '62' + formatted;
+    }
     return `https://wa.me/${formatted}?text=${encodeURIComponent(message)}`;
 }
 
