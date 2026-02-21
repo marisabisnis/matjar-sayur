@@ -945,7 +945,7 @@ function bulkKirimNotif() {
   var lastRow = sheet.getLastRow();
   if (lastRow < 2) { ui.alert('Belum ada data order.'); return; }
 
-  var data = sheet.getRange(2, 1, lastRow - 1, 16).getValues();
+  var data = sheet.getRange(2, 1, lastRow - 1, 13).getValues();
   var confirmedOrders = [];
 
   for (var i = 0; i < data.length; i++) {
@@ -1022,7 +1022,7 @@ function dashboardHariIni() {
   var lastRow = sheet.getLastRow();
   if (lastRow < 2) { ui.alert('Belum ada data order.'); return; }
 
-  var data = sheet.getRange(2, 1, lastRow - 1, 16).getValues();
+  var data = sheet.getRange(2, 1, lastRow - 1, 13).getValues();
   var today = new Date();
   // Gunakan format lokal WIB (UTC+7) bukan UTC agar tanggal benar
   var todayStr = Utilities.formatDate(today, 'Asia/Jakarta', 'yyyy-MM-dd');
@@ -1096,7 +1096,7 @@ function produkTerlaris() {
   var lastRow = sheet.getLastRow();
   if (lastRow < 2) { ui.alert('Belum ada data order.'); return; }
 
-  var data = sheet.getRange(2, 1, lastRow - 1, 16).getValues();
+  var data = sheet.getRange(2, 1, lastRow - 1, 13).getValues();
   var productMap = {};
 
   for (var i = 0; i < data.length; i++) {
