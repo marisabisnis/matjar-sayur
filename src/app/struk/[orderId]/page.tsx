@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState, use } from 'react';
+import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useHistoryStore, type LocalOrder } from '@/stores/history-store';
@@ -63,6 +64,12 @@ export default function StrukPage({ params }: { params: Promise<{ orderId: strin
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState('');
     const [mode, setMode] = useState<StrukMode>('pembeli');
+    const searchParams = useSearchParams();
+    const isAdminMode = searchParams.get('mode') === 'kurir';
+
+    useEffect(() => {
+        if (isAdminMode) setMode('kurir');
+    }, [isAdminMode]);
 
     useEffect(() => {
         const local = getOrder(orderId);
@@ -159,23 +166,25 @@ export default function StrukPage({ params }: { params: Promise<{ orderId: strin
                 <p className={styles.successDesc}>Pesananmu sudah dikirim via WhatsApp</p>
             </div>
 
-            {/* Mode Toggle */}
-            <div className={styles.modeToggle}>
-                <button
-                    className={`${styles.modeBtn} ${mode === 'pembeli' ? styles.modeBtnActive : ''}`}
-                    onClick={() => setMode('pembeli')}
-                >
-                    <span className="material-symbols-outlined" style={{ fontSize: '18px' }}>person</span>
-                    Struk Pembeli
-                </button>
-                <button
-                    className={`${styles.modeBtn} ${mode === 'kurir' ? styles.modeBtnActive : ''}`}
-                    onClick={() => setMode('kurir')}
-                >
-                    <span className="material-symbols-outlined" style={{ fontSize: '18px' }}>local_shipping</span>
-                    Struk Kurir
-                </button>
-            </div>
+            {/* Mode Toggle — hanya muncul jika admin (via ?mode=kurir) */}
+            {isAdminMode && (
+                <div className={styles.modeToggle}>
+                    <button
+                        className={`${styles.modeBtn} ${mode === 'pembeli' ? styles.modeBtnActive : ''}`}
+                        onClick={() => setMode('pembeli')}
+                    >
+                        <span className="material-symbols-outlined" style={{ fontSize: '18px' }}>person</span>
+                        Struk Belanja
+                    </button>
+                    <button
+                        className={`${styles.modeBtn} ${mode === 'kurir' ? styles.modeBtnActive : ''}`}
+                        onClick={() => setMode('kurir')}
+                    >
+                        <span className="material-symbols-outlined" style={{ fontSize: '18px' }}>local_shipping</span>
+                        Struk Kurir
+                    </button>
+                </div>
+            )}
 
             {/* Receipt Card */}
             <div className={styles.receipt} id="struk-cetak">

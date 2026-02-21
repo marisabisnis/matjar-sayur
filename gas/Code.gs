@@ -26,10 +26,25 @@ const VERCEL_DEPLOY_HOOK_URL = 'https://api.vercel.com/v1/integrations/deploy/pr
  * Menu kustom di Google Sheets
  */
 function onOpen() {
-  SpreadsheetApp.getUi()
-    .createMenu('🛒 Pesan Sayur')
+  var ui = SpreadsheetApp.getUi();
+  ui.createMenu('🛒 Pesan Sayur')
     .addItem('🔄 Update Website', 'rebuildWebsite')
     .addSeparator()
+    .addSubMenu(ui.createMenu('📱 WA Follow-up')
+      .addItem('✅ Konfirmasi Pesanan', 'waKonfirmasi')
+      .addItem('💳 Reminder Pembayaran', 'waReminderBayar')
+      .addItem('🚚 Pesanan Dikirim', 'waPesananDikirim')
+      .addItem('🚚 Kirim Notif (Bulk)', 'bulkKirimNotif')
+      .addItem('🎉 Pesanan Selesai', 'waPesananSelesai')
+      .addItem('💬 Pesan Custom', 'waPesanCustom')
+    )
+    .addSeparator()
+    .addSubMenu(ui.createMenu('📊 Dashboard')
+      .addItem('📈 Ringkasan Hari Ini', 'dashboardHariIni')
+      .addItem('🏆 Produk Terlaris', 'produkTerlaris')
+    )
+    .addSeparator()
+    .addItem('🔃 Refresh WA Links', 'refreshWALinks')
     .addItem('📊 Setup Headers', 'setupHeaders')
     .addToUi();
 }
@@ -470,6 +485,19 @@ function doPost(e) {
         d.linkMaps || '',
       ]);
       
+      // Auto-generate WA hyperlinks di kolom Q-U
+      var lastRow = sheet.getLastRow();
+      generateWALinksForRow(sheet, lastRow, {
+        orderId: orderId,
+        nama: d.nama || '',
+        telepon: String(d.telepon || ''),
+        alamat: d.alamat || '',
+        items: d.items || [],
+        total: Number(d.total) || 0,
+        jadwal: d.jadwal || '',
+        metodeBayar: d.metodeBayar || ''
+      });
+      
       return jsonResponse({ success: true, orderId: orderId });
     }
 
@@ -520,6 +548,542 @@ function jsonResponse(data) {
   return ContentService
     .createTextOutput(JSON.stringify(data))
     .setMimeType(ContentService.MimeType.JSON);
+}
+
+// ============================================
+// WA FOLLOW-UP TEMPLATES
+// Admin: klik baris order → menu WA Follow-up
+// ============================================
+
+/**
+ * Ambil data order dari baris yang dipilih di sheet 'orders'
+ */
+function getSelectedOrder() {
+  var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+  if (sheet.getName() !== 'orders') {
+    return { error: 'Buka tab "orders" dulu, lalu pilih baris pesanan.' };
+  }
+  var row = sheet.getActiveRange().getRow();
+  if (row < 2) {
+    return { error: 'Pilih baris data pesanan (bukan header).' };
+  }
+  var data = sheet.getRange(row, 1, 1, 16).getValues()[0];
+  // Kolom: id_order(0), tanggal(1), nama(2), telepon(3), alamat(4),
+  // items_json(5), subtotal(6), ongkir(7), total(8),
+  // jadwal(9), metode_bayar(10), status(11), catatan(12),
+  // diskon(13), kupon(14), link_maps(15)
+  return {
+    row: row,
+    orderId: data[0],
+    tanggal: data[1],
+    nama: data[2],
+    telepon: String(data[3]),
+    alamat: data[4],
+    items: data[5],
+    subtotal: data[6],
+    ongkir: data[7],
+    total: data[8],
+    jadwal: data[9],
+    metodeBayar: data[10],
+    status: data[11],
+    catatan: data[12]
+  };
+}
+
+/**
+ * Format nomor telepon ke format WA (62xxx)
+ */
+function formatWANumber(phone) {
+  var clean = String(phone).replace(/[^0-9]/g, '');
+  if (clean.startsWith('0')) clean = '62' + clean.slice(1);
+  if (!clean.startsWith('62')) clean = '62' + clean;
+  return clean;
+}
+
+/**
+ * Buka WA link dan update status order
+ */
+function openWALink(message, order, newStatus) {
+  var ui = SpreadsheetApp.getUi();
+  var waNumber = formatWANumber(order.telepon);
+  var waUrl = 'https://wa.me/' + waNumber + '?text=' + encodeURIComponent(message);
+  
+  // Update status di sheet jika diminta
+  if (newStatus) {
+    var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('orders');
+    sheet.getRange(order.row, 12).setValue(newStatus); // kolom L = status
+  }
+  
+  // Tampilkan link yang bisa diklik
+  var html = '<html><body style="font-family:sans-serif;text-align:center;padding:20px">'
+    + '<p>✅ Pesan WA siap dikirim ke <b>' + order.nama + '</b></p>'
+    + '<p style="margin:16px 0"><a href="' + waUrl + '" target="_blank" '
+    + 'style="background:#25D366;color:white;padding:12px 24px;border-radius:8px;'
+    + 'text-decoration:none;font-weight:bold;font-size:16px">'
+    + '📱 Buka WhatsApp</a></p>'
+    + '<p style="color:#666;font-size:12px">Klik tombol di atas untuk membuka chat WA</p>'
+    + '</body></html>';
+  
+  var htmlOutput = HtmlService.createHtmlOutput(html)
+    .setWidth(350)
+    .setHeight(180);
+  ui.showModalDialog(htmlOutput, '📱 WhatsApp Follow-up');
+}
+
+/**
+ * Format ringkasan items untuk pesan WA
+ */
+function formatItemsSummary(itemsJson) {
+  try {
+    var items = JSON.parse(itemsJson);
+    return items.map(function(item, i) {
+      return (i + 1) + '. ' + item.nama + ' x' + item.qty;
+    }).join('\n');
+  } catch(e) {
+    return '(detail pesanan)';
+  }
+}
+
+/**
+ * Format harga ke Rupiah
+ */
+function formatRupiah(num) {
+  return 'Rp' + Number(num).toLocaleString('id-ID');
+}
+
+// === TEMPLATE 1: Konfirmasi Pesanan ===
+function waKonfirmasi() {
+  var ui = SpreadsheetApp.getUi();
+  var order = getSelectedOrder();
+  if (order.error) { ui.alert(order.error); return; }
+  
+  var items = formatItemsSummary(order.items);
+  var msg = 'Assalamu\'alaikum ' + order.nama + ' 🙏\n\n'
+    + 'Terima kasih sudah belanja di *Pesan Sayur*! ✅\n\n'
+    + 'Pesanan Anda sudah kami terima:\n'
+    + '📋 *ID: ' + order.orderId + '*\n'
+    + '━━━━━━━━━━━━━━━━\n'
+    + items + '\n'
+    + '━━━━━━━━━━━━━━━━\n'
+    + '💰 *Total: ' + formatRupiah(order.total) + '*\n'
+    + '🚚 Jadwal: ' + order.jadwal + '\n'
+    + '💳 Bayar: ' + order.metodeBayar + '\n\n'
+    + 'Pesanan sedang kami siapkan ya! 🥬';
+  
+  openWALink(msg, order, 'confirmed');
+}
+
+// === TEMPLATE 2: Reminder Pembayaran ===
+function waReminderBayar() {
+  var ui = SpreadsheetApp.getUi();
+  var order = getSelectedOrder();
+  if (order.error) { ui.alert(order.error); return; }
+  
+  var msg = 'Halo ' + order.nama + ' 👋\n\n'
+    + 'Ini reminder untuk pesanan *' + order.orderId + '* ya.\n\n'
+    + '💰 Total: *' + formatRupiah(order.total) + '*\n'
+    + '💳 Metode: ' + order.metodeBayar + '\n\n'
+    + 'Mohon segera lakukan pembayaran agar pesanan bisa kami proses. 🙏\n\n'
+    + 'Jika sudah bayar, kirim bukti transfer ke chat ini ya! ✅';
+  
+  openWALink(msg, order, null);
+}
+
+// === TEMPLATE 3: Pesanan Dikirim ===
+function waPesananDikirim() {
+  var ui = SpreadsheetApp.getUi();
+  var order = getSelectedOrder();
+  if (order.error) { ui.alert(order.error); return; }
+  
+  var msg = 'Halo ' + order.nama + ' 🎉\n\n'
+    + 'Pesanan *' + order.orderId + '* sudah dalam perjalanan! 🚚\n\n'
+    + '📦 Estimasi tiba: ' + order.jadwal + '\n'
+    + '📍 Alamat: ' + order.alamat + '\n\n'
+    + 'Mohon siap di lokasi ya. Terima kasih! 🙏';
+  
+  openWALink(msg, order, 'shipped');
+}
+
+// === TEMPLATE 4: Pesanan Selesai ===
+function waPesananSelesai() {
+  var ui = SpreadsheetApp.getUi();
+  var order = getSelectedOrder();
+  if (order.error) { ui.alert(order.error); return; }
+  
+  var msg = 'Halo ' + order.nama + ' 😊\n\n'
+    + 'Pesanan *' + order.orderId + '* sudah sampai! ✅\n\n'
+    + 'Terima kasih sudah belanja di *Pesan Sayur*.\n'
+    + 'Semoga sayurannya segar dan bermanfaat! 🥬\n\n'
+    + 'Jangan lupa belanja lagi ya: pesan-sayur.vercel.app 🛒';
+  
+  openWALink(msg, order, 'completed');
+}
+
+// === TEMPLATE 5: Pesan Custom ===
+function waPesanCustom() {
+  var ui = SpreadsheetApp.getUi();
+  var order = getSelectedOrder();
+  if (order.error) { ui.alert(order.error); return; }
+  
+  var result = ui.prompt(
+    '💬 Pesan Custom ke ' + order.nama,
+    'Tulis pesan yang ingin dikirim:',
+    ui.ButtonSet.OK_CANCEL
+  );
+  
+  if (result.getSelectedButton() !== ui.Button.OK) return;
+  
+  var customMsg = result.getResponseText().trim();
+  if (!customMsg) { ui.alert('Pesan tidak boleh kosong.'); return; }
+  
+  openWALink(customMsg, order, null);
+}
+
+// ============================================
+// PER-ROW WA HYPERLINK GENERATOR
+// Auto-generate clickable WA links di kolom Q-U
+// ============================================
+
+/**
+ * Generate WA hyperlinks untuk 1 baris order
+ * Dipanggil otomatis dari doPost saat order masuk
+ */
+function generateWALinksForRow(sheet, row, d) {
+  var waNum = formatWANumber(d.telepon);
+  var baseUrl = 'https://wa.me/' + waNum + '?text=';
+
+  // Items summary
+  var itemsText = '';
+  try {
+    var items = (typeof d.items === 'string') ? JSON.parse(d.items) : d.items;
+    itemsText = items.map(function(item, i) {
+      return (i + 1) + '. ' + item.nama + ' x' + item.qty;
+    }).join('\n');
+  } catch(e) { itemsText = '(detail pesanan)'; }
+
+  var totalText = 'Rp' + Number(d.total).toLocaleString('id-ID');
+
+  // Template 1: Konfirmasi
+  var msgKonfirmasi = "Assalamu'alaikum " + d.nama + " \ud83d\ude4f\n\n"
+    + "Terima kasih sudah belanja di *Pesan Sayur*! \u2705\n\n"
+    + "Pesanan sudah kami terima:\n"
+    + "\ud83d\udccb *ID: " + d.orderId + "*\n"
+    + "\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\n"
+    + itemsText + "\n"
+    + "\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\n"
+    + "\ud83d\udcb0 *Total: " + totalText + "*\n"
+    + "\ud83d\ude9a Jadwal: " + d.jadwal + "\n"
+    + "\ud83d\udcb3 Bayar: " + d.metodeBayar + "\n\n"
+    + "Pesanan sedang kami siapkan ya! \ud83e\udd6c";
+
+  // Template 2: Reminder (skip jika COD)
+  var isCOD = String(d.metodeBayar).toLowerCase().indexOf('cod') >= 0;
+  var msgReminder = "Halo " + d.nama + " \ud83d\udc4b\n\n"
+    + "Ini reminder untuk pesanan *" + d.orderId + "* ya.\n\n"
+    + "\ud83d\udcb0 Total: *" + totalText + "*\n"
+    + "\ud83d\udcb3 Metode: " + d.metodeBayar + "\n\n"
+    + "Mohon segera lakukan pembayaran agar pesanan bisa kami proses. \ud83d\ude4f\n\n"
+    + "Jika sudah bayar, kirim bukti transfer ke chat ini ya! \u2705";
+
+  // Template 3: Dikirim
+  var msgDikirim = "Halo " + d.nama + " \ud83c\udf89\n\n"
+    + "Pesanan *" + d.orderId + "* sudah dalam perjalanan! \ud83d\ude9a\n\n"
+    + "\ud83d\udce6 Estimasi tiba: " + d.jadwal + "\n"
+    + "\ud83d\udccd Alamat: " + d.alamat + "\n\n"
+    + "Mohon siap di lokasi ya. Terima kasih! \ud83d\ude4f";
+
+  // Template 4: Selesai
+  var msgSelesai = "Halo " + d.nama + " \ud83d\ude0a\n\n"
+    + "Pesanan *" + d.orderId + "* sudah sampai! \u2705\n\n"
+    + "Terima kasih sudah belanja di *Pesan Sayur*.\n"
+    + "Semoga sayurannya segar dan bermanfaat! \ud83e\udd6c\n\n"
+    + "Jangan lupa belanja lagi ya: pesan-sayur.vercel.app \ud83d\uded2";
+
+  // Struk kurir link
+  var strukUrl = 'https://pesan-sayur.vercel.app/struk/' + d.orderId + '?mode=kurir';
+
+  // Set hyperlinks di kolom Q-U (kolom 17-21)
+  var range = sheet.getRange(row, 17, 1, 5);
+
+  // Kolom Q: Konfirmasi
+  sheet.getRange(row, 17).setFormula(
+    '=HYPERLINK("' + baseUrl + encodeURIComponent(msgKonfirmasi) + '", "\u2705 Konfirmasi")'
+  );
+
+  // Kolom R: Reminder (atau "✅ COD" jika bayar COD)
+  if (isCOD) {
+    sheet.getRange(row, 18).setValue('\u2705 COD');
+  } else {
+    sheet.getRange(row, 18).setFormula(
+      '=HYPERLINK("' + baseUrl + encodeURIComponent(msgReminder) + '", "\ud83d\udcb3 Reminder")'
+    );
+  }
+
+  // Kolom S: Dikirim
+  sheet.getRange(row, 19).setFormula(
+    '=HYPERLINK("' + baseUrl + encodeURIComponent(msgDikirim) + '", "\ud83d\ude9a Dikirim")'
+  );
+
+  // Kolom T: Selesai
+  sheet.getRange(row, 20).setFormula(
+    '=HYPERLINK("' + baseUrl + encodeURIComponent(msgSelesai) + '", "\ud83c\udf89 Selesai")'
+  );
+
+  // Kolom U: Struk Kurir
+  sheet.getRange(row, 21).setFormula(
+    '=HYPERLINK("' + strukUrl + '", "\ud83d\udda8\ufe0f Struk")'
+  );
+}
+
+/**
+ * Refresh WA links untuk semua order yang sudah ada
+ * Menu: 🔃 Refresh WA Links
+ */
+function refreshWALinks() {
+  var ui = SpreadsheetApp.getUi();
+  var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('orders');
+  if (!sheet) { ui.alert('Sheet "orders" tidak ditemukan.'); return; }
+
+  var lastRow = sheet.getLastRow();
+  if (lastRow < 2) { ui.alert('Belum ada data order.'); return; }
+
+  var confirm = ui.alert(
+    '\ud83d\udd03 Refresh WA Links',
+    'Regenerate semua WA links di kolom Q-U untuk ' + (lastRow - 1) + ' order?',
+    ui.ButtonSet.YES_NO
+  );
+  if (confirm !== ui.Button.YES) return;
+
+  var data = sheet.getRange(2, 1, lastRow - 1, 16).getValues();
+  for (var i = 0; i < data.length; i++) {
+    var row = data[i];
+    var items = row[5]; // items_json
+    try { items = JSON.parse(items); } catch(e) { items = []; }
+
+    generateWALinksForRow(sheet, i + 2, {
+      orderId: row[0],
+      nama: row[2],
+      telepon: String(row[3]),
+      alamat: row[4],
+      items: items,
+      total: Number(row[8]),
+      jadwal: row[9],
+      metodeBayar: row[10]
+    });
+  }
+
+  ui.alert('\u2705 WA links berhasil di-refresh untuk ' + data.length + ' order!');
+}
+
+// ============================================
+// BULK OPERATIONS
+// ============================================
+
+/**
+ * Bulk kirim notif WA "Pesanan Dikirim" ke semua order confirmed
+ */
+function bulkKirimNotif() {
+  var ui = SpreadsheetApp.getUi();
+  var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('orders');
+  if (!sheet) { ui.alert('Sheet "orders" tidak ditemukan.'); return; }
+
+  var lastRow = sheet.getLastRow();
+  if (lastRow < 2) { ui.alert('Belum ada data order.'); return; }
+
+  var data = sheet.getRange(2, 1, lastRow - 1, 16).getValues();
+  var confirmedOrders = [];
+
+  for (var i = 0; i < data.length; i++) {
+    if (String(data[i][11]).toLowerCase() === 'confirmed') {
+      confirmedOrders.push({
+        row: i + 2,
+        orderId: data[i][0],
+        nama: data[i][2],
+        telepon: String(data[i][3]),
+        alamat: data[i][4],
+        jadwal: data[i][9]
+      });
+    }
+  }
+
+  if (confirmedOrders.length === 0) {
+    ui.alert('Tidak ada pesanan dengan status "confirmed".');
+    return;
+  }
+
+  var confirm = ui.alert(
+    '\ud83d\ude9a Bulk Kirim Notif',
+    'Kirim notif "Pesanan Dikirim" ke ' + confirmedOrders.length + ' pelanggan?\n\n'
+    + confirmedOrders.map(function(o) { return '• ' + o.nama + ' (' + o.orderId + ')'; }).join('\n'),
+    ui.ButtonSet.YES_NO
+  );
+  if (confirm !== ui.Button.YES) return;
+
+  // Generate semua WA links dalam satu HTML popup
+  var links = confirmedOrders.map(function(o) {
+    var waNum = formatWANumber(o.telepon);
+    var msg = 'Halo ' + o.nama + ' \ud83c\udf89\n\n'
+      + 'Pesanan *' + o.orderId + '* sudah dalam perjalanan! \ud83d\ude9a\n\n'
+      + '\ud83d\udce6 Estimasi tiba: ' + o.jadwal + '\n'
+      + '\ud83d\udccd Alamat: ' + o.alamat + '\n\n'
+      + 'Mohon siap di lokasi ya. Terima kasih! \ud83d\ude4f';
+    var url = 'https://wa.me/' + waNum + '?text=' + encodeURIComponent(msg);
+
+    // Update status ke shipped
+    sheet.getRange(o.row, 12).setValue('shipped');
+
+    return '<a href="' + url + '" target="_blank" '
+      + 'style="display:block;background:#25D366;color:white;padding:10px 16px;'
+      + 'border-radius:8px;text-decoration:none;margin:6px 0;font-weight:bold">'
+      + '\ud83d\ude9a ' + o.nama + ' — ' + o.orderId + '</a>';
+  });
+
+  var html = '<html><body style="font-family:sans-serif;padding:16px">'
+    + '<p style="margin-bottom:12px">Klik setiap tombol untuk buka WA:</p>'
+    + links.join('')
+    + '<p style="color:#666;font-size:12px;margin-top:16px">\u2705 Status sudah diupdate ke "shipped"</p>'
+    + '</body></html>';
+
+  var htmlOutput = HtmlService.createHtmlOutput(html)
+    .setWidth(400)
+    .setHeight(Math.min(100 + confirmedOrders.length * 55, 500));
+  ui.showModalDialog(htmlOutput, '\ud83d\ude9a Bulk Kirim Notif WA');
+}
+
+// ============================================
+// DASHBOARD
+// ============================================
+
+/**
+ * Dashboard Ringkasan Hari Ini
+ */
+function dashboardHariIni() {
+  var ui = SpreadsheetApp.getUi();
+  var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('orders');
+  if (!sheet) { ui.alert('Sheet "orders" tidak ditemukan.'); return; }
+
+  var lastRow = sheet.getLastRow();
+  if (lastRow < 2) { ui.alert('Belum ada data order.'); return; }
+
+  var data = sheet.getRange(2, 1, lastRow - 1, 16).getValues();
+  var today = new Date();
+  var todayStr = today.toISOString().split('T')[0]; // YYYY-MM-DD
+
+  var stats = { total: 0, revenue: 0, pending: 0, confirmed: 0, shipped: 0, completed: 0 };
+
+  for (var i = 0; i < data.length; i++) {
+    var orderDate = '';
+    try { orderDate = new Date(data[i][1]).toISOString().split('T')[0]; } catch(e) {}
+    if (orderDate === todayStr) {
+      stats.total++;
+      stats.revenue += Number(data[i][8]) || 0;
+      var status = String(data[i][11]).toLowerCase();
+      if (status === 'pending') stats.pending++;
+      else if (status === 'confirmed') stats.confirmed++;
+      else if (status === 'shipped') stats.shipped++;
+      else if (status === 'completed') stats.completed++;
+    }
+  }
+
+  // Total all-time
+  var allRevenue = 0;
+  var allOrders = data.length;
+  for (var j = 0; j < data.length; j++) {
+    allRevenue += Number(data[j][8]) || 0;
+  }
+
+  var avgOrder = stats.total > 0 ? Math.round(stats.revenue / stats.total) : 0;
+
+  var html = '<html><body style="font-family:sans-serif;padding:20px">'
+    + '<h2 style="margin:0 0 16px;\color:#16a34a">\ud83d\udcc8 Dashboard Hari Ini</h2>'
+    + '<p style="color:#666;margin-bottom:16px">' + today.toLocaleDateString('id-ID', {weekday:'long',year:'numeric',month:'long',day:'numeric'}) + '</p>'
+    + '<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">'
+    + '<div style="background:#dcfce7;padding:16px;border-radius:12px;text-align:center">'
+    + '<div style="font-size:28px;font-weight:bold;color:#16a34a">' + stats.total + '</div>'
+    + '<div style="font-size:12px;color:#666">Order Hari Ini</div></div>'
+    + '<div style="background:#dbeafe;padding:16px;border-radius:12px;text-align:center">'
+    + '<div style="font-size:28px;font-weight:bold;color:#2563eb">Rp' + stats.revenue.toLocaleString('id-ID') + '</div>'
+    + '<div style="font-size:12px;color:#666">Revenue Hari Ini</div></div>'
+    + '<div style="background:#fef3c7;padding:16px;border-radius:12px;text-align:center">'
+    + '<div style="font-size:28px;font-weight:bold;color:#d97706">' + stats.pending + '</div>'
+    + '<div style="font-size:12px;color:#666">Pending</div></div>'
+    + '<div style="background:#e0e7ff;padding:16px;border-radius:12px;text-align:center">'
+    + '<div style="font-size:28px;font-weight:bold;color:#4f46e5">' + stats.confirmed + '</div>'
+    + '<div style="font-size:12px;color:#666">Confirmed</div></div>'
+    + '<div style="background:#fce7f3;padding:16px;border-radius:12px;text-align:center">'
+    + '<div style="font-size:28px;font-weight:bold;color:#db2777">' + stats.shipped + '</div>'
+    + '<div style="font-size:12px;color:#666">Shipped</div></div>'
+    + '<div style="background:#d1fae5;padding:16px;border-radius:12px;text-align:center">'
+    + '<div style="font-size:28px;font-weight:bold;color:#059669">' + stats.completed + '</div>'
+    + '<div style="font-size:12px;color:#666">Completed</div></div>'
+    + '</div>'
+    + '<div style="margin-top:16px;padding:12px;background:#f8fafc;border-radius:8px">'
+    + '<p style="margin:4px 0">\ud83d\udcb0 Rata-rata per order: <b>Rp' + avgOrder.toLocaleString('id-ID') + '</b></p>'
+    + '<p style="margin:4px 0">\ud83d\udce6 Total order (all-time): <b>' + allOrders + '</b></p>'
+    + '<p style="margin:4px 0">\ud83d\udcb5 Total revenue (all-time): <b>Rp' + allRevenue.toLocaleString('id-ID') + '</b></p>'
+    + '</div></body></html>';
+
+  var htmlOutput = HtmlService.createHtmlOutput(html).setWidth(420).setHeight(480);
+  ui.showModalDialog(htmlOutput, '\ud83d\udcc8 Dashboard');
+}
+
+/**
+ * Produk Terlaris — Top 10 produk berdasarkan qty terjual
+ */
+function produkTerlaris() {
+  var ui = SpreadsheetApp.getUi();
+  var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('orders');
+  if (!sheet) { ui.alert('Sheet "orders" tidak ditemukan.'); return; }
+
+  var lastRow = sheet.getLastRow();
+  if (lastRow < 2) { ui.alert('Belum ada data order.'); return; }
+
+  var data = sheet.getRange(2, 1, lastRow - 1, 16).getValues();
+  var productMap = {};
+
+  for (var i = 0; i < data.length; i++) {
+    try {
+      var items = JSON.parse(data[i][5]);
+      for (var j = 0; j < items.length; j++) {
+        var nama = items[j].nama;
+        var qty = Number(items[j].qty) || 1;
+        var harga = Number(items[j].harga) || 0;
+        if (!productMap[nama]) productMap[nama] = { qty: 0, revenue: 0 };
+        productMap[nama].qty += qty;
+        productMap[nama].revenue += (harga + (Number(items[j].tambahan) || 0)) * qty;
+      }
+    } catch(e) {}
+  }
+
+  var sorted = Object.keys(productMap).map(function(nama) {
+    return { nama: nama, qty: productMap[nama].qty, revenue: productMap[nama].revenue };
+  }).sort(function(a, b) { return b.qty - a.qty; }).slice(0, 10);
+
+  if (sorted.length === 0) {
+    ui.alert('Belum ada data produk terjual.');
+    return;
+  }
+
+  var rows = sorted.map(function(p, i) {
+    var medal = i === 0 ? '\ud83e\udd47' : i === 1 ? '\ud83e\udd48' : i === 2 ? '\ud83e\udd49' : (i + 1) + '.';
+    return '<tr><td style="padding:8px">' + medal + '</td>'
+      + '<td style="padding:8px;font-weight:' + (i < 3 ? 'bold' : 'normal') + '">' + p.nama + '</td>'
+      + '<td style="padding:8px;text-align:center">' + p.qty + '</td>'
+      + '<td style="padding:8px;text-align:right">Rp' + p.revenue.toLocaleString('id-ID') + '</td></tr>';
+  }).join('');
+
+  var html = '<html><body style="font-family:sans-serif;padding:20px">'
+    + '<h2 style="margin:0 0 16px;color:#16a34a">\ud83c\udfc6 Produk Terlaris</h2>'
+    + '<table style="width:100%;border-collapse:collapse">'
+    + '<tr style="background:#f1f5f9"><th style="padding:8px;text-align:left">#</th>'
+    + '<th style="padding:8px;text-align:left">Produk</th>'
+    + '<th style="padding:8px;text-align:center">Terjual</th>'
+    + '<th style="padding:8px;text-align:right">Revenue</th></tr>'
+    + rows
+    + '</table></body></html>';
+
+  var htmlOutput = HtmlService.createHtmlOutput(html).setWidth(450).setHeight(400);
+  ui.showModalDialog(htmlOutput, '\ud83c\udfc6 Produk Terlaris');
 }
 
 /**
@@ -654,7 +1218,8 @@ function setupHeaders() {
       'id_order', 'tanggal', 'nama', 'telepon', 'alamat',
       'items_json', 'subtotal', 'ongkir', 'total',
       'jadwal', 'metode_bayar', 'status', 'catatan',
-      'diskon', 'kupon', 'link_maps'
+      'diskon', 'kupon', 'link_maps',
+      '📱 Konfirmasi', '📱 Reminder', '📱 Dikirim', '📱 Selesai', '🖨️ Struk'
     ]);
   }
   
