@@ -7,13 +7,23 @@
     display: flex;
     flex-direction: column;
     height: 100%;
-    text-decoration: none;
-    color: inherit;
 }
 
 .card:hover {
     box-shadow: var(--shadow-lg);
     transform: translateY(-2px);
+}
+
+.cardLink {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    text-decoration: none;
+    color: inherit;
+}
+
+.addBtnWrap {
+    padding: 0 var(--space-md) var(--space-md);
 }
 
 .imageWrapper {
