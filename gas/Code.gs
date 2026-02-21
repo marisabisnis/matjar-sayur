@@ -388,9 +388,13 @@ function doGet(e) {
         break;
       }
       const order = {};
-      // Hanya ambil 16 kolom data (sampai link_maps), skip kolom WA hyperlink
-      var safeHeaders = orderHeaders.slice(0, 16);
-      safeHeaders.forEach((h, i) => { order[h] = orderRow[i]; });
+      // Ambil data kolom berdasarkan nama header (skip kolom WA/spacer)
+      var dataHeaders = ['id_order','tanggal','nama','telepon','alamat','items_json','subtotal','ongkir','total','jadwal','metode_bayar','status','catatan','diskon','kupon','link_maps'];
+      orderHeaders.forEach((h, i) => {
+        if (dataHeaders.indexOf(String(h)) >= 0) {
+          order[h] = orderRow[i];
+        }
+      });
       // Parse items_json back to array
       try { order.items_json = JSON.parse(order.items_json || '[]'); } catch(ex) { order.items_json = []; }
       data = { success: true, order: order };
@@ -421,9 +425,13 @@ function doGet(e) {
         })
         .map(row => {
           const obj = {};
-          // Hanya ambil 16 kolom data, skip kolom WA hyperlink
-          var safeSOHeaders = soHeaders.slice(0, 16);
-          safeSOHeaders.forEach((h, i) => { obj[h] = row[i]; });
+          // Ambil data kolom berdasarkan nama header (skip kolom WA/spacer)
+          var dataSOHeaders = ['id_order','tanggal','nama','telepon','alamat','items_json','subtotal','ongkir','total','jadwal','metode_bayar','status','catatan','diskon','kupon','link_maps'];
+          soHeaders.forEach((h, i) => {
+            if (dataSOHeaders.indexOf(String(h)) >= 0) {
+              obj[h] = row[i];
+            }
+          });
           try { obj.items_json = JSON.parse(obj.items_json || '[]'); } catch(ex) { obj.items_json = []; }
           return obj;
         })
@@ -470,6 +478,7 @@ function doPost(e) {
       const orderId = d.orderId || ('ORD-' + new Date().getTime().toString(36).toUpperCase());
       const tanggal = new Date().toISOString();
       
+      // Tulis data utama (A-M, 13 kolom)
       sheet.appendRow([
         orderId,
         tanggal,
@@ -484,13 +493,15 @@ function doPost(e) {
         d.metodeBayar || '',
         'pending',
         d.catatan || '',
-        Number(d.diskon) || 0,
-        d.kupon || '',
-        d.linkMaps || '',
       ]);
       
-      // Auto-generate WA hyperlinks di kolom Q-U
+      // Tulis diskon/kupon/link_maps di kolom T-V (20-22)
       var lastRow = sheet.getLastRow();
+      sheet.getRange(lastRow, 20).setValue(Number(d.diskon) || 0);
+      sheet.getRange(lastRow, 21).setValue(d.kupon || '');
+      sheet.getRange(lastRow, 22).setValue(d.linkMaps || '');
+      
+      // Auto-generate WA hyperlinks di kolom O-S (15-19)
       generateWALinksForRow(sheet, lastRow, {
         orderId: orderId,
         nama: d.nama || '',
@@ -571,11 +582,13 @@ function getSelectedOrder() {
   if (row < 2) {
     return { error: 'Pilih baris data pesanan (bukan header).' };
   }
-  var data = sheet.getRange(row, 1, 1, 16).getValues()[0];
+  var data = sheet.getRange(row, 1, 1, 22).getValues()[0];
+  // Layout: A-M data(0-12), N spacer(13), O-S WA(14-18), T-V extras(19-21)
   // Kolom: id_order(0), tanggal(1), nama(2), telepon(3), alamat(4),
   // items_json(5), subtotal(6), ongkir(7), total(8),
   // jadwal(9), metode_bayar(10), status(11), catatan(12),
-  // diskon(13), kupon(14), link_maps(15)
+  // [spacer](13), [WA cols](14-18),
+  // diskon(19), kupon(20), link_maps(21)
   return {
     row: row,
     orderId: data[0],
@@ -794,77 +807,52 @@ function waPesanCustom() {
 
 // ============================================
 // PER-ROW WA HYPERLINK GENERATOR
-// Auto-generate clickable WA links di kolom Q-U
+// Auto-generate clickable WA links di kolom O-S
 // ============================================
 
 /**
  * Generate WA hyperlinks untuk 1 baris order
  * Dipanggil otomatis dari doPost saat order masuk
+ * NOTE: Pesan dibuat PENDEK agar URL HYPERLINK tidak #ERROR!
+ *       Pesan lengkap ada di menu WA (waKonfirmasi, dll.)
  */
 function generateWALinksForRow(sheet, row, d) {
   var waNum = formatWANumber(d.telepon);
   var baseUrl = 'https://wa.me/' + waNum + '?text=';
 
-  // Items summary — max 5 items agar URL tidak terlalu panjang
-  var itemsText = '';
-  try {
-    var items = (typeof d.items === 'string') ? JSON.parse(d.items) : d.items;
-    var maxShow = 5;
-    var shown = items.slice(0, maxShow);
-    itemsText = shown.map(function(item, i) {
-      return (i + 1) + '. ' + item.nama + ' x' + item.qty;
-    }).join('\n');
-    if (items.length > maxShow) {
-      itemsText += '\n...dan ' + (items.length - maxShow) + ' item lainnya';
-    }
-  } catch(e) { itemsText = '(detail pesanan)'; }
-
   var totalText = 'Rp' + Number(d.total).toLocaleString('id-ID');
   var strukUrl = 'https://pesan-sayur.vercel.app/struk/' + d.orderId;
 
-  // Template 1: Konfirmasi
+  // Template PENDEK 1: Konfirmasi
   var msgKonfirmasi = "Assalamu'alaikum " + d.nama + " \ud83d\ude4f\n\n"
-    + "Terima kasih sudah belanja di *Pesan Sayur*! \u2705\n\n"
-    + "Pesanan sudah kami terima:\n"
-    + "\ud83d\udccb *ID: " + d.orderId + "*\n"
-    + "\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\n"
-    + itemsText + "\n"
-    + "\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\n"
-    + "\ud83d\udcb0 *Total: " + totalText + "*\n"
-    + "\ud83d\ude9a Jadwal: " + d.jadwal + "\n"
+    + "Pesanan *" + d.orderId + "* sudah kami terima! \u2705\n"
+    + "\ud83d\udcb0 Total: *" + totalText + "*\n"
     + "\ud83d\udcb3 Bayar: " + d.metodeBayar + "\n\n"
-    + "Pesanan sedang kami siapkan ya! \ud83e\udd6c\n"
+    + "Pesanan sedang disiapkan \ud83e\udd6c\n"
     + "\ud83d\udcc4 Detail: " + strukUrl;
 
-  // Template 2: Reminder (skip jika COD)
+  // Template PENDEK 2: Reminder
   var isCOD = String(d.metodeBayar).toLowerCase().indexOf('cod') >= 0;
   var msgReminder = "Halo " + d.nama + " \ud83d\udc4b\n\n"
-    + "Pesanan *" + d.orderId + "* menunggu pembayaran:\n\n"
-    + "\ud83d\udcb0 Total: *" + totalText + "*\n"
-    + "\ud83d\udcb3 Metode: " + d.metodeBayar + "\n\n"
-    + "\u23f0 Mohon bayar dalam *3 jam* agar pesanan bisa segera kami proses.\n\n"
-    + "Sudah bayar? Kirim bukti transfer ke chat ini ya! \u2705";
+    + "Pesanan *" + d.orderId + "* menunggu bayar:\n"
+    + "\ud83d\udcb0 *" + totalText + "* (" + d.metodeBayar + ")\n\n"
+    + "\u23f0 Mohon bayar dalam *3 jam*.\n"
+    + "Sudah bayar? Kirim bukti ke sini \u2705";
 
-  // Template 3: Dikirim
+  // Template PENDEK 3: Dikirim
   var msgDikirim = "Halo " + d.nama + " \ud83c\udf89\n\n"
-    + "Pesanan *" + d.orderId + "* sedang diantar! \ud83d\ude9a\n\n"
-    + "\ud83d\udccd Tujuan: " + d.alamat + "\n"
-    + "\u23f0 Estimasi tiba: *30-60 menit*\n"
-    + "\ud83d\udcc4 Detail: " + strukUrl + "\n\n"
-    + "Mohon siap di lokasi ya. Terima kasih! \ud83d\ude4f";
+    + "Pesanan *" + d.orderId + "* sedang diantar! \ud83d\ude9a\n"
+    + "\u23f0 Estimasi: *30-60 menit*\n"
+    + "\ud83d\udcc4 Detail: " + strukUrl;
 
-  // Template 4: Selesai
+  // Template PENDEK 4: Selesai
   var msgSelesai = "Halo " + d.nama + " \ud83d\ude0a\n\n"
-    + "Pesanan *" + d.orderId + "* sudah diterima! \u2705\n\n"
-    + "Terima kasih sudah belanja di *Pesan Sayur* \ud83e\udd6c\n"
-    + "Semoga belanjanya bermanfaat!\n\n"
-    + "\u2b50 Puas dengan layanan kami?\n"
-    + "Ceritakan ke teman & keluarga ya!\n\n"
-    + "\ud83d\uded2 Belanja lagi: pesan-sayur.vercel.app\n"
-    + "Sampai jumpa di pesanan berikutnya! \ud83d\ude4f";
+    + "Pesanan *" + d.orderId + "* diterima! \u2705\n"
+    + "Terima kasih! \ud83e\udd6c\n\n"
+    + "\ud83d\uded2 Belanja lagi: pesan-sayur.vercel.app";
 
   // Struk kurir link
-  var strukUrl = 'https://pesan-sayur.vercel.app/struk/' + d.orderId + '?mode=kurir';
+  var strukKurirUrl = 'https://pesan-sayur.vercel.app/struk/' + d.orderId + '?mode=kurir';
 
   // Escape double-quotes di URL agar HYPERLINK formula tidak rusak
   function safeFormula(url, label) {
@@ -872,33 +860,33 @@ function generateWALinksForRow(sheet, row, d) {
     return '=HYPERLINK("' + cleanUrl + '", "' + label + '")';
   }
 
-  // Kolom Q: Konfirmasi
-  sheet.getRange(row, 17).setFormula(
+  // Kolom O (15): Konfirmasi
+  sheet.getRange(row, 15).setFormula(
     safeFormula(baseUrl + encodeURIComponent(msgKonfirmasi), '\u2705 Konfirmasi')
   );
 
-  // Kolom R: Reminder (atau "✅ COD" jika bayar COD)
+  // Kolom P (16): Reminder (atau "✅ COD" jika bayar COD)
   if (isCOD) {
-    sheet.getRange(row, 18).setValue('\u2705 COD');
+    sheet.getRange(row, 16).setValue('\u2705 COD');
   } else {
-    sheet.getRange(row, 18).setFormula(
+    sheet.getRange(row, 16).setFormula(
       safeFormula(baseUrl + encodeURIComponent(msgReminder), '\ud83d\udcb3 Reminder')
     );
   }
 
-  // Kolom S: Dikirim
-  sheet.getRange(row, 19).setFormula(
+  // Kolom Q (17): Dikirim
+  sheet.getRange(row, 17).setFormula(
     safeFormula(baseUrl + encodeURIComponent(msgDikirim), '\ud83d\ude9a Dikirim')
   );
 
-  // Kolom T: Selesai
-  sheet.getRange(row, 20).setFormula(
+  // Kolom R (18): Selesai
+  sheet.getRange(row, 18).setFormula(
     safeFormula(baseUrl + encodeURIComponent(msgSelesai), '\ud83c\udf89 Selesai')
   );
 
-  // Kolom U: Struk Kurir
-  sheet.getRange(row, 21).setFormula(
-    safeFormula(strukUrl, '\ud83d\udda8\ufe0f Struk')
+  // Kolom S (19): Struk Kurir
+  sheet.getRange(row, 19).setFormula(
+    safeFormula(strukKurirUrl, '\ud83d\udda8\ufe0f Struk')
   );
 }
 
@@ -916,12 +904,12 @@ function refreshWALinks() {
 
   var confirm = ui.alert(
     '\ud83d\udd03 Refresh WA Links',
-    'Regenerate semua WA links di kolom Q-U untuk ' + (lastRow - 1) + ' order?',
+    'Regenerate semua WA links di kolom O-S untuk ' + (lastRow - 1) + ' order?',
     ui.ButtonSet.YES_NO
   );
   if (confirm !== ui.Button.YES) return;
 
-  var data = sheet.getRange(2, 1, lastRow - 1, 16).getValues();
+  var data = sheet.getRange(2, 1, lastRow - 1, 13).getValues();
   for (var i = 0; i < data.length; i++) {
     var row = data[i];
     var items = row[5]; // items_json
@@ -1288,8 +1276,9 @@ function setupHeaders() {
       'id_order', 'tanggal', 'nama', 'telepon', 'alamat',
       'items_json', 'subtotal', 'ongkir', 'total',
       'jadwal', 'metode_bayar', 'status', 'catatan',
-      'diskon', 'kupon', 'link_maps',
-      '📱 Konfirmasi', '📱 Reminder', '📱 Dikirim', '📱 Selesai', '🖨️ Struk'
+      '', // N = spacer
+      '📱 Konfirmasi', '📱 Reminder', '📱 Dikirim', '📱 Selesai', '🖨️ Struk',
+      'diskon', 'kupon', 'link_maps'
     ]);
   }
   
