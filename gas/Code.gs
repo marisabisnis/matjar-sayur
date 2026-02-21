@@ -662,6 +662,7 @@ function waKonfirmasi() {
   if (order.error) { ui.alert(order.error); return; }
   
   var items = formatItemsSummary(order.items);
+  var strukUrl = 'https://pesan-sayur.vercel.app/struk/' + order.orderId;
   var msg = 'Assalamu\'alaikum ' + order.nama + ' 🙏\n\n'
     + 'Terima kasih sudah belanja di *Pesan Sayur*! ✅\n\n'
     + 'Pesanan Anda sudah kami terima:\n'
@@ -672,7 +673,9 @@ function waKonfirmasi() {
     + '💰 *Total: ' + formatRupiah(order.total) + '*\n'
     + '🚚 Jadwal: ' + order.jadwal + '\n'
     + '💳 Bayar: ' + order.metodeBayar + '\n\n'
-    + 'Pesanan sedang kami siapkan ya! 🥬';
+    + '⏱️ Pesanan sedang kami siapkan, estimasi 15-30 menit.\n'
+    + '📄 Detail pesanan: ' + strukUrl + '\n\n'
+    + 'Terima kasih sudah menunggu ya! 🥬';
   
   openWALink(msg, order, 'confirmed');
 }
@@ -689,14 +692,48 @@ function waReminderBayar() {
     return;
   }
   
+  // Ambil info rekening dari sheet payment_methods
+  var rekeningInfo = getRekeningInfo(order.metodeBayar);
+  
   var msg = 'Halo ' + order.nama + ' 👋\n\n'
-    + 'Ini reminder untuk pesanan *' + order.orderId + '* ya.\n\n'
+    + 'Pesanan *' + order.orderId + '* menunggu pembayaran:\n\n'
     + '💰 Total: *' + formatRupiah(order.total) + '*\n'
-    + '💳 Metode: ' + order.metodeBayar + '\n\n'
-    + 'Mohon segera lakukan pembayaran agar pesanan bisa kami proses. 🙏\n\n'
-    + 'Jika sudah bayar, kirim bukti transfer ke chat ini ya! ✅';
+    + '━━━━━━━━━━━━━━━━\n'
+    + rekeningInfo + '\n'
+    + '━━━━━━━━━━━━━━━━\n\n'
+    + '⏰ Mohon bayar dalam *3 jam* agar pesanan bisa segera kami proses.\n\n'
+    + 'Sudah bayar? Kirim bukti transfer ke chat ini ya! ✅';
   
   openWALink(msg, order, null);
+}
+
+/**
+ * Ambil info rekening dari sheet payment_methods
+ */
+function getRekeningInfo(metodeBayar) {
+  var payments = sheetToJSON('payment_methods');
+  var info = '';
+  var metode = String(metodeBayar).toLowerCase();
+  
+  if (metode.indexOf('qris') >= 0) {
+    info = '💳 Bayar via *QRIS*\nScan QR Code di halaman struk pesanan Anda.';
+  } else {
+    // Transfer bank — tampilkan semua rekening aktif
+    var banks = payments.filter(function(p) {
+      return String(p.tipe).toLowerCase() === 'transfer' && 
+             (p.aktif === true || p.aktif === 'TRUE' || p.aktif === 'true');
+    });
+    if (banks.length > 0) {
+      info = '🏦 Transfer ke salah satu rekening:\n';
+      banks.forEach(function(b) {
+        info += '\n*' + (b.provider || '') + '* — ' + (b.no_rekening || '') + '\n';
+        info += 'a.n. *' + (b.atas_nama || '') + '*\n';
+      });
+    } else {
+      info = '💳 Metode: ' + metodeBayar;
+    }
+  }
+  return info;
 }
 
 // === TEMPLATE 3: Pesanan Dikirim ===
@@ -705,11 +742,14 @@ function waPesananDikirim() {
   var order = getSelectedOrder();
   if (order.error) { ui.alert(order.error); return; }
   
+  var strukUrl = 'https://pesan-sayur.vercel.app/struk/' + order.orderId;
   var msg = 'Halo ' + order.nama + ' 🎉\n\n'
-    + 'Pesanan *' + order.orderId + '* sudah dalam perjalanan! 🚚\n\n'
-    + '📦 Estimasi tiba: ' + order.jadwal + '\n'
-    + '📍 Alamat: ' + order.alamat + '\n\n'
-    + 'Mohon siap di lokasi ya. Terima kasih! 🙏';
+    + 'Pesanan *' + order.orderId + '* sedang diantar! 🚚\n\n'
+    + '📍 Tujuan: ' + order.alamat + '\n'
+    + '⏰ Estimasi tiba: *30-60 menit*\n'
+    + '📄 Detail: ' + strukUrl + '\n\n'
+    + 'Mohon siap di lokasi ya.\n'
+    + 'Terima kasih sudah belanja! 🙏';
   
   openWALink(msg, order, 'shipped');
 }
@@ -721,10 +761,13 @@ function waPesananSelesai() {
   if (order.error) { ui.alert(order.error); return; }
   
   var msg = 'Halo ' + order.nama + ' 😊\n\n'
-    + 'Pesanan *' + order.orderId + '* sudah sampai! ✅\n\n'
-    + 'Terima kasih sudah belanja di *Pesan Sayur*.\n'
-    + 'Semoga sayurannya segar dan bermanfaat! 🥬\n\n'
-    + 'Jangan lupa belanja lagi ya: pesan-sayur.vercel.app 🛒';
+    + 'Pesanan *' + order.orderId + '* sudah diterima! ✅\n\n'
+    + 'Terima kasih sudah belanja di *Pesan Sayur* 🥬\n'
+    + 'Semoga belanjanya bermanfaat!\n\n'
+    + '⭐ Puas dengan layanan kami?\n'
+    + 'Ceritakan ke teman & keluarga ya!\n\n'
+    + '🛒 Belanja lagi: pesan-sayur.vercel.app\n'
+    + 'Sampai jumpa di pesanan berikutnya! 🙏';
   
   openWALink(msg, order, 'completed');
 }
@@ -796,25 +839,29 @@ function generateWALinksForRow(sheet, row, d) {
   // Template 2: Reminder (skip jika COD)
   var isCOD = String(d.metodeBayar).toLowerCase().indexOf('cod') >= 0;
   var msgReminder = "Halo " + d.nama + " \ud83d\udc4b\n\n"
-    + "Ini reminder untuk pesanan *" + d.orderId + "* ya.\n\n"
+    + "Pesanan *" + d.orderId + "* menunggu pembayaran:\n\n"
     + "\ud83d\udcb0 Total: *" + totalText + "*\n"
     + "\ud83d\udcb3 Metode: " + d.metodeBayar + "\n\n"
-    + "Mohon segera lakukan pembayaran agar pesanan bisa kami proses. \ud83d\ude4f\n\n"
-    + "Jika sudah bayar, kirim bukti transfer ke chat ini ya! \u2705";
+    + "\u23f0 Mohon bayar dalam *3 jam* agar pesanan bisa segera kami proses.\n\n"
+    + "Sudah bayar? Kirim bukti transfer ke chat ini ya! \u2705";
 
   // Template 3: Dikirim
   var msgDikirim = "Halo " + d.nama + " \ud83c\udf89\n\n"
-    + "Pesanan *" + d.orderId + "* sudah dalam perjalanan! \ud83d\ude9a\n\n"
-    + "\ud83d\udce6 Estimasi tiba: " + d.jadwal + "\n"
-    + "\ud83d\udccd Alamat: " + d.alamat + "\n\n"
+    + "Pesanan *" + d.orderId + "* sedang diantar! \ud83d\ude9a\n\n"
+    + "\ud83d\udccd Tujuan: " + d.alamat + "\n"
+    + "\u23f0 Estimasi tiba: *30-60 menit*\n"
+    + "\ud83d\udcc4 Detail: " + strukUrl + "\n\n"
     + "Mohon siap di lokasi ya. Terima kasih! \ud83d\ude4f";
 
   // Template 4: Selesai
   var msgSelesai = "Halo " + d.nama + " \ud83d\ude0a\n\n"
-    + "Pesanan *" + d.orderId + "* sudah sampai! \u2705\n\n"
-    + "Terima kasih sudah belanja di *Pesan Sayur*.\n"
-    + "Semoga sayurannya segar dan bermanfaat! \ud83e\udd6c\n\n"
-    + "Jangan lupa belanja lagi ya: pesan-sayur.vercel.app \ud83d\uded2";
+    + "Pesanan *" + d.orderId + "* sudah diterima! \u2705\n\n"
+    + "Terima kasih sudah belanja di *Pesan Sayur* \ud83e\udd6c\n"
+    + "Semoga belanjanya bermanfaat!\n\n"
+    + "\u2b50 Puas dengan layanan kami?\n"
+    + "Ceritakan ke teman & keluarga ya!\n\n"
+    + "\ud83d\uded2 Belanja lagi: pesan-sayur.vercel.app\n"
+    + "Sampai jumpa di pesanan berikutnya! \ud83d\ude4f";
 
   // Struk kurir link
   var strukUrl = 'https://pesan-sayur.vercel.app/struk/' + d.orderId + '?mode=kurir';
@@ -942,10 +989,12 @@ function bulkKirimNotif() {
   // Generate semua WA links dalam satu HTML popup
   var links = confirmedOrders.map(function(o) {
     var waNum = formatWANumber(o.telepon);
+    var oStrukUrl = 'https://pesan-sayur.vercel.app/struk/' + o.orderId;
     var msg = 'Halo ' + o.nama + ' \ud83c\udf89\n\n'
-      + 'Pesanan *' + o.orderId + '* sudah dalam perjalanan! \ud83d\ude9a\n\n'
-      + '\ud83d\udce6 Estimasi tiba: ' + o.jadwal + '\n'
-      + '\ud83d\udccd Alamat: ' + o.alamat + '\n\n'
+      + 'Pesanan *' + o.orderId + '* sedang diantar! \ud83d\ude9a\n\n'
+      + '\ud83d\udccd Tujuan: ' + o.alamat + '\n'
+      + '\u23f0 Estimasi tiba: *30-60 menit*\n'
+      + '\ud83d\udcc4 Detail: ' + oStrukUrl + '\n\n'
       + 'Mohon siap di lokasi ya. Terima kasih! \ud83d\ude4f';
     var url = 'https://wa.me/' + waNum + '?text=' + encodeURIComponent(msg);
 
