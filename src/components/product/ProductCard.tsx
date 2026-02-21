@@ -16,8 +16,8 @@ export default function ProductCard({ product }: ProductCardProps) {
         : 0;
 
     return (
-        <article className={styles.card}>
-            <Link href={`/produk/${product.slug}`} className={styles.imageWrapper}>
+        <Link href={`/produk/${product.slug}`} className={styles.card}>
+            <div className={styles.imageWrapper}>
                 {diskonPersen > 0 && (
                     <span className={`${styles.badge} ${styles.badgeDiscount}`}>
                         -{diskonPersen}%
@@ -34,15 +34,7 @@ export default function ProductCard({ product }: ProductCardProps) {
                     className={styles.productImage}
                     loading="lazy"
                 />
-                <button
-                    className={styles.wishlistBtn}
-                    aria-label={`Tambah ${product.nama} ke wishlist`}
-                >
-                    <span className="material-symbols-outlined" style={{ fontSize: '20px' }}>
-                        favorite
-                    </span>
-                </button>
-            </Link>
+            </div>
 
             <div className={styles.info}>
                 <p className={styles.category}>{product.kategori_nama || 'Produk'}</p>
@@ -53,8 +45,11 @@ export default function ProductCard({ product }: ProductCardProps) {
                     )}
                     <span className={styles.priceNow}>{formatHarga(hargaTampil)}</span>
                 </div>
-                <AddToCartButton product={product} />
+                {/* onClick stopPropagation agar klik tombol tidak navigasi */}
+                <div onClick={(e) => e.preventDefault()}>
+                    <AddToCartButton product={product} />
+                </div>
             </div>
-        </article>
+        </Link>
     );
 }

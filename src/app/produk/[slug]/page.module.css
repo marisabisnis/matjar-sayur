@@ -486,6 +486,8 @@
     box-shadow: var(--shadow-sm);
     transition: var(--transition);
     cursor: pointer;
+    display: flex;
+    flex-direction: column;
 }
 
 .relatedCard:hover {
@@ -560,6 +562,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-top: auto;
 }
 
 .relatedPriceGroup {
