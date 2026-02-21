@@ -388,7 +388,9 @@ function doGet(e) {
         break;
       }
       const order = {};
-      orderHeaders.forEach((h, i) => { order[h] = orderRow[i]; });
+      // Hanya ambil 16 kolom data (sampai link_maps), skip kolom WA hyperlink
+      var safeHeaders = orderHeaders.slice(0, 16);
+      safeHeaders.forEach((h, i) => { order[h] = orderRow[i]; });
       // Parse items_json back to array
       try { order.items_json = JSON.parse(order.items_json || '[]'); } catch(ex) { order.items_json = []; }
       data = { success: true, order: order };
@@ -419,7 +421,9 @@ function doGet(e) {
         })
         .map(row => {
           const obj = {};
-          soHeaders.forEach((h, i) => { obj[h] = row[i]; });
+          // Hanya ambil 16 kolom data, skip kolom WA hyperlink
+          var safeSOHeaders = soHeaders.slice(0, 16);
+          safeSOHeaders.forEach((h, i) => { obj[h] = row[i]; });
           try { obj.items_json = JSON.parse(obj.items_json || '[]'); } catch(ex) { obj.items_json = []; }
           return obj;
         })
@@ -679,6 +683,12 @@ function waReminderBayar() {
   var order = getSelectedOrder();
   if (order.error) { ui.alert(order.error); return; }
   
+  // Skip jika metode bayar COD
+  if (String(order.metodeBayar).toLowerCase().indexOf('cod') >= 0) {
+    ui.alert('✅ Pesanan ini menggunakan COD, tidak perlu reminder pembayaran.');
+    return;
+  }
+  
   var msg = 'Halo ' + order.nama + ' 👋\n\n'
     + 'Ini reminder untuk pesanan *' + order.orderId + '* ya.\n\n'
     + '💰 Total: *' + formatRupiah(order.total) + '*\n'
@@ -802,12 +812,15 @@ function generateWALinksForRow(sheet, row, d) {
   // Struk kurir link
   var strukUrl = 'https://pesan-sayur.vercel.app/struk/' + d.orderId + '?mode=kurir';
 
-  // Set hyperlinks di kolom Q-U (kolom 17-21)
-  var range = sheet.getRange(row, 17, 1, 5);
+  // Escape double-quotes di URL agar HYPERLINK formula tidak rusak
+  function safeFormula(url, label) {
+    var cleanUrl = url.replace(/"/g, '%22');
+    return '=HYPERLINK("' + cleanUrl + '", "' + label + '")';
+  }
 
   // Kolom Q: Konfirmasi
   sheet.getRange(row, 17).setFormula(
-    '=HYPERLINK("' + baseUrl + encodeURIComponent(msgKonfirmasi) + '", "\u2705 Konfirmasi")'
+    safeFormula(baseUrl + encodeURIComponent(msgKonfirmasi), '\u2705 Konfirmasi')
   );
 
   // Kolom R: Reminder (atau "✅ COD" jika bayar COD)
@@ -815,23 +828,23 @@ function generateWALinksForRow(sheet, row, d) {
     sheet.getRange(row, 18).setValue('\u2705 COD');
   } else {
     sheet.getRange(row, 18).setFormula(
-      '=HYPERLINK("' + baseUrl + encodeURIComponent(msgReminder) + '", "\ud83d\udcb3 Reminder")'
+      safeFormula(baseUrl + encodeURIComponent(msgReminder), '\ud83d\udcb3 Reminder')
     );
   }
 
   // Kolom S: Dikirim
   sheet.getRange(row, 19).setFormula(
-    '=HYPERLINK("' + baseUrl + encodeURIComponent(msgDikirim) + '", "\ud83d\ude9a Dikirim")'
+    safeFormula(baseUrl + encodeURIComponent(msgDikirim), '\ud83d\ude9a Dikirim')
   );
 
   // Kolom T: Selesai
   sheet.getRange(row, 20).setFormula(
-    '=HYPERLINK("' + baseUrl + encodeURIComponent(msgSelesai) + '", "\ud83c\udf89 Selesai")'
+    safeFormula(baseUrl + encodeURIComponent(msgSelesai), '\ud83c\udf89 Selesai')
   );
 
   // Kolom U: Struk Kurir
   sheet.getRange(row, 21).setFormula(
-    '=HYPERLINK("' + strukUrl + '", "\ud83d\udda8\ufe0f Struk")'
+    safeFormula(strukUrl, '\ud83d\udda8\ufe0f Struk')
   );
 }
 
@@ -967,13 +980,14 @@ function dashboardHariIni() {
 
   var data = sheet.getRange(2, 1, lastRow - 1, 16).getValues();
   var today = new Date();
-  var todayStr = today.toISOString().split('T')[0]; // YYYY-MM-DD
+  // Gunakan format lokal WIB (UTC+7) bukan UTC agar tanggal benar
+  var todayStr = Utilities.formatDate(today, 'Asia/Jakarta', 'yyyy-MM-dd');
 
   var stats = { total: 0, revenue: 0, pending: 0, confirmed: 0, shipped: 0, completed: 0 };
 
   for (var i = 0; i < data.length; i++) {
     var orderDate = '';
-    try { orderDate = new Date(data[i][1]).toISOString().split('T')[0]; } catch(e) {}
+    try { orderDate = Utilities.formatDate(new Date(data[i][1]), 'Asia/Jakarta', 'yyyy-MM-dd'); } catch(e) {}
     if (orderDate === todayStr) {
       stats.total++;
       stats.revenue += Number(data[i][8]) || 0;
@@ -995,7 +1009,7 @@ function dashboardHariIni() {
   var avgOrder = stats.total > 0 ? Math.round(stats.revenue / stats.total) : 0;
 
   var html = '<html><body style="font-family:sans-serif;padding:20px">'
-    + '<h2 style="margin:0 0 16px;\color:#16a34a">\ud83d\udcc8 Dashboard Hari Ini</h2>'
+    + '<h2 style="margin:0 0 16px;color:#16a34a">\ud83d\udcc8 Dashboard Hari Ini</h2>'
     + '<p style="color:#666;margin-bottom:16px">' + today.toLocaleDateString('id-ID', {weekday:'long',year:'numeric',month:'long',day:'numeric'}) + '</p>'
     + '<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">'
     + '<div style="background:#dcfce7;padding:16px;border-radius:12px;text-align:center">'
