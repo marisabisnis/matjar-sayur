@@ -35,31 +35,116 @@ function onOpen() {
 }
 
 /**
+ * GitHub repo config — untuk push data JSON langsung ke repo
+ * Buat Personal Access Token di: https://github.com/settings/tokens
+ * Scope yang dibutuhkan: repo (full control)
+ */
+const GITHUB_TOKEN = 'PASTE_GITHUB_TOKEN_DISINI';
+const GITHUB_OWNER = 'marisabisnis';
+const GITHUB_REPO = 'pesan-sayur';
+const GITHUB_BRANCH = 'main';
+
+/**
+ * Push multiple files ke GitHub dalam 1 commit via Git Trees API
+ * files = [{ path: 'public/data/stores.json', content: '...' }, ...]
+ */
+function pushFilesToGitHub(files, commitMessage) {
+  var baseApi = 'https://api.github.com/repos/' + GITHUB_OWNER + '/' + GITHUB_REPO;
+  var headers = { 'Authorization': 'Bearer ' + GITHUB_TOKEN, 'Content-Type': 'application/json' };
+  
+  // 1. Get latest commit SHA on branch
+  var refRes = UrlFetchApp.fetch(baseApi + '/git/ref/heads/' + GITHUB_BRANCH, { headers: headers, muteHttpExceptions: true });
+  if (refRes.getResponseCode() !== 200) {
+    throw new Error('Gagal ambil branch ref: ' + refRes.getResponseCode());
+  }
+  var latestSha = JSON.parse(refRes.getContentText()).object.sha;
+  
+  // 2. Get the tree SHA of latest commit
+  var commitRes = UrlFetchApp.fetch(baseApi + '/git/commits/' + latestSha, { headers: headers, muteHttpExceptions: true });
+  var baseTreeSha = JSON.parse(commitRes.getContentText()).tree.sha;
+  
+  // 3. Create blobs for each file
+  var treeItems = [];
+  for (var i = 0; i < files.length; i++) {
+    var blobRes = UrlFetchApp.fetch(baseApi + '/git/blobs', {
+      method: 'POST', headers: headers,
+      payload: JSON.stringify({ content: files[i].content, encoding: 'utf-8' })
+    });
+    var blobSha = JSON.parse(blobRes.getContentText()).sha;
+    treeItems.push({ path: files[i].path, mode: '100644', type: 'blob', sha: blobSha });
+  }
+  
+  // 4. Create new tree
+  var treeRes = UrlFetchApp.fetch(baseApi + '/git/trees', {
+    method: 'POST', headers: headers,
+    payload: JSON.stringify({ base_tree: baseTreeSha, tree: treeItems })
+  });
+  var newTreeSha = JSON.parse(treeRes.getContentText()).sha;
+  
+  // 5. Create commit
+  var newCommitRes = UrlFetchApp.fetch(baseApi + '/git/commits', {
+    method: 'POST', headers: headers,
+    payload: JSON.stringify({ message: commitMessage, tree: newTreeSha, parents: [latestSha] })
+  });
+  var newCommitSha = JSON.parse(newCommitRes.getContentText()).sha;
+  
+  // 6. Update branch ref
+  var updateRes = UrlFetchApp.fetch(baseApi + '/git/refs/heads/' + GITHUB_BRANCH, {
+    method: 'PATCH', headers: headers,
+    payload: JSON.stringify({ sha: newCommitSha })
+  });
+  
+  if (updateRes.getResponseCode() !== 200) {
+    throw new Error('Gagal update branch: ' + updateRes.getResponseCode());
+  }
+  return newCommitSha;
+}
+
+/**
  * Trigger rebuild website di Vercel
+ * Flow: Ambil data dari Sheets → Push 1 commit ke GitHub → Auto deploy
  */
 function rebuildWebsite() {
-  const ui = SpreadsheetApp.getUi();
+  var ui = SpreadsheetApp.getUi();
   
-  if (VERCEL_DEPLOY_HOOK_URL === 'PASTE_DEPLOY_HOOK_URL_DISINI') {
-    ui.alert('⚠️ Deploy Hook belum diatur!\n\nBuka Vercel → Settings → Git → Deploy Hooks\nBuat hook baru, lalu paste URL-nya di Code.gs baris VERCEL_DEPLOY_HOOK_URL');
+  if (GITHUB_TOKEN === 'PASTE_GITHUB_TOKEN_DISINI') {
+    ui.alert('⚠️ GitHub Token belum diatur!\n\n1. Buka https://github.com/settings/tokens\n2. Buat token baru (classic) dengan scope "repo"\n3. Paste token di Code.gs baris GITHUB_TOKEN');
     return;
   }
   
-  const confirm = ui.alert(
+  var confirm = ui.alert(
     '🔄 Update Website',
-    'Apakah Anda yakin ingin update website dengan data terbaru dari spreadsheet?\n\nProses ini membutuhkan ~1 menit.',
+    'Apakah Anda yakin ingin update website dengan data terbaru dari spreadsheet?\n\nProses ini membutuhkan ~1-2 menit.',
     ui.ButtonSet.YES_NO
   );
   
   if (confirm !== ui.Button.YES) return;
   
   try {
-    const response = UrlFetchApp.fetch(VERCEL_DEPLOY_HOOK_URL, { method: 'POST' });
-    if (response.getResponseCode() === 200 || response.getResponseCode() === 201) {
-      ui.alert('✅ Website sedang di-update!\n\nPerubahan akan muncul dalam ~1 menit.\nCek status di dashboard Vercel.');
-    } else {
-      ui.alert('❌ Gagal: ' + response.getContentText());
-    }
+    // 1. Collect all data from sheets
+    var allData = {
+      products: parseProducts(sheetToJSON('products')),
+      categories: parseCategories(sheetToJSON('categories')),
+      stores: parseStores(sheetToJSON('stores')),
+      payments: parsePayments(sheetToJSON('payment_methods')),
+      sliders: parseSliders(sheetToJSON('sliders')),
+      coupons: parseCoupons(sheetToJSON('coupons'))
+    };
+    
+    // 2. Prepare files for single commit
+    var files = [
+      { path: 'public/data/products.json', content: JSON.stringify(allData.products, null, 2) },
+      { path: 'public/data/categories.json', content: JSON.stringify(allData.categories, null, 2) },
+      { path: 'public/data/stores.json', content: JSON.stringify(allData.stores, null, 2) },
+      { path: 'public/data/payments.json', content: JSON.stringify(allData.payments, null, 2) },
+      { path: 'public/data/sliders.json', content: JSON.stringify(allData.sliders, null, 2) },
+      { path: 'public/data/coupons.json', content: JSON.stringify(allData.coupons, null, 2) }
+    ];
+    
+    // 3. Push all files in 1 commit → triggers Vercel auto-deploy
+    pushFilesToGitHub(files, 'data: update semua data dari Sheets');
+    
+    ui.alert('✅ Berhasil!\n\n📦 6 file data di-push ke GitHub (1 commit)\n🚀 Vercel sedang rebuild website otomatis\n\nPerubahan akan muncul dalam ~1-2 menit.');
   } catch (e) {
     ui.alert('❌ Error: ' + e.message);
   }
