@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import ProductCard from '@/components/product/ProductCard';
+import ProductGridLoadMore from '@/components/product/ProductGridLoadMore';
 import PromoSlider from '@/components/home/PromoSlider';
 import type { Product, Category } from '@/types';
 import styles from './page.module.css';
@@ -172,11 +172,7 @@ export default function HomePage() {
               </Link>
             </div>
 
-            <div className={styles.productGrid}>
-              {products.map((product) => (
-                <ProductCard key={product.id} product={product} />
-              ))}
-            </div>
+            <ProductGridLoadMore products={products} />
           </section>
 
           {/* Trust Badges */}
