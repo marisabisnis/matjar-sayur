@@ -17,12 +17,12 @@ export default function Header() {
             <header className={styles.header} role="banner">
                 <div className={styles.headerInner}>
                     {/* Logo */}
-                    <Link href="/" className={styles.logo} aria-label="Pesan Sayur - Beranda">
+                    <Link href="/" className={styles.logo} aria-label="Matjar Sayur - Beranda">
                         <div className={styles.logoIcon}>
                             <span className="material-symbols-outlined" aria-hidden="true">eco</span>
                         </div>
                         <h1 className={styles.logoText}>
-                            Pesan <span className={styles.logoAccent}>Sayur</span>
+                            Matjar <span className={styles.logoAccent}>Sayur</span>
                         </h1>
                     </Link>
 

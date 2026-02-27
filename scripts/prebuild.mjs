@@ -69,7 +69,7 @@ function writeData(filename, data) {
 }
 
 async function main() {
-    console.log('\n🥬 Pesan Sayur — Prebuild Data Fetch\n');
+    console.log('\n🥬 Matjar Sayur — Prebuild Data Fetch\n');
 
     const gasUrl = loadEnv();
 

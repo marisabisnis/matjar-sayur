@@ -208,7 +208,7 @@ export default function CetakStrukPage() {
                             <div className={styles.printReceiptHeader}>
                                 <div>
                                     <h2 className={styles.printTitle}>🚚 Struk Pengiriman</h2>
-                                    <p className={styles.printBrand}>Pesan Sayur</p>
+                                    <p className={styles.printBrand}>Matjar Sayur</p>
                                 </div>
                                 <div className={styles.printMeta}>
                                     <span className={styles.printOrderId}>{order.id_order}</span>

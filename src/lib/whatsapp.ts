@@ -30,7 +30,7 @@ export function generateWAMessage(data: CheckoutData): string {
         day: 'numeric',
     });
 
-    let msg = `🛒 *PESANAN BARU — PESAN SAYUR*\n`;
+    let msg = `🛒 *PESANAN BARU — MATJAR SAYUR*\n`;
     msg += `━━━━━━━━━━━━━━━━\n`;
     msg += `📋 ID: *${orderId}*\n`;
     msg += `📅 ${tanggal}\n\n`;
@@ -71,7 +71,7 @@ export function generateWAMessage(data: CheckoutData): string {
         msg += `\n📝 Catatan: ${data.catatan}\n`;
     }
 
-    msg += `\n_Terima kasih sudah belanja di Pesan Sayur! 🥬_`;
+    msg += `\n_Terima kasih sudah belanja di Matjar Sayur! 🥬_`;
 
     return msg;
 }

@@ -14,33 +14,33 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Pesan Sayur - Belanja Segar Harian Online',
-    template: '%s | Pesan Sayur',
+    default: 'Matjar Sayur - Belanja Segar Harian Online',
+    template: '%s | Matjar Sayur',
   },
   description:
     'Belanja sayuran segar, buah-buahan, lauk pauk, dan bumbu dapur online. Diantar cepat langsung dari petani ke rumah Anda. Gratis ongkir untuk pembelian minimal Rp100rb.',
   keywords: [
     'belanja sayur online',
     'sayuran segar',
-    'pesan sayur',
+    'matjar sayur',
     'belanja buah online',
     'bumbu dapur',
     'lauk pauk segar',
     'delivery sayur',
     'toko sayur online',
   ],
-  authors: [{ name: 'Pesan Sayur' }],
+  authors: [{ name: 'Matjar Sayur' }],
   openGraph: {
     type: 'website',
     locale: 'id_ID',
-    siteName: 'Pesan Sayur',
-    title: 'Pesan Sayur - Belanja Segar Harian Online',
+    siteName: 'Matjar Sayur',
+    title: 'Matjar Sayur - Belanja Segar Harian Online',
     description:
       'Belanja sayuran segar, buah-buahan, lauk pauk, dan bumbu dapur online. Diantar cepat langsung dari petani ke rumah Anda.',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Pesan Sayur - Belanja Segar Harian Online',
+    title: 'Matjar Sayur - Belanja Segar Harian Online',
     description:
       'Belanja sayuran segar online. Diantar cepat dari petani ke rumah Anda.',
   },
@@ -63,7 +63,7 @@ export default function RootLayout({
         <link rel="manifest" href="/manifest.json" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-        <meta name="apple-mobile-web-app-title" content="Pesan Sayur" />
+        <meta name="apple-mobile-web-app-title" content="Matjar Sayur" />
         <link rel="apple-touch-icon" href="/icons/icon-192.svg" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />

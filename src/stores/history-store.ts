@@ -44,6 +44,6 @@ export const useHistoryStore = create<HistoryStore>()(
 
             clearHistory: () => set({ orders: [] }),
         }),
-        { name: 'pesan-sayur-history' }
+        { name: 'matjar-sayur-history' }
     )
 );

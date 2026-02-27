@@ -103,7 +103,7 @@ export default function StrukPage({ params }: { params: Promise<{ orderId: strin
 
     const handleShare = () => {
         const url = window.location.href;
-        const text = `🧾 Struk Belanja Pesan Sayur\nID: ${orderId}\n${url}`;
+        const text = `🧾 Struk Belanja Matjar Sayur\nID: ${orderId}\n${url}`;
         const waUrl = generateWALink(DEFAULT_WA_NUMBER, text);
         window.open(waUrl, '_blank');
     };
@@ -194,7 +194,7 @@ export default function StrukPage({ params }: { params: Promise<{ orderId: strin
                         <h2 className={styles.receiptTitle}>
                             {mode === 'kurir' ? '🚚 Struk Pengiriman' : '🧾 Struk Belanja'}
                         </h2>
-                        <p className={styles.receiptBrand}>Pesan Sayur</p>
+                        <p className={styles.receiptBrand}>Matjar Sayur</p>
                     </div>
                     <div className={styles.receiptMeta}>
                         <span className={styles.orderId}>{order.id}</span>
@@ -363,7 +363,7 @@ export default function StrukPage({ params }: { params: Promise<{ orderId: strin
 
                 {/* Footer */}
                 <div className={styles.receiptFooter}>
-                    <p>Terima kasih sudah belanja di <strong>Pesan Sayur</strong> 🥬</p>
+                    <p>Terima kasih sudah belanja di <strong>Matjar Sayur</strong> 🥬</p>
                 </div>
             </div>
 

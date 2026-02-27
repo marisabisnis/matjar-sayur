@@ -18,9 +18,9 @@ export default function HomePage() {
     '@graph': [
       {
         '@type': 'Organization',
-        name: 'Pesan Sayur',
-        url: 'https://pesansayur.com',
-        logo: 'https://pesansayur.com/icons/logo.png',
+        name: 'Matjar Sayur',
+        url: 'https://matjarsayur.com',
+        logo: 'https://matjarsayur.com/icons/logo.png',
         description: 'Toko sayuran & lauk pauk online. Belanja segar harian diantar cepat.',
         contactPoint: {
           '@type': 'ContactPoint',
@@ -30,11 +30,11 @@ export default function HomePage() {
       },
       {
         '@type': 'WebSite',
-        name: 'Pesan Sayur',
-        url: 'https://pesansayur.com',
+        name: 'Matjar Sayur',
+        url: 'https://matjarsayur.com',
         potentialAction: {
           '@type': 'SearchAction',
-          target: 'https://pesansayur.com/search?q={search_term_string}',
+          target: 'https://matjarsayur.com/search?q={search_term_string}',
           'query-input': 'required name=search_term_string',
         },
       },
@@ -48,7 +48,7 @@ export default function HomePage() {
           item: {
             '@type': 'Product',
             name: p.nama,
-            url: `https://pesansayur.com/produk/${p.slug}`,
+            url: `https://matjarsayur.com/produk/${p.slug}`,
             image: p.foto_utama,
             offers: {
               '@type': 'Offer',

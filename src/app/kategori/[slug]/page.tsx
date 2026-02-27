@@ -15,8 +15,8 @@ export function generateStaticParams() {
 export function generateMetadata({ params }: { params: { slug: string } }) {
     const cat = categories.find(c => c.slug === params.slug);
     return {
-        title: cat ? `${cat.nama} — Pesan Sayur` : 'Kategori — Pesan Sayur',
-        description: cat ? `Belanja ${cat.nama} segar online di Pesan Sayur. Diantar cepat!` : 'Kategori produk Pesan Sayur',
+        title: cat ? `${cat.nama} — Matjar Sayur` : 'Kategori — Matjar Sayur',
+        description: cat ? `Belanja ${cat.nama} segar online di Matjar Sayur. Diantar cepat!` : 'Kategori produk Matjar Sayur',
     };
 }
 

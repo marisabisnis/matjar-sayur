@@ -1,6 +1,6 @@
 {
-  "name": "Pesan Sayur",
-  "short_name": "PesanSayur",
+  "name": "Matjar Sayur",
+  "short_name": "MatjarSayur",
   "description": "Belanja sayuran segar, buah-buahan, lauk pauk, dan bumbu dapur online. Diantar cepat langsung dari petani ke rumah Anda.",
   "start_url": "/",
   "scope": "/",

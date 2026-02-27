@@ -5,7 +5,7 @@ import type { Product } from '@/types';
 const products = productsData as Product[];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const baseUrl = 'https://pesansayur.com';
+    const baseUrl = 'https://matjarsayur.com';
 
     const productUrls = products.map((p) => ({
         url: `${baseUrl}/produk/${p.slug}`,

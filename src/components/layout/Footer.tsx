@@ -50,7 +50,7 @@ export default function Footer() {
                             nutrition
                         </span>
                     </div>
-                    <span className={styles.footerLogoText}>Pesan Sayur</span>
+                    <span className={styles.footerLogoText}>Matjar Sayur</span>
                 </div>
 
                 {/* PWA Install Section */}
@@ -69,7 +69,7 @@ export default function Footer() {
                 )}
 
                 <p className={styles.footerCopy}>
-                    © 2026 Pesan Sayur. Segar dari ladang ke meja Anda.
+                    © 2026 Matjar Sayur. Segar dari ladang ke meja Anda.
                 </p>
             </div>
         </footer>

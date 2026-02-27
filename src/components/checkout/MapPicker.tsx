@@ -158,7 +158,7 @@ export default function MapPicker({ storeLat, storeLng, maxJarak, onLocationSele
                 weight: 2,
             })
                 .addTo(map)
-                .bindPopup('📍 Toko Pesan Sayur');
+                .bindPopup('\ud83d\udccd Toko Matjar Sayur');
 
             // Delivery radius circle
             L.circle([storeLat, storeLng], {

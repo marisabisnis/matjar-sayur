@@ -60,7 +60,7 @@ export default function InstallPrompt() {
             <div className={styles.content}>
                 <span className={styles.emoji}>📱</span>
                 <div className={styles.text}>
-                    <p className={styles.title}>Install Pesan Sayur</p>
+                    <p className={styles.title}>Install Matjar Sayur</p>
                     <p className={styles.desc}>Akses cepat dari layar utama!</p>
                 </div>
             </div>

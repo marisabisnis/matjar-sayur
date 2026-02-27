@@ -79,15 +79,15 @@ export default async function ProductDetailPage({
                     availability: product.stok > 0
                         ? 'https://schema.org/InStock'
                         : 'https://schema.org/OutOfStock',
-                    seller: { '@type': 'Organization', name: 'Pesan Sayur' },
+                    seller: { '@type': 'Organization', name: 'Matjar Sayur' },
                 },
                 category: product.kategori_nama,
             },
             {
                 '@type': 'BreadcrumbList',
                 itemListElement: [
-                    { '@type': 'ListItem', position: 1, name: 'Beranda', item: 'https://pesansayur.com' },
-                    { '@type': 'ListItem', position: 2, name: product.kategori_nama || 'Produk', item: `https://pesansayur.com/kategori/${product.kategori_nama?.toLowerCase().replace(/\s+/g, '-') || 'semua'}` },
+                    { '@type': 'ListItem', position: 1, name: 'Beranda', item: 'https://matjarsayur.com' },
+                    { '@type': 'ListItem', position: 2, name: product.kategori_nama || 'Produk', item: `https://matjarsayur.com/kategori/${product.kategori_nama?.toLowerCase().replace(/\s+/g, '-') || 'semua'}` },
                     { '@type': 'ListItem', position: 3, name: product.nama },
                 ],
             },

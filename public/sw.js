@@ -1,4 +1,4 @@
-const CACHE_NAME = 'pesan-sayur-v2';
+const CACHE_NAME = 'matjar-sayur-v2';
 const PRECACHE_URLS = [
     '/',
     '/keranjang',
