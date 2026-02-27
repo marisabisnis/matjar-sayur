@@ -10,17 +10,17 @@ interface ProductGridLoadMoreProps {
 }
 
 function getInitialCount(): number {
-    if (typeof window === 'undefined') return 18;
-    return window.innerWidth < 768 ? 10 : 18;
+    if (typeof window === 'undefined') return 20;
+    return window.innerWidth < 768 ? 10 : 20;
 }
 
 function getLoadMoreCount(): number {
-    if (typeof window === 'undefined') return 18;
-    return window.innerWidth < 768 ? 10 : 18;
+    if (typeof window === 'undefined') return 20;
+    return window.innerWidth < 768 ? 10 : 20;
 }
 
 export default function ProductGridLoadMore({ products }: ProductGridLoadMoreProps) {
-    const [visibleCount, setVisibleCount] = useState(18);
+    const [visibleCount, setVisibleCount] = useState(20);
 
     useEffect(() => {
         setVisibleCount(getInitialCount());
