@@ -126,7 +126,7 @@ export default function SearchOverlay({ products, isOpen, onClose }: SearchOverl
                             >
                                 <div className={styles.resultImage}>
                                     <Image
-                                        src={p.foto_utama}
+                                        src={p.foto_utama || '/images/products/placeholder.png'}
                                         alt={p.nama}
                                         width={48}
                                         height={48}

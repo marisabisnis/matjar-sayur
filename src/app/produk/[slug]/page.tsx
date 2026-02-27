@@ -58,9 +58,11 @@ export default async function ProductDetailPage({
         ? [...relatedProducts, ...products.filter((p) => p.id !== product.id && !relatedProducts.find((r) => r.id === p.id)).slice(0, 5 - relatedProducts.length)]
         : relatedProducts;
 
+    const placeholder = '/images/products/placeholder.png';
+    const mainFoto = product.foto_utama || placeholder;
     const gallery = product.foto_galeri?.length > 0
         ? product.foto_galeri
-        : [product.foto_utama];
+        : [mainFoto];
 
     // JSON-LD Product + BreadcrumbList
     const jsonLd = {
@@ -70,7 +72,7 @@ export default async function ProductDetailPage({
                 '@type': 'Product',
                 name: product.nama,
                 description: product.deskripsi,
-                image: product.foto_utama,
+                image: mainFoto,
                 sku: product.id,
                 offers: {
                     '@type': 'Offer',
@@ -119,7 +121,7 @@ export default async function ProductDetailPage({
                         <div className={styles.mainImage}>
                             <span className={styles.organikBadge}>Organik</span>
                             <Image
-                                src={product.foto_utama}
+                                src={mainFoto}
                                 alt={product.nama}
                                 fill
                                 className={styles.mainImageInner}
@@ -135,7 +137,7 @@ export default async function ProductDetailPage({
                                     aria-label={`Lihat foto ${i + 1}`}
                                 >
                                     <Image
-                                        src={img}
+                                        src={img || placeholder}
                                         alt={`${product.nama} foto ${i + 1}`}
                                         width={100}
                                         height={100}
@@ -231,7 +233,7 @@ export default async function ProductDetailPage({
                                         <span className={styles.relatedPromoBadge}>Promo</span>
                                     )}
                                     <Image
-                                        src={p.foto_utama}
+                                        src={p.foto_utama || placeholder}
                                         alt={p.nama}
                                         fill
                                         className={styles.relatedCardImg}

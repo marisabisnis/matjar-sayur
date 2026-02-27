@@ -28,7 +28,7 @@ export default function ProductCard({ product }: ProductCardProps) {
                         <span className={`${styles.badge} ${styles.badgeNew}`}>Baru</span>
                     )}
                     <Image
-                        src={product.foto_utama}
+                        src={product.foto_utama || '/images/products/placeholder.png'}
                         alt={product.nama}
                         fill
                         sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
