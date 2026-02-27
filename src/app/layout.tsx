@@ -68,7 +68,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=add,add_shopping_cart,arrow_forward,check_circle,chevron_left,chevron_right,close,cookie,delete,emoji_nature,expand_more,favorite,grid_view,history,home,local_cafe,local_offer,local_shipping,location_on,menu,new_releases,nutrition,phone,play_circle,search,search_off,set_meal,shopping_cart,soup_kitchen,support_agent,trending_up,verified,verified_user,workspace_premium&display=swap"
           rel="stylesheet"
         />
       </head>

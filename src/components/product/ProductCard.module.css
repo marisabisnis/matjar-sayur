@@ -105,7 +105,7 @@
 
 .category {
     font-size: var(--font-size-xs);
-    color: var(--text-muted);
+    color: #475569;
     margin-bottom: 4px;
 }
 
@@ -141,15 +141,15 @@
 .priceNow {
     font-size: var(--font-size-lg);
     font-weight: 700;
-    color: var(--text-price);
+    color: #15803d;
 }
 
 .addButton {
     width: 100%;
     padding: 10px;
     border-radius: var(--radius);
-    background: var(--color-primary);
-    color: white;
+    background: #15803d;
+    color: #ffffff;
     font-size: var(--font-size-sm);
     font-weight: 600;
     display: flex;
@@ -157,6 +157,7 @@
     justify-content: center;
     gap: var(--space-sm);
     transition: var(--transition);
+    min-height: 44px;
 }
 
 .addButton:hover {
