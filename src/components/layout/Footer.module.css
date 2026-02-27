@@ -87,7 +87,7 @@
 
 .footerCopy {
     font-size: var(--font-size-sm);
-    color: var(--text-muted);
+    color: #64748b;
     text-align: center;
 }
 

@@ -29,10 +29,10 @@
     align-items: center;
     gap: 8px;
     padding: 12px 32px;
-    border: 2px solid var(--color-primary, #16a34a);
+    border: 2px solid #15803d;
     border-radius: 12px;
     background: transparent;
-    color: var(--color-primary, #16a34a);
+    color: #15803d;
     font-weight: 600;
     font-size: 14px;
     cursor: pointer;
@@ -40,7 +40,7 @@
 }
 
 .loadMoreBtn:hover {
-    background: var(--color-primary, #16a34a);
+    background: #15803d;
     color: white;
     transform: translateY(-1px);
     box-shadow: 0 4px 12px rgba(22, 163, 74, 0.3);

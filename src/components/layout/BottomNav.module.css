@@ -41,7 +41,7 @@
 
 .navIcon {
     font-size: 24px;
-    color: var(--text-muted);
+    color: #64748b;
     transition: var(--transition);
 }
 
@@ -52,7 +52,7 @@
 .navLabel {
     font-size: 10px;
     font-weight: 500;
-    color: var(--text-muted);
+    color: #64748b;
     transition: var(--transition);
 }
 

@@ -63,7 +63,7 @@ export default function Header() {
 
                         <button className={styles.userButton} aria-label="Akun pengguna">
                             <div className={styles.userAvatar}>
-                                <span className="material-symbols-outlined" aria-hidden="true" style={{ fontSize: '20px', color: '#94a3b8' }}>
+                                <span className="material-symbols-outlined" aria-hidden="true" style={{ fontSize: '20px', color: '#64748b' }}>
                                     person
                                 </span>
                             </div>

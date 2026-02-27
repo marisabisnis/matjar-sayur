@@ -239,9 +239,9 @@
 }
 
 .sectionLink {
-  color: var(--color-primary);
+  color: #15803d;
   font-size: var(--font-size-sm);
-  font-weight: 500;
+  font-weight: 600;
   display: flex;
   align-items: center;
   gap: 2px;
