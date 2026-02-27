@@ -1,50 +1,66 @@
 [
   {
     "id": "1",
-    "nama": "Sayuran Segar",
-    "slug": "sayuran-segar",
-    "icon_url": "nutrition",
+    "nama": "Sayuran Daun",
+    "slug": "sayuran-daun",
+    "icon_url": "eco",
     "urutan": 1,
     "aktif": true
   },
   {
     "id": "2",
-    "nama": "Buah-buahan",
-    "slug": "buah-buahan",
-    "icon_url": "emoji_nature",
+    "nama": "Sayuran Buah & Umbi",
+    "slug": "sayuran-buah-umbi",
+    "icon_url": "nutrition",
     "urutan": 2,
     "aktif": true
   },
   {
     "id": "3",
-    "nama": "Lauk Pauk",
-    "slug": "lauk-pauk",
-    "icon_url": "set_meal",
+    "nama": "Kacang & Tauge",
+    "slug": "kacang-tauge",
+    "icon_url": "grass",
     "urutan": 3,
     "aktif": true
   },
   {
     "id": "4",
-    "nama": "Bumbu Dapur",
-    "slug": "bumbu-dapur",
-    "icon_url": "soup_kitchen",
+    "nama": "Lauk Pauk & Protein",
+    "slug": "lauk-protein",
+    "icon_url": "set_meal",
     "urutan": 4,
     "aktif": true
   },
   {
     "id": "5",
-    "nama": "Minuman",
-    "slug": "minuman",
-    "icon_url": "local_cafe",
+    "nama": "Bumbu Dasar",
+    "slug": "bumbu-dasar",
+    "icon_url": "soup_kitchen",
     "urutan": 5,
     "aktif": true
   },
   {
     "id": "6",
-    "nama": "Snack",
-    "slug": "snack",
-    "icon_url": "cookie",
+    "nama": "Rempah & Empon",
+    "slug": "rempah-empon",
+    "icon_url": "spa",
     "urutan": 6,
+    "aktif": true
+  },
+  {
+    "id": "7",
+    "nama": "Bumbu Daun & Batang",
+    "slug": "bumbu-daun",
+    "icon_url": "local_florist",
+    "urutan": 7,
+    "aktif": true
+  },
+  {
+    "id": "8",
+    "nama": "Bumbu Kering & Penyedap",
+    "slug": "bumbu-kering",
+    "icon_url": "kitchen",
+    "urutan": 8,
     "aktif": true
   }
 ]
