@@ -2,7 +2,8 @@
  * API helper — POST order + GET order data from Google Apps Script
  */
 
-const GAS_URL = process.env.NEXT_PUBLIC_GAS_URL;
+import configData from '../../public/data/config.json';
+const GAS_URL = configData.gas_url || process.env.NEXT_PUBLIC_GAS_URL;
 
 interface OrderData {
     orderId: string;

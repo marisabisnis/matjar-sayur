@@ -79,29 +79,6 @@ export default function ProductDetailClient({ product }: ProductDetailClientProp
                                 onClick={() => setSelectedVariasi(i)}
                             >
                                 {opsi.label}
-                                {opsi.tambahan > 0 && (() => {
-                                    const hargaDasar = product.harga_diskon || product.harga;
-                                    const totalHarga = hargaDasar + opsi.tambahan;
-                                    // Extract quantity from label (e.g. "3" from "3 ikat kecil", "500" from "500 gram")
-                                    const qtyMatch = opsi.label.match(/^(\d+)/);
-                                    const labelQty = qtyMatch ? parseInt(qtyMatch[1]) : null;
-                                    // Extract unit from label (e.g. "ikat" from "3 ikat kecil", "gram" from "500 gram")
-                                    const unitMatch = opsi.label.match(/^\d+\s+(\S+)/);
-                                    const unit = unitMatch ? unitMatch[1] : product.satuan || 'pcs';
-
-                                    if (labelQty && labelQty > 1 && unit !== 'gram' && unit !== 'kg') {
-                                        const perUnit = Math.round(totalHarga / labelQty);
-                                        return <span style={{ fontSize: '11px', opacity: 0.7 }}> (per {unit} {formatHarga(perUnit)})</span>;
-                                    } else if (unit === 'gram' && labelQty && labelQty >= 500) {
-                                        // For weight: show price per 100g or per kg
-                                        const perKg = Math.round(totalHarga / (labelQty / 1000));
-                                        return <span style={{ fontSize: '11px', opacity: 0.7 }}> ({formatHarga(perKg)}/kg)</span>;
-                                    } else if (unit === 'kg' && labelQty && labelQty > 1) {
-                                        const perKg = Math.round(totalHarga / labelQty);
-                                        return <span style={{ fontSize: '11px', opacity: 0.7 }}> (per kg {formatHarga(perKg)})</span>;
-                                    }
-                                    return <span style={{ fontSize: '11px', opacity: 0.7 }}> +{formatHarga(opsi.tambahan)}</span>;
-                                })()}
                                 {i === selectedVariasi && (
                                     <span className={styles.variantCheck}>
                                         <span className="material-symbols-outlined" style={{ fontSize: '12px' }}>check</span>

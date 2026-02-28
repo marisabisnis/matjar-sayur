@@ -5,7 +5,8 @@
  * Also fires a GAS POST for server-side usage tracking (fire-and-forget).
  */
 
-const GAS_URL = process.env.NEXT_PUBLIC_GAS_URL;
+import configData from '../../public/data/config.json';
+const GAS_URL = configData.gas_url || process.env.NEXT_PUBLIC_GAS_URL;
 
 export interface CouponData {
     kode: string;
