@@ -5,7 +5,7 @@
     "nama": "Bayam Hijau",
     "slug": "bayam-hijau",
     "deskripsi": "Bayam hijau segar dipetik pagi hari dari petani lokal. Kaya zat besi dan vitamin A.",
-    "harga": 3000,
+    "harga": 3200,
     "harga_diskon": null,
     "foto_utama": "/images/products/bayam-hijau.png",
     "foto_galeri": [],
@@ -24,12 +24,12 @@
             "tambahan": 0
           },
           {
-            "label": "3 ikat kecil (per ikat Rp 2.500)",
-            "tambahan": 4500
+            "label": "3 ikat kecil (per ikat Rp 2.900)",
+            "tambahan": 5500
           },
           {
-            "label": "20 ikat (per ikat Rp 2.000)",
-            "tambahan": 37000
+            "label": "20 ikat (per ikat Rp 2.600)",
+            "tambahan": 48800
           }
         ]
       }
@@ -63,12 +63,12 @@
             "tambahan": 0
           },
           {
-            "label": "3 ikat kecil (per ikat Rp 3.500)",
-            "tambahan": 6500
+            "label": "3 ikat kecil (per ikat Rp 3.700)",
+            "tambahan": 7100
           },
           {
-            "label": "20 ikat (per ikat Rp 3.000)",
-            "tambahan": 56000
+            "label": "20 ikat (per ikat Rp 3.400)",
+            "tambahan": 64000
           }
         ]
       }
@@ -83,7 +83,7 @@
     "nama": "Kangkung",
     "slug": "kangkung",
     "deskripsi": "Kangkung segar batang renyah dan daun hijau lebat. Enak ditumis dengan bumbu bawang.",
-    "harga": 2500,
+    "harga": 2700,
     "harga_diskon": null,
     "foto_utama": "/images/products/kangkung.png",
     "foto_galeri": [],
@@ -102,12 +102,12 @@
             "tambahan": 0
           },
           {
-            "label": "3 ikat kecil (per ikat Rp 2.000)",
-            "tambahan": 3500
+            "label": "3 ikat kecil (per ikat Rp 2.400)",
+            "tambahan": 4500
           },
           {
-            "label": "20 ikat (per ikat Rp 1.500)",
-            "tambahan": 27500
+            "label": "20 ikat (per ikat Rp 2.200)",
+            "tambahan": 41300
           }
         ]
       }
@@ -122,7 +122,7 @@
     "nama": "Sawi Hijau (Caisim)",
     "slug": "sawi-hijau",
     "deskripsi": "Sawi hijau segar untuk cap cay, mie ayam, atau sup. Renyah dan segar.",
-    "harga": 3500,
+    "harga": 3600,
     "harga_diskon": null,
     "foto_utama": "/images/products/sawi-hijau.png",
     "foto_galeri": [],
@@ -141,12 +141,12 @@
             "tambahan": 0
           },
           {
-            "label": "3 ikat kecil (per ikat Rp 3.000)",
-            "tambahan": 5500
+            "label": "3 ikat kecil (per ikat Rp 3.200)",
+            "tambahan": 6000
           },
           {
-            "label": "20 ikat (per ikat Rp 2.500)",
-            "tambahan": 46500
+            "label": "20 ikat (per ikat Rp 2.900)",
+            "tambahan": 54400
           }
         ]
       }
@@ -223,12 +223,12 @@
             "tambahan": 4500
           },
           {
-            "label": "1 kg (Rp 18.000)",
-            "tambahan": 12500
+            "label": "1 kg (Rp 19.600)",
+            "tambahan": 14100
           },
           {
-            "label": "5 kg (Rp 80.000)",
-            "tambahan": 74500
+            "label": "5 kg (Rp 94.000)",
+            "tambahan": 88500
           }
         ]
       }
@@ -243,7 +243,7 @@
     "nama": "Daun Singkong",
     "slug": "daun-singkong",
     "deskripsi": "Daun singkong muda segar untuk sayur lodeh, gulai, atau pecel.",
-    "harga": 3000,
+    "harga": 3200,
     "harga_diskon": null,
     "foto_utama": "/images/products/daun-singkong.png",
     "foto_galeri": [],
@@ -262,12 +262,12 @@
             "tambahan": 0
           },
           {
-            "label": "3 ikat kecil (per ikat Rp 2.500)",
-            "tambahan": 4500
+            "label": "3 ikat kecil (per ikat Rp 2.900)",
+            "tambahan": 5500
           },
           {
-            "label": "20 ikat (per ikat Rp 2.000)",
-            "tambahan": 37000
+            "label": "20 ikat (per ikat Rp 2.600)",
+            "tambahan": 48800
           }
         ]
       }
@@ -282,7 +282,7 @@
     "nama": "Daun Pepaya",
     "slug": "daun-pepaya",
     "deskripsi": "Daun pepaya muda segar. Enak dibuat tumis, lalap, atau rebusan.",
-    "harga": 3500,
+    "harga": 3600,
     "harga_diskon": null,
     "foto_utama": "/images/products/daun-pepaya.png",
     "foto_galeri": [],
@@ -301,12 +301,12 @@
             "tambahan": 0
           },
           {
-            "label": "3 ikat kecil (per ikat Rp 3.000)",
-            "tambahan": 5500
+            "label": "3 ikat kecil (per ikat Rp 3.200)",
+            "tambahan": 6000
           },
           {
-            "label": "20 ikat (per ikat Rp 2.500)",
-            "tambahan": 46500
+            "label": "20 ikat (per ikat Rp 2.900)",
+            "tambahan": 54400
           }
         ]
       }
@@ -321,7 +321,7 @@
     "nama": "Daun Kemangi",
     "slug": "daun-kemangi",
     "deskripsi": "Kemangi segar harum untuk lalapan, pepes ikan, dan masakan Sunda.",
-    "harga": 2500,
+    "harga": 2700,
     "harga_diskon": null,
     "foto_utama": "/images/products/daun-kemangi.png",
     "foto_galeri": [],
@@ -340,12 +340,12 @@
             "tambahan": 0
           },
           {
-            "label": "3 ikat kecil (per ikat Rp 2.000)",
-            "tambahan": 3500
+            "label": "3 ikat kecil (per ikat Rp 2.400)",
+            "tambahan": 4500
           },
           {
-            "label": "20 ikat (per ikat Rp 1.500)",
-            "tambahan": 27500
+            "label": "20 ikat (per ikat Rp 2.200)",
+            "tambahan": 41300
           }
         ]
       }
@@ -360,7 +360,7 @@
     "nama": "Kubis / Kol",
     "slug": "kubis-kol",
     "deskripsi": "Kubis segar renyah untuk cap cay, coleslaw, atau sayur asam.",
-    "harga": 4500,
+    "harga": 4800,
     "harga_diskon": null,
     "foto_utama": "/images/products/kubis-kol.png",
     "foto_galeri": [],
@@ -379,12 +379,12 @@
             "tambahan": 0
           },
           {
-            "label": "3 buah (per buah Rp 4.000)",
-            "tambahan": 7500
+            "label": "3 buah (per buah Rp 4.400)",
+            "tambahan": 8400
           },
           {
-            "label": "5 buah (per buah Rp 3.500)",
-            "tambahan": 13000
+            "label": "5 buah (per buah Rp 4.100)",
+            "tambahan": 15700
           }
         ]
       }
@@ -418,16 +418,16 @@
             "tambahan": 0
           },
           {
-            "label": "500 gram (Rp 8.000)",
-            "tambahan": 3500
+            "label": "500 gram (Rp 8.400)",
+            "tambahan": 3900
           },
           {
-            "label": "1 kg (Rp 14.000)",
-            "tambahan": 9500
+            "label": "1 kg (Rp 16.000)",
+            "tambahan": 11500
           },
           {
-            "label": "5 kg (Rp 60.000)",
-            "tambahan": 55500
+            "label": "5 kg (Rp 78.000)",
+            "tambahan": 73500
           }
         ]
       }
@@ -442,7 +442,7 @@
     "nama": "Terong Ungu",
     "slug": "terong-ungu",
     "deskripsi": "Terong ungu segar untuk balado terong, terong bakar, atau orak-arik. Daging lembut.",
-    "harga": 3500,
+    "harga": 3700,
     "harga_diskon": null,
     "foto_utama": "/images/products/terong-ungu.png",
     "foto_galeri": [],
@@ -461,12 +461,12 @@
             "tambahan": 0
           },
           {
-            "label": "3 buah (per buah Rp 3.000)",
-            "tambahan": 5500
+            "label": "3 buah (per buah Rp 3.400)",
+            "tambahan": 6500
           },
           {
-            "label": "5 buah (per buah Rp 2.500)",
-            "tambahan": 9000
+            "label": "5 buah (per buah Rp 3.200)",
+            "tambahan": 12300
           }
         ]
       }
@@ -481,7 +481,7 @@
     "nama": "Terong Hijau",
     "slug": "terong-hijau",
     "deskripsi": "Terong hijau muda manis, cocok untuk lalapan atau di masak gulai.",
-    "harga": 3500,
+    "harga": 3700,
     "harga_diskon": null,
     "foto_utama": "/images/products/terong-hijau.png",
     "foto_galeri": [],
@@ -500,12 +500,12 @@
             "tambahan": 0
           },
           {
-            "label": "3 buah (per buah Rp 3.000)",
-            "tambahan": 5500
+            "label": "3 buah (per buah Rp 3.400)",
+            "tambahan": 6500
           },
           {
-            "label": "5 buah (per buah Rp 2.500)",
-            "tambahan": 9000
+            "label": "5 buah (per buah Rp 3.200)",
+            "tambahan": 12300
           }
         ]
       }
@@ -520,7 +520,7 @@
     "nama": "Labu Siam",
     "slug": "labu-siam",
     "deskripsi": "Labu siam segar berbentuk buah pir hijau. Enak dibuat sayur lodeh, tumis, atau sup.",
-    "harga": 3500,
+    "harga": 3600,
     "harga_diskon": null,
     "foto_utama": "/images/products/labu-siam.png",
     "foto_galeri": [],
@@ -539,12 +539,12 @@
             "tambahan": 0
           },
           {
-            "label": "3 buah (per buah Rp 3.000)",
-            "tambahan": 5500
+            "label": "3 buah (per buah Rp 3.300)",
+            "tambahan": 6300
           },
           {
-            "label": "5 buah (per buah Rp 2.500)",
-            "tambahan": 9000
+            "label": "5 buah (per buah Rp 3.200)",
+            "tambahan": 12400
           }
         ]
       }
@@ -602,7 +602,7 @@
     "nama": "Pare Segar",
     "slug": "pare-segar",
     "deskripsi": "Pare segar untuk tumis pare telur, pare isi, atau jus kesehatan. Pahit menyehatkan!",
-    "harga": 4000,
+    "harga": 4300,
     "harga_diskon": null,
     "foto_utama": "/images/products/pare-segar.png",
     "foto_galeri": [],
@@ -621,12 +621,12 @@
             "tambahan": 0
           },
           {
-            "label": "3 buah (per buah Rp 3.500)",
-            "tambahan": 6500
+            "label": "3 buah (per buah Rp 4.000)",
+            "tambahan": 7700
           },
           {
-            "label": "5 buah (per buah Rp 3.000)",
-            "tambahan": 11000
+            "label": "5 buah (per buah Rp 3.800)",
+            "tambahan": 14700
           }
         ]
       }
@@ -641,7 +641,7 @@
     "nama": "Mentimun Segar",
     "slug": "mentimun-segar",
     "deskripsi": "Mentimun segar renyah dan menyegarkan untuk lalapan, acar, jus, atau salad.",
-    "harga": 3500,
+    "harga": 3600,
     "harga_diskon": null,
     "foto_utama": "/images/products/mentimun-segar.png",
     "foto_galeri": [],
@@ -660,16 +660,16 @@
             "tambahan": 0
           },
           {
-            "label": "500 gram (Rp 6.000)",
-            "tambahan": 2500
+            "label": "500 gram (Rp 6.600)",
+            "tambahan": 3000
           },
           {
-            "label": "1 kg (Rp 10.000)",
-            "tambahan": 6500
+            "label": "1 kg (Rp 12.800)",
+            "tambahan": 9200
           },
           {
-            "label": "5 kg (Rp 40.000)",
-            "tambahan": 36500
+            "label": "5 kg (Rp 62.000)",
+            "tambahan": 58400
           }
         ]
       }
@@ -684,7 +684,7 @@
     "nama": "Oyong / Gambas",
     "slug": "oyong-gambas",
     "deskripsi": "Oyong/gambas untuk sayur bening yang segar dan menyehatkan.",
-    "harga": 3000,
+    "harga": 3300,
     "harga_diskon": null,
     "foto_utama": "/images/products/oyong-gambas.png",
     "foto_galeri": [],
@@ -703,12 +703,12 @@
             "tambahan": 0
           },
           {
-            "label": "3 buah (per buah Rp 2.500)",
-            "tambahan": 4500
+            "label": "3 buah (per buah Rp 3.000)",
+            "tambahan": 5700
           },
           {
-            "label": "5 buah (per buah Rp 2.000)",
-            "tambahan": 7000
+            "label": "5 buah (per buah Rp 2.800)",
+            "tambahan": 10700
           }
         ]
       }
@@ -824,8 +824,8 @@
             "tambahan": 9500
           },
           {
-            "label": "5 buah (per buah Rp 4.500)",
-            "tambahan": 17000
+            "label": "5 buah (per buah Rp 4.900)",
+            "tambahan": 19000
           }
         ]
       }
@@ -918,7 +918,7 @@
     "nama": "Jagung Manis",
     "slug": "jagung-manis",
     "deskripsi": "Jagung manis pilihan, manisnya alami. Cocok untuk jagung bakar, sop, atau direbus.",
-    "harga": 3500,
+    "harga": 3600,
     "harga_diskon": null,
     "foto_utama": "/images/products/jagung-manis.png",
     "foto_galeri": [],
@@ -937,16 +937,16 @@
             "tambahan": 0
           },
           {
-            "label": "500 gram (Rp 6.000)",
-            "tambahan": 2500
+            "label": "500 gram (Rp 6.600)",
+            "tambahan": 3000
           },
           {
-            "label": "1 kg (Rp 10.000)",
-            "tambahan": 6500
+            "label": "1 kg (Rp 12.800)",
+            "tambahan": 9200
           },
           {
-            "label": "5 kg (Rp 40.000)",
-            "tambahan": 36500
+            "label": "5 kg (Rp 62.000)",
+            "tambahan": 58400
           }
         ]
       }
@@ -961,7 +961,7 @@
     "nama": "Wortel Segar",
     "slug": "wortel-segar",
     "deskripsi": "Wortel oranye segar untuk jus, tumis, sup, atau campuran masakan. Manis dan renyah.",
-    "harga": 4000,
+    "harga": 4300,
     "harga_diskon": null,
     "foto_utama": "/images/products/wortel.png",
     "foto_galeri": [],
@@ -980,16 +980,16 @@
             "tambahan": 0
           },
           {
-            "label": "500 gram (Rp 7.000)",
-            "tambahan": 3000
+            "label": "500 gram (Rp 8.000)",
+            "tambahan": 3700
           },
           {
-            "label": "1 kg (Rp 12.000)",
-            "tambahan": 8000
+            "label": "1 kg (Rp 15.600)",
+            "tambahan": 11300
           },
           {
-            "label": "5 kg (Rp 50.000)",
-            "tambahan": 46000
+            "label": "5 kg (Rp 74.000)",
+            "tambahan": 69700
           }
         ]
       }
@@ -1023,12 +1023,12 @@
             "tambahan": 0
           },
           {
-            "label": "1 kg (Rp 11.000)",
-            "tambahan": 4500
+            "label": "1 kg (Rp 12.000)",
+            "tambahan": 5500
           },
           {
-            "label": "2 kg (Rp 20.000)",
-            "tambahan": 13500
+            "label": "2 kg (Rp 22.000)",
+            "tambahan": 15500
           }
         ]
       }
@@ -1062,16 +1062,16 @@
             "tambahan": 0
           },
           {
-            "label": "500 gram (Rp 13.000)",
-            "tambahan": 5500
+            "label": "500 gram (Rp 14.000)",
+            "tambahan": 6500
           },
           {
-            "label": "1 kg (Rp 24.000)",
-            "tambahan": 16500
+            "label": "1 kg (Rp 26.000)",
+            "tambahan": 18500
           },
           {
-            "label": "5 kg (Rp 110.000)",
-            "tambahan": 102500
+            "label": "5 kg (Rp 120.000)",
+            "tambahan": 112500
           }
         ]
       }
@@ -1105,12 +1105,12 @@
             "tambahan": 0
           },
           {
-            "label": "3 ikat kecil (per ikat Rp 3.000)",
-            "tambahan": 5500
+            "label": "3 ikat kecil (per ikat Rp 3.300)",
+            "tambahan": 6400
           },
           {
-            "label": "20 ikat (per ikat Rp 2.500)",
-            "tambahan": 46500
+            "label": "20 ikat (per ikat Rp 3.100)",
+            "tambahan": 58500
           }
         ]
       }
@@ -1187,16 +1187,16 @@
             "tambahan": 0
           },
           {
-            "label": "500 gram (Rp 19.000)",
-            "tambahan": 8500
+            "label": "500 gram (Rp 20.000)",
+            "tambahan": 9500
           },
           {
-            "label": "1 kg (Rp 36.000)",
-            "tambahan": 25500
+            "label": "1 kg (Rp 38.000)",
+            "tambahan": 27500
           },
           {
-            "label": "5 kg (Rp 170.000)",
-            "tambahan": 159500
+            "label": "5 kg (Rp 180.000)",
+            "tambahan": 169500
           }
         ]
       }
@@ -1211,7 +1211,7 @@
     "nama": "Tauge Kacang Hijau",
     "slug": "tauge-kacang-hijau",
     "deskripsi": "Tauge/kecambah kacang hijau segar dan bersih untuk tumis, bakso, atau mie.",
-    "harga": 3500,
+    "harga": 3800,
     "harga_diskon": null,
     "foto_utama": "/images/products/tauge-kacang-hijau.png",
     "foto_galeri": [],
@@ -1230,16 +1230,16 @@
             "tambahan": 0
           },
           {
-            "label": "500 gram (Rp 6.000)",
-            "tambahan": 2500
+            "label": "500 gram (Rp 7.000)",
+            "tambahan": 3200
           },
           {
-            "label": "1 kg (Rp 10.000)",
-            "tambahan": 6500
+            "label": "1 kg (Rp 13.600)",
+            "tambahan": 9800
           },
           {
-            "label": "5 kg (Rp 40.000)",
-            "tambahan": 36500
+            "label": "5 kg (Rp 64.000)",
+            "tambahan": 60200
           }
         ]
       }
@@ -1254,7 +1254,7 @@
     "nama": "Tauge Kedelai",
     "slug": "tauge-kedelai",
     "deskripsi": "Tauge kedelai (kecambah besar) untuk bakso, rawon, atau tumisan.",
-    "harga": 4500,
+    "harga": 4600,
     "harga_diskon": null,
     "foto_utama": "/images/products/tauge-kedelai.png",
     "foto_galeri": [],
@@ -1273,16 +1273,16 @@
             "tambahan": 0
           },
           {
-            "label": "500 gram (Rp 8.000)",
-            "tambahan": 3500
+            "label": "500 gram (Rp 8.400)",
+            "tambahan": 3800
           },
           {
-            "label": "1 kg (Rp 14.000)",
-            "tambahan": 9500
+            "label": "1 kg (Rp 16.400)",
+            "tambahan": 11800
           },
           {
-            "label": "5 kg (Rp 60.000)",
-            "tambahan": 55500
+            "label": "5 kg (Rp 78.000)",
+            "tambahan": 73400
           }
         ]
       }
@@ -1340,7 +1340,7 @@
     "nama": "Tempe Daun Pisang",
     "slug": "tempe-daun-pisang",
     "deskripsi": "Tempe premium terbungkus daun pisang tradisional. Tekstur padat, rasa gurih khas.",
-    "harga": 3500,
+    "harga": 3800,
     "harga_diskon": null,
     "foto_utama": "/images/products/tempe-daun-pisang.png",
     "foto_galeri": [],
@@ -1359,8 +1359,8 @@
             "tambahan": 0
           },
           {
-            "label": "5 bungkus (per bungkus Rp 3.000)",
-            "tambahan": 11500
+            "label": "5 bungkus (per bungkus Rp 3.400)",
+            "tambahan": 13200
           }
         ]
       }
@@ -1375,7 +1375,7 @@
     "nama": "Tempe Plastik",
     "slug": "tempe-plastik",
     "deskripsi": "Tempe berkualitas dalam kemasan plastik. Konsisten dan higienis.",
-    "harga": 3000,
+    "harga": 3300,
     "harga_diskon": null,
     "foto_utama": "/images/products/tempe-plastik.png",
     "foto_galeri": [],
@@ -1394,8 +1394,8 @@
             "tambahan": 0
           },
           {
-            "label": "5 bungkus (per bungkus Rp 2.500)",
-            "tambahan": 9500
+            "label": "5 bungkus (per bungkus Rp 3.000)",
+            "tambahan": 11700
           }
         ]
       }
@@ -1429,8 +1429,8 @@
             "tambahan": 0
           },
           {
-            "label": "3 pack (5 kotak) (per pack (5 kotak) Rp 4.500)",
-            "tambahan": 8000
+            "label": "3 pack (5 kotak) (per pack (5 kotak) Rp 5.000)",
+            "tambahan": 9500
           }
         ]
       }
@@ -1464,8 +1464,8 @@
             "tambahan": 0
           },
           {
-            "label": "3 pack (5 kotak) (per pack (5 kotak) Rp 5.500)",
-            "tambahan": 10000
+            "label": "3 pack (5 kotak) (per pack (5 kotak) Rp 6.000)",
+            "tambahan": 11500
           }
         ]
       }
@@ -1499,8 +1499,8 @@
             "tambahan": 0
           },
           {
-            "label": "3 pack (5 kotak) (per pack (5 kotak) Rp 4.500)",
-            "tambahan": 8000
+            "label": "3 pack (5 kotak) (per pack (5 kotak) Rp 5.000)",
+            "tambahan": 9500
           }
         ]
       }
@@ -1538,12 +1538,12 @@
             "tambahan": 25000
           },
           {
-            "label": "1 kg (Rp 100.000)",
-            "tambahan": 72000
+            "label": "1 kg (Rp 104.000)",
+            "tambahan": 76000
           },
           {
-            "label": "5 kg (Rp 480.000)",
-            "tambahan": 452000
+            "label": "5 kg (Rp 510.000)",
+            "tambahan": 482000
           }
         ]
       }
@@ -1577,16 +1577,16 @@
             "tambahan": 0
           },
           {
-            "label": "500 gram (Rp 17.000)",
-            "tambahan": 7500
+            "label": "500 gram (Rp 18.000)",
+            "tambahan": 8500
           },
           {
-            "label": "1 kg (Rp 32.000)",
-            "tambahan": 22500
+            "label": "1 kg (Rp 34.000)",
+            "tambahan": 24500
           },
           {
-            "label": "5 kg (Rp 150.000)",
-            "tambahan": 140500
+            "label": "5 kg (Rp 160.000)",
+            "tambahan": 150500
           }
         ]
       }
@@ -1620,12 +1620,12 @@
             "tambahan": 0
           },
           {
-            "label": "3 buah (per buah Rp 4.500)",
-            "tambahan": 8500
+            "label": "3 buah (per buah Rp 4.700)",
+            "tambahan": 9100
           },
           {
-            "label": "5 buah (per buah Rp 4.000)",
-            "tambahan": 15000
+            "label": "5 buah (per buah Rp 4.400)",
+            "tambahan": 17000
           }
         ]
       }
@@ -1698,8 +1698,8 @@
             "tambahan": 0
           },
           {
-            "label": "1 kg (Rp 31.000)",
-            "tambahan": 13500
+            "label": "1 kg (Rp 32.000)",
+            "tambahan": 14500
           }
         ]
       }
@@ -1733,8 +1733,8 @@
             "tambahan": 0
           },
           {
-            "label": "1 kg (Rp 37.000)",
-            "tambahan": 16500
+            "label": "1 kg (Rp 38.000)",
+            "tambahan": 17500
           }
         ]
       }
@@ -1768,8 +1768,8 @@
             "tambahan": 0
           },
           {
-            "label": "1 kg (Rp 34.000)",
-            "tambahan": 15000
+            "label": "1 kg (Rp 35.000)",
+            "tambahan": 16000
           }
         ]
       }
@@ -1846,8 +1846,8 @@
             "tambahan": 0
           },
           {
-            "label": "3 pack (per pack Rp 12.500)",
-            "tambahan": 23000
+            "label": "3 pack (per pack Rp 13.000)",
+            "tambahan": 24500
           }
         ]
       }
@@ -1881,8 +1881,8 @@
             "tambahan": 0
           },
           {
-            "label": "3 pack (per pack Rp 14.500)",
-            "tambahan": 27500
+            "label": "3 pack (per pack Rp 15.000)",
+            "tambahan": 29000
           }
         ]
       }
@@ -1920,8 +1920,8 @@
             "tambahan": 20000
           },
           {
-            "label": "5 buah (per buah Rp 9.500)",
-            "tambahan": 36000
+            "label": "5 buah (per buah Rp 10.000)",
+            "tambahan": 38500
           }
         ]
       }
@@ -1955,16 +1955,16 @@
             "tambahan": 0
           },
           {
-            "label": "250 gram (Rp 11.250)",
-            "tambahan": 6250
+            "label": "250 gram (Rp 12.000)",
+            "tambahan": 7000
           },
           {
-            "label": "500 gram (Rp 20.000)",
-            "tambahan": 15000
+            "label": "500 gram (Rp 23.500)",
+            "tambahan": 18500
           },
           {
-            "label": "1 kg (Rp 35.000)",
-            "tambahan": 30000
+            "label": "1 kg (Rp 46.000)",
+            "tambahan": 41000
           }
         ]
       }
@@ -2045,8 +2045,8 @@
             "tambahan": 11500
           },
           {
-            "label": "5 buah (per buah Rp 5.500)",
-            "tambahan": 21000
+            "label": "5 buah (per buah Rp 6.000)",
+            "tambahan": 23500
           }
         ]
       }
@@ -2256,12 +2256,12 @@
             "tambahan": 7000
           },
           {
-            "label": "500 gram (Rp 22.500)",
-            "tambahan": 17000
+            "label": "500 gram (Rp 24.500)",
+            "tambahan": 19000
           },
           {
-            "label": "1 kg (Rp 40.000)",
-            "tambahan": 34500
+            "label": "1 kg (Rp 48.000)",
+            "tambahan": 42500
           }
         ]
       }
@@ -2276,7 +2276,7 @@
     "nama": "Jahe Gajah Segar",
     "slug": "jahe-gajah",
     "deskripsi": "Jahe gajah segar beraroma kuat, cocok untuk minuman hangat, masakan, atau empon-empon.",
-    "harga": 4000,
+    "harga": 4400,
     "harga_diskon": null,
     "foto_utama": "/images/products/jahe-gajah-segar.png",
     "foto_galeri": [],
@@ -2295,16 +2295,16 @@
             "tambahan": 0
           },
           {
-            "label": "250 gram (Rp 8.750)",
-            "tambahan": 4750
+            "label": "250 gram (Rp 10.250)",
+            "tambahan": 5850
           },
           {
-            "label": "500 gram (Rp 15.000)",
-            "tambahan": 11000
+            "label": "500 gram (Rp 19.500)",
+            "tambahan": 15100
           },
           {
-            "label": "1 kg (Rp 25.000)",
-            "tambahan": 21000
+            "label": "1 kg (Rp 38.000)",
+            "tambahan": 33600
           }
         ]
       }
@@ -2319,7 +2319,7 @@
     "nama": "Kunyit Segar",
     "slug": "kunyit-segar",
     "deskripsi": "Kunyit segar berwarna oranye cerah, antioksidan tinggi. Untuk bumbu masak, jamu, atau minuman.",
-    "harga": 3500,
+    "harga": 3700,
     "harga_diskon": null,
     "foto_utama": "/images/products/kunyit-segar.png",
     "foto_galeri": [],
@@ -2338,16 +2338,16 @@
             "tambahan": 0
           },
           {
-            "label": "250 gram (Rp 7.500)",
-            "tambahan": 4000
+            "label": "250 gram (Rp 8.750)",
+            "tambahan": 5050
           },
           {
-            "label": "500 gram (Rp 12.500)",
-            "tambahan": 9000
+            "label": "500 gram (Rp 16.500)",
+            "tambahan": 12800
           },
           {
-            "label": "1 kg (Rp 20.000)",
-            "tambahan": 16500
+            "label": "1 kg (Rp 32.000)",
+            "tambahan": 28300
           }
         ]
       }
@@ -2362,7 +2362,7 @@
     "nama": "Lengkuas / Laos",
     "slug": "lengkuas-laos",
     "deskripsi": "Lengkuas segar untuk gulai, rendang, dan masakan berkuah santan. Aroma harum khas.",
-    "harga": 3500,
+    "harga": 3700,
     "harga_diskon": null,
     "foto_utama": "/images/products/lengkuas-laos.png",
     "foto_galeri": [],
@@ -2381,16 +2381,16 @@
             "tambahan": 0
           },
           {
-            "label": "250 gram (Rp 7.500)",
-            "tambahan": 4000
+            "label": "250 gram (Rp 8.750)",
+            "tambahan": 5050
           },
           {
-            "label": "500 gram (Rp 12.500)",
-            "tambahan": 9000
+            "label": "500 gram (Rp 16.500)",
+            "tambahan": 12800
           },
           {
-            "label": "1 kg (Rp 20.000)",
-            "tambahan": 16500
+            "label": "1 kg (Rp 32.000)",
+            "tambahan": 28300
           }
         ]
       }
@@ -2405,7 +2405,7 @@
     "nama": "Kencur Segar",
     "slug": "kencur-segar",
     "deskripsi": "Kencur segar untuk bumbu masakan dan jamu beras kencur. Aroma khas dan menyehatkan.",
-    "harga": 4000,
+    "harga": 4400,
     "harga_diskon": null,
     "foto_utama": "/images/products/kencur-segar.png",
     "foto_galeri": [],
@@ -2424,16 +2424,16 @@
             "tambahan": 0
           },
           {
-            "label": "250 gram (Rp 8.750)",
-            "tambahan": 4750
+            "label": "250 gram (Rp 10.250)",
+            "tambahan": 5850
           },
           {
-            "label": "500 gram (Rp 15.000)",
-            "tambahan": 11000
+            "label": "500 gram (Rp 19.500)",
+            "tambahan": 15100
           },
           {
-            "label": "1 kg (Rp 25.000)",
-            "tambahan": 21000
+            "label": "1 kg (Rp 38.000)",
+            "tambahan": 33600
           }
         ]
       }
@@ -2448,7 +2448,7 @@
     "nama": "Temu Kunci Segar",
     "slug": "temu-kunci",
     "deskripsi": "Temu kunci untuk bumbu pepes dan masakan Jawa. Kaya manfaat kesehatan.",
-    "harga": 4000,
+    "harga": 4400,
     "harga_diskon": null,
     "foto_utama": "/images/products/temu-kunci.png",
     "foto_galeri": [],
@@ -2467,16 +2467,16 @@
             "tambahan": 0
           },
           {
-            "label": "250 gram (Rp 8.750)",
-            "tambahan": 4750
+            "label": "250 gram (Rp 10.250)",
+            "tambahan": 5850
           },
           {
-            "label": "500 gram (Rp 15.000)",
-            "tambahan": 11000
+            "label": "500 gram (Rp 19.500)",
+            "tambahan": 15100
           },
           {
-            "label": "1 kg (Rp 25.000)",
-            "tambahan": 21000
+            "label": "1 kg (Rp 38.000)",
+            "tambahan": 33600
           }
         ]
       }
@@ -2491,7 +2491,7 @@
     "nama": "Daun Bawang (Prei)",
     "slug": "daun-bawang",
     "deskripsi": "Daun bawang segar untuk taburan bakso, mie, soto, atau tumisan. Harum dan menyegarkan.",
-    "harga": 3000,
+    "harga": 3200,
     "harga_diskon": null,
     "foto_utama": "/images/products/daun-bawang.png",
     "foto_galeri": [],
@@ -2510,8 +2510,8 @@
             "tambahan": 0
           },
           {
-            "label": "3 ikat (per ikat Rp 2.500)",
-            "tambahan": 4500
+            "label": "3 ikat (per ikat Rp 2.900)",
+            "tambahan": 5500
           }
         ]
       }
@@ -2526,7 +2526,7 @@
     "nama": "Daun Seledri",
     "slug": "daun-seledri",
     "deskripsi": "Daun seledri segar untuk taburan sup, soto, atau bakso. Aroma khas yang menggugah selera.",
-    "harga": 3000,
+    "harga": 3300,
     "harga_diskon": null,
     "foto_utama": "/images/products/daun-seledri.png",
     "foto_galeri": [],
@@ -2545,8 +2545,8 @@
             "tambahan": 0
           },
           {
-            "label": "3 ikat (per ikat Rp 2.500)",
-            "tambahan": 4500
+            "label": "3 ikat (per ikat Rp 3.000)",
+            "tambahan": 5700
           }
         ]
       }
@@ -2561,7 +2561,7 @@
     "nama": "Serai / Sereh",
     "slug": "serai-sereh",
     "deskripsi": "Serai segar untuk rendang, soto, dan minuman sereh. Aroma harum dan menyegarkan.",
-    "harga": 3500,
+    "harga": 3600,
     "harga_diskon": null,
     "foto_utama": "/images/products/serai-sereh.png",
     "foto_galeri": [],
@@ -2580,8 +2580,8 @@
             "tambahan": 0
           },
           {
-            "label": "3 ikat (per ikat Rp 3.000)",
-            "tambahan": 5500
+            "label": "3 ikat (per ikat Rp 3.300)",
+            "tambahan": 6300
           }
         ]
       }
@@ -2596,7 +2596,7 @@
     "nama": "Daun Salam",
     "slug": "daun-salam",
     "deskripsi": "Daun salam segar untuk sayur lodeh, semur, dan berbagai masakan Indonesia.",
-    "harga": 2500,
+    "harga": 2900,
     "harga_diskon": null,
     "foto_utama": "/images/products/daun-salam.png",
     "foto_galeri": [],
@@ -2615,8 +2615,8 @@
             "tambahan": 0
           },
           {
-            "label": "3 ikat (per ikat Rp 2.000)",
-            "tambahan": 3500
+            "label": "3 ikat (per ikat Rp 2.600)",
+            "tambahan": 4900
           }
         ]
       }
@@ -2650,8 +2650,8 @@
             "tambahan": 0
           },
           {
-            "label": "3 ikat (per ikat Rp 2.500)",
-            "tambahan": 4500
+            "label": "3 ikat (per ikat Rp 2.700)",
+            "tambahan": 5100
           }
         ]
       }
@@ -2685,8 +2685,8 @@
             "tambahan": 0
           },
           {
-            "label": "3 ikat (per ikat Rp 2.000)",
-            "tambahan": 3500
+            "label": "3 ikat (per ikat Rp 2.300)",
+            "tambahan": 4400
           }
         ]
       }
@@ -2701,7 +2701,7 @@
     "nama": "Kemiri Kupas",
     "slug": "kemiri-kupas",
     "deskripsi": "Kemiri kupas bersih untuk bumbu dasar masakan Indonesia. Membuat masakan lebih gurih.",
-    "harga": 4000,
+    "harga": 4200,
     "harga_diskon": null,
     "foto_utama": "/images/products/kemiri-kupas.png",
     "foto_galeri": [],
@@ -2720,16 +2720,16 @@
             "tambahan": 0
           },
           {
-            "label": "250 gram (Rp 8.750)",
-            "tambahan": 4750
+            "label": "250 gram (Rp 10.000)",
+            "tambahan": 5800
           },
           {
-            "label": "500 gram (Rp 15.000)",
-            "tambahan": 11000
+            "label": "500 gram (Rp 19.000)",
+            "tambahan": 14800
           },
           {
-            "label": "1 kg (Rp 25.000)",
-            "tambahan": 21000
+            "label": "1 kg (Rp 37.000)",
+            "tambahan": 32800
           }
         ]
       }
@@ -2744,7 +2744,7 @@
     "nama": "Ketumbar Biji",
     "slug": "ketumbar-biji",
     "deskripsi": "Ketumbar biji pilihan untuk berbagai bumbu rempah. Haluskan untuk bumbu rolade atau soto.",
-    "harga": 4000,
+    "harga": 4200,
     "harga_diskon": null,
     "foto_utama": "/images/products/ketumbar-biji.png",
     "foto_galeri": [],
@@ -2763,16 +2763,16 @@
             "tambahan": 0
           },
           {
-            "label": "250 gram (Rp 8.750)",
-            "tambahan": 4750
+            "label": "250 gram (Rp 10.000)",
+            "tambahan": 5800
           },
           {
-            "label": "500 gram (Rp 15.000)",
-            "tambahan": 11000
+            "label": "500 gram (Rp 19.000)",
+            "tambahan": 14800
           },
           {
-            "label": "1 kg (Rp 25.000)",
-            "tambahan": 21000
+            "label": "1 kg (Rp 37.000)",
+            "tambahan": 32800
           }
         ]
       }
@@ -2787,7 +2787,7 @@
     "nama": "Merica/Lada Hitam Biji",
     "slug": "merica-lada-hitam",
     "deskripsi": "Lada hitam biji pilihan untuk bumbu sup dan masakan. Bisa digiling segar.",
-    "harga": 4500,
+    "harga": 4900,
     "harga_diskon": null,
     "foto_utama": "/images/products/merica-lada-hitam.png",
     "foto_galeri": [],
@@ -2806,16 +2806,16 @@
             "tambahan": 0
           },
           {
-            "label": "250 gram (Rp 10.000)",
-            "tambahan": 5500
+            "label": "250 gram (Rp 11.500)",
+            "tambahan": 6600
           },
           {
-            "label": "500 gram (Rp 17.500)",
-            "tambahan": 13000
+            "label": "500 gram (Rp 22.000)",
+            "tambahan": 17100
           },
           {
-            "label": "1 kg (Rp 30.000)",
-            "tambahan": 25500
+            "label": "1 kg (Rp 43.000)",
+            "tambahan": 38100
           }
         ]
       }
@@ -2849,12 +2849,12 @@
             "tambahan": 0
           },
           {
-            "label": "3 buah (per buah Rp 3.000)",
-            "tambahan": 5500
+            "label": "3 buah (per buah Rp 3.300)",
+            "tambahan": 6400
           },
           {
-            "label": "5 buah (per buah Rp 2.500)",
-            "tambahan": 9000
+            "label": "5 buah (per buah Rp 3.100)",
+            "tambahan": 12000
           }
         ]
       }
@@ -2888,16 +2888,16 @@
             "tambahan": 0
           },
           {
-            "label": "250 gram (Rp 7.500)",
-            "tambahan": 4000
+            "label": "250 gram (Rp 8.250)",
+            "tambahan": 4750
           },
           {
-            "label": "500 gram (Rp 12.500)",
-            "tambahan": 9000
+            "label": "500 gram (Rp 16.000)",
+            "tambahan": 12500
           },
           {
-            "label": "1 kg (Rp 20.000)",
-            "tambahan": 16500
+            "label": "1 kg (Rp 31.000)",
+            "tambahan": 27500
           }
         ]
       }
@@ -2931,12 +2931,12 @@
             "tambahan": 0
           },
           {
-            "label": "3 buah (per buah Rp 3.500)",
-            "tambahan": 6500
+            "label": "3 buah (per buah Rp 3.700)",
+            "tambahan": 7100
           },
           {
-            "label": "5 buah (per buah Rp 3.000)",
-            "tambahan": 11000
+            "label": "5 buah (per buah Rp 3.400)",
+            "tambahan": 13000
           }
         ]
       }
@@ -2951,7 +2951,7 @@
     "nama": "Garam Halus Beryodium",
     "slug": "garam-halus",
     "deskripsi": "Garam halus beryodium untuk pemakaian sehari-hari. Higienis dalam kemasan.",
-    "harga": 2500,
+    "harga": 2800,
     "harga_diskon": null,
     "foto_utama": "/images/products/garam-halus.png",
     "foto_galeri": [],
@@ -2970,12 +2970,12 @@
             "tambahan": 0
           },
           {
-            "label": "3 buah (per buah Rp 2.000)",
-            "tambahan": 3500
+            "label": "3 buah (per buah Rp 2.600)",
+            "tambahan": 5000
           },
           {
-            "label": "5 buah (per buah Rp 1.500)",
-            "tambahan": 5000
+            "label": "5 buah (per buah Rp 2.400)",
+            "tambahan": 9200
           }
         ]
       }
@@ -3013,8 +3013,8 @@
             "tambahan": 11500
           },
           {
-            "label": "2 kg (Rp 46.000)",
-            "tambahan": 33500
+            "label": "2 kg (Rp 48.000)",
+            "tambahan": 35500
           }
         ]
       }
@@ -3056,8 +3056,8 @@
             "tambahan": 24500
           },
           {
-            "label": "5 kg (Rp 160.000)",
-            "tambahan": 150500
+            "label": "5 kg (Rp 170.000)",
+            "tambahan": 160500
           }
         ]
       }
@@ -3072,7 +3072,7 @@
     "nama": "Kaldu Ayam Bubuk",
     "slug": "kaldu-ayam-bubuk",
     "deskripsi": "Kaldu ayam bubuk untuk penyedap sup, bakso, dan tumisan. Rasa asli ayam.",
-    "harga": 4500,
+    "harga": 4800,
     "harga_diskon": null,
     "foto_utama": "/images/products/kaldu-ayam-bubuk.png",
     "foto_galeri": [],
@@ -3091,12 +3091,12 @@
             "tambahan": 0
           },
           {
-            "label": "3 buah (per buah Rp 4.000)",
-            "tambahan": 7500
+            "label": "3 buah (per buah Rp 4.400)",
+            "tambahan": 8400
           },
           {
-            "label": "5 buah (per buah Rp 3.500)",
-            "tambahan": 13000
+            "label": "5 buah (per buah Rp 4.100)",
+            "tambahan": 15700
           }
         ]
       }
@@ -3189,7 +3189,7 @@
     "nama": "Santan Kemasan Segar",
     "slug": "santan-kemasan",
     "deskripsi": "Santan kemasan praktis 200ml untuk masakan berkuah santan. Rasa kelapa asli.",
-    "harga": 4500,
+    "harga": 4900,
     "harga_diskon": null,
     "foto_utama": "/images/products/santan-kemasan.png",
     "foto_galeri": [],
@@ -3208,12 +3208,12 @@
             "tambahan": 0
           },
           {
-            "label": "3 buah (per buah Rp 4.000)",
-            "tambahan": 7500
+            "label": "3 buah (per buah Rp 4.600)",
+            "tambahan": 8900
           },
           {
-            "label": "5 buah (per buah Rp 3.500)",
-            "tambahan": 13000
+            "label": "5 buah (per buah Rp 4.400)",
+            "tambahan": 17100
           }
         ]
       }
