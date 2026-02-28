@@ -200,7 +200,7 @@
     "nama": "Pakcoy / Sawi Sendok",
     "slug": "pakcoy-sawi-sendok",
     "deskripsi": "Pakcoy segar dengan batang putih renyah dan daun hijau segar. Pilihan sehat untuk tumisan.",
-    "harga": 6000,
+    "harga": 5500,
     "harga_diskon": null,
     "foto_utama": "/images/products/pakcoy.png",
     "foto_galeri": [],
@@ -219,16 +219,16 @@
             "tambahan": 0
           },
           {
-            "label": "500 gram (Rp 10.500)",
+            "label": "500 gram (Rp 10.000)",
             "tambahan": 4500
           },
           {
-            "label": "1 kg (Rp 20.000)",
-            "tambahan": 14000
+            "label": "1 kg (Rp 18.000)",
+            "tambahan": 12500
           },
           {
-            "label": "5 kg (Rp 96.000)",
-            "tambahan": 90000
+            "label": "5 kg (Rp 80.000)",
+            "tambahan": 74500
           }
         ]
       }
@@ -360,7 +360,7 @@
     "nama": "Kubis / Kol",
     "slug": "kubis-kol",
     "deskripsi": "Kubis segar renyah untuk cap cay, coleslaw, atau sayur asam.",
-    "harga": 5000,
+    "harga": 4500,
     "harga_diskon": null,
     "foto_utama": "/images/products/kubis-kol.png",
     "foto_galeri": [],
@@ -369,1247 +369,6 @@
     "aktif": true,
     "unggulan": false,
     "urutan": 10,
-    "min_qty": 1,
-    "variasi": [
-      {
-        "nama": "Jumlah",
-        "opsi": [
-          {
-            "label": "1 buah",
-            "tambahan": 0
-          },
-          {
-            "label": "3 buah (per buah Rp 4.500)",
-            "tambahan": 8500
-          },
-          {
-            "label": "5 buah (per buah Rp 4.000)",
-            "tambahan": 15000
-          }
-        ]
-      }
-    ],
-    "seo_title": "Kubis / Kol Segar - Matjar Sayur",
-    "seo_desc": "Kubis segar renyah untuk cap cay, coleslaw, atau sayur asam.",
-    "kategori_nama": "Sayuran Daun"
-  },
-  {
-    "id": "11",
-    "kategori_id": "2",
-    "nama": "Tomat Merah Segar",
-    "slug": "tomat-merah",
-    "deskripsi": "Tomat merah matang sempurna, manis segar. Cocok untuk masakan, sambal, jus, dan salad.",
-    "harga": 5000,
-    "harga_diskon": null,
-    "foto_utama": "/images/products/tomat-merah.png",
-    "foto_galeri": [],
-    "stok": 100,
-    "satuan": "250g",
-    "aktif": true,
-    "unggulan": true,
-    "urutan": 1,
-    "min_qty": 1,
-    "variasi": [
-      {
-        "nama": "Berat",
-        "opsi": [
-          {
-            "label": "250 gram",
-            "tambahan": 0
-          },
-          {
-            "label": "500 gram (Rp 9.000)",
-            "tambahan": 4000
-          },
-          {
-            "label": "1 kg (Rp 17.000)",
-            "tambahan": 12000
-          },
-          {
-            "label": "5 kg (Rp 80.000)",
-            "tambahan": 75000
-          }
-        ]
-      }
-    ],
-    "seo_title": "Tomat Merah Segar Segar - Matjar Sayur",
-    "seo_desc": "Tomat merah matang sempurna, manis segar. Cocok untuk masakan, sambal, jus, dan salad.",
-    "kategori_nama": "Sayuran Buah & Umbi"
-  },
-  {
-    "id": "12",
-    "kategori_id": "2",
-    "nama": "Terong Ungu",
-    "slug": "terong-ungu",
-    "deskripsi": "Terong ungu segar untuk balado terong, terong bakar, atau orak-arik. Daging lembut.",
-    "harga": 4000,
-    "harga_diskon": null,
-    "foto_utama": "/images/products/terong-ungu.png",
-    "foto_galeri": [],
-    "stok": 80,
-    "satuan": "buah",
-    "aktif": true,
-    "unggulan": true,
-    "urutan": 2,
-    "min_qty": 1,
-    "variasi": [
-      {
-        "nama": "Jumlah",
-        "opsi": [
-          {
-            "label": "1 buah",
-            "tambahan": 0
-          },
-          {
-            "label": "3 buah (per buah Rp 3.500)",
-            "tambahan": 6500
-          },
-          {
-            "label": "5 buah (per buah Rp 3.000)",
-            "tambahan": 11000
-          }
-        ]
-      }
-    ],
-    "seo_title": "Terong Ungu Segar - Matjar Sayur",
-    "seo_desc": "Terong ungu segar untuk balado terong, terong bakar, atau orak-arik. Daging lembut.",
-    "kategori_nama": "Sayuran Buah & Umbi"
-  },
-  {
-    "id": "13",
-    "kategori_id": "2",
-    "nama": "Terong Hijau",
-    "slug": "terong-hijau",
-    "deskripsi": "Terong hijau muda manis, cocok untuk lalapan atau di masak gulai.",
-    "harga": 4000,
-    "harga_diskon": null,
-    "foto_utama": "/images/products/terong-hijau.png",
-    "foto_galeri": [],
-    "stok": 70,
-    "satuan": "buah",
-    "aktif": true,
-    "unggulan": false,
-    "urutan": 3,
-    "min_qty": 1,
-    "variasi": [
-      {
-        "nama": "Jumlah",
-        "opsi": [
-          {
-            "label": "1 buah",
-            "tambahan": 0
-          },
-          {
-            "label": "3 buah (per buah Rp 3.500)",
-            "tambahan": 6500
-          },
-          {
-            "label": "5 buah (per buah Rp 3.000)",
-            "tambahan": 11000
-          }
-        ]
-      }
-    ],
-    "seo_title": "Terong Hijau Segar - Matjar Sayur",
-    "seo_desc": "Terong hijau muda manis, cocok untuk lalapan atau di masak gulai.",
-    "kategori_nama": "Sayuran Buah & Umbi"
-  },
-  {
-    "id": "14",
-    "kategori_id": "2",
-    "nama": "Labu Siam",
-    "slug": "labu-siam",
-    "deskripsi": "Labu siam segar berbentuk buah pir hijau. Enak dibuat sayur lodeh, tumis, atau sup.",
-    "harga": 4000,
-    "harga_diskon": null,
-    "foto_utama": "/images/products/labu-siam.png",
-    "foto_galeri": [],
-    "stok": 90,
-    "satuan": "buah",
-    "aktif": true,
-    "unggulan": true,
-    "urutan": 4,
-    "min_qty": 1,
-    "variasi": [
-      {
-        "nama": "Jumlah",
-        "opsi": [
-          {
-            "label": "1 buah",
-            "tambahan": 0
-          },
-          {
-            "label": "3 buah (per buah Rp 3.500)",
-            "tambahan": 6500
-          },
-          {
-            "label": "5 buah (per buah Rp 3.000)",
-            "tambahan": 11000
-          }
-        ]
-      }
-    ],
-    "seo_title": "Labu Siam Segar - Matjar Sayur",
-    "seo_desc": "Labu siam segar berbentuk buah pir hijau. Enak dibuat sayur lodeh, tumis, atau sup.",
-    "kategori_nama": "Sayuran Buah & Umbi"
-  },
-  {
-    "id": "15",
-    "kategori_id": "2",
-    "nama": "Labu Siam Baby",
-    "slug": "labu-siam-baby",
-    "deskripsi": "Labu siam baby ukuran kecil imut, empuk dan manis. Cocok untuk balita.",
-    "harga": 8000,
-    "harga_diskon": null,
-    "foto_utama": "/images/products/labu-siam-baby.png",
-    "foto_galeri": [],
-    "stok": 60,
-    "satuan": "5 buah",
-    "aktif": true,
-    "unggulan": false,
-    "urutan": 5,
-    "min_qty": 1,
-    "variasi": [
-      {
-        "nama": "Berat",
-        "opsi": [
-          {
-            "label": "250 gram",
-            "tambahan": 0
-          },
-          {
-            "label": "500 gram (Rp 14.000)",
-            "tambahan": 6000
-          },
-          {
-            "label": "1 kg (Rp 27.000)",
-            "tambahan": 19000
-          },
-          {
-            "label": "5 kg (Rp 128.000)",
-            "tambahan": 120000
-          }
-        ]
-      }
-    ],
-    "seo_title": "Labu Siam Baby Segar - Matjar Sayur",
-    "seo_desc": "Labu siam baby ukuran kecil imut, empuk dan manis. Cocok untuk balita.",
-    "kategori_nama": "Sayuran Buah & Umbi"
-  },
-  {
-    "id": "16",
-    "kategori_id": "2",
-    "nama": "Pare Segar",
-    "slug": "pare-segar",
-    "deskripsi": "Pare segar untuk tumis pare telur, pare isi, atau jus kesehatan. Pahit menyehatkan!",
-    "harga": 5000,
-    "harga_diskon": null,
-    "foto_utama": "/images/products/pare-segar.png",
-    "foto_galeri": [],
-    "stok": 70,
-    "satuan": "buah",
-    "aktif": true,
-    "unggulan": false,
-    "urutan": 6,
-    "min_qty": 1,
-    "variasi": [
-      {
-        "nama": "Jumlah",
-        "opsi": [
-          {
-            "label": "1 buah",
-            "tambahan": 0
-          },
-          {
-            "label": "3 buah (per buah Rp 4.500)",
-            "tambahan": 8500
-          },
-          {
-            "label": "5 buah (per buah Rp 4.000)",
-            "tambahan": 15000
-          }
-        ]
-      }
-    ],
-    "seo_title": "Pare Segar Segar - Matjar Sayur",
-    "seo_desc": "Pare segar untuk tumis pare telur, pare isi, atau jus kesehatan. Pahit menyehatkan!",
-    "kategori_nama": "Sayuran Buah & Umbi"
-  },
-  {
-    "id": "17",
-    "kategori_id": "2",
-    "nama": "Mentimun Segar",
-    "slug": "mentimun-segar",
-    "deskripsi": "Mentimun segar renyah dan menyegarkan untuk lalapan, acar, jus, atau salad.",
-    "harga": 4000,
-    "harga_diskon": null,
-    "foto_utama": "/images/products/mentimun-segar.png",
-    "foto_galeri": [],
-    "stok": 100,
-    "satuan": "2 buah",
-    "aktif": true,
-    "unggulan": true,
-    "urutan": 7,
-    "min_qty": 1,
-    "variasi": [
-      {
-        "nama": "Berat",
-        "opsi": [
-          {
-            "label": "250 gram",
-            "tambahan": 0
-          },
-          {
-            "label": "500 gram (Rp 7.000)",
-            "tambahan": 3000
-          },
-          {
-            "label": "1 kg (Rp 13.500)",
-            "tambahan": 9500
-          },
-          {
-            "label": "5 kg (Rp 64.000)",
-            "tambahan": 60000
-          }
-        ]
-      }
-    ],
-    "seo_title": "Mentimun Segar Segar - Matjar Sayur",
-    "seo_desc": "Mentimun segar renyah dan menyegarkan untuk lalapan, acar, jus, atau salad.",
-    "kategori_nama": "Sayuran Buah & Umbi"
-  },
-  {
-    "id": "18",
-    "kategori_id": "2",
-    "nama": "Oyong / Gambas",
-    "slug": "oyong-gambas",
-    "deskripsi": "Oyong/gambas untuk sayur bening yang segar dan menyehatkan.",
-    "harga": 3500,
-    "harga_diskon": null,
-    "foto_utama": "/images/products/oyong-gambas.png",
-    "foto_galeri": [],
-    "stok": 80,
-    "satuan": "buah",
-    "aktif": true,
-    "unggulan": false,
-    "urutan": 8,
-    "min_qty": 1,
-    "variasi": [
-      {
-        "nama": "Jumlah",
-        "opsi": [
-          {
-            "label": "1 buah",
-            "tambahan": 0
-          },
-          {
-            "label": "3 buah (per buah Rp 3.000)",
-            "tambahan": 5500
-          },
-          {
-            "label": "5 buah (per buah Rp 2.500)",
-            "tambahan": 9000
-          }
-        ]
-      }
-    ],
-    "seo_title": "Oyong / Gambas Segar - Matjar Sayur",
-    "seo_desc": "Oyong/gambas untuk sayur bening yang segar dan menyehatkan.",
-    "kategori_nama": "Sayuran Buah & Umbi"
-  },
-  {
-    "id": "19",
-    "kategori_id": "2",
-    "nama": "Paprika Merah",
-    "slug": "paprika-merah",
-    "deskripsi": "Paprika merah manis untuk tumisan, salad, pizza, atau campuran masakan.",
-    "harga": 7000,
-    "harga_diskon": null,
-    "foto_utama": "/images/products/paprika-merah.png",
-    "foto_galeri": [],
-    "stok": 50,
-    "satuan": "buah",
-    "aktif": true,
-    "unggulan": true,
-    "urutan": 9,
-    "min_qty": 1,
-    "variasi": [
-      {
-        "nama": "Jumlah",
-        "opsi": [
-          {
-            "label": "1 buah",
-            "tambahan": 0
-          },
-          {
-            "label": "3 buah (per buah Rp 6.000)",
-            "tambahan": 11000
-          },
-          {
-            "label": "5 buah (per buah Rp 5.500)",
-            "tambahan": 20500
-          }
-        ]
-      }
-    ],
-    "seo_title": "Paprika Merah Segar - Matjar Sayur",
-    "seo_desc": "Paprika merah manis untuk tumisan, salad, pizza, atau campuran masakan.",
-    "kategori_nama": "Sayuran Buah & Umbi"
-  },
-  {
-    "id": "20",
-    "kategori_id": "2",
-    "nama": "Paprika Kuning",
-    "slug": "paprika-kuning",
-    "deskripsi": "Paprika kuning manis segar untuk salad dan aneka masakan kreatif.",
-    "harga": 7000,
-    "harga_diskon": null,
-    "foto_utama": "/images/products/paprika-kuning.png",
-    "foto_galeri": [],
-    "stok": 50,
-    "satuan": "buah",
-    "aktif": true,
-    "unggulan": false,
-    "urutan": 10,
-    "min_qty": 1,
-    "variasi": [
-      {
-        "nama": "Jumlah",
-        "opsi": [
-          {
-            "label": "1 buah",
-            "tambahan": 0
-          },
-          {
-            "label": "3 buah (per buah Rp 6.000)",
-            "tambahan": 11000
-          },
-          {
-            "label": "5 buah (per buah Rp 5.500)",
-            "tambahan": 20500
-          }
-        ]
-      }
-    ],
-    "seo_title": "Paprika Kuning Segar - Matjar Sayur",
-    "seo_desc": "Paprika kuning manis segar untuk salad dan aneka masakan kreatif.",
-    "kategori_nama": "Sayuran Buah & Umbi"
-  },
-  {
-    "id": "21",
-    "kategori_id": "2",
-    "nama": "Paprika Hijau",
-    "slug": "paprika-hijau",
-    "deskripsi": "Paprika hijau sedikit pahit untuk tumisan dan masakan sayur.",
-    "harga": 6000,
-    "harga_diskon": null,
-    "foto_utama": "/images/products/paprika-hijau.png",
-    "foto_galeri": [],
-    "stok": 50,
-    "satuan": "buah",
-    "aktif": true,
-    "unggulan": false,
-    "urutan": 11,
-    "min_qty": 1,
-    "variasi": [
-      {
-        "nama": "Jumlah",
-        "opsi": [
-          {
-            "label": "1 buah",
-            "tambahan": 0
-          },
-          {
-            "label": "3 buah (per buah Rp 5.000)",
-            "tambahan": 9000
-          },
-          {
-            "label": "5 buah (per buah Rp 4.500)",
-            "tambahan": 16500
-          }
-        ]
-      }
-    ],
-    "seo_title": "Paprika Hijau Segar - Matjar Sayur",
-    "seo_desc": "Paprika hijau sedikit pahit untuk tumisan dan masakan sayur.",
-    "kategori_nama": "Sayuran Buah & Umbi"
-  },
-  {
-    "id": "22",
-    "kategori_id": "2",
-    "nama": "Kembang Kol",
-    "slug": "kembang-kol",
-    "deskripsi": "Kembang kol putih segar untuk tumiss, sup, atau kembang kol goreng tepung.",
-    "harga": 10000,
-    "harga_diskon": null,
-    "foto_utama": "/images/products/kembang-kol.png",
-    "foto_galeri": [],
-    "stok": 60,
-    "satuan": "bonggol",
-    "aktif": true,
-    "unggulan": true,
-    "urutan": 12,
-    "min_qty": 1,
-    "variasi": [
-      {
-        "nama": "Jumlah",
-        "opsi": [
-          {
-            "label": "1 buah",
-            "tambahan": 0
-          },
-          {
-            "label": "3 buah (per buah Rp 9.000)",
-            "tambahan": 17000
-          },
-          {
-            "label": "5 buah (per buah Rp 8.500)",
-            "tambahan": 32500
-          }
-        ]
-      }
-    ],
-    "seo_title": "Kembang Kol Segar - Matjar Sayur",
-    "seo_desc": "Kembang kol putih segar untuk tumiss, sup, atau kembang kol goreng tepung.",
-    "kategori_nama": "Sayuran Buah & Umbi"
-  },
-  {
-    "id": "23",
-    "kategori_id": "2",
-    "nama": "Brokoli Segar",
-    "slug": "brokoli-segar",
-    "deskripsi": "Brokoli hijau segar kaya vitamin C dan serat untuk tumis, sup, atau dikukus.",
-    "harga": 9000,
-    "harga_diskon": null,
-    "foto_utama": "/images/products/brokoli-segar.png",
-    "foto_galeri": [],
-    "stok": 70,
-    "satuan": "bonggol",
-    "aktif": true,
-    "unggulan": true,
-    "urutan": 13,
-    "min_qty": 1,
-    "variasi": [
-      {
-        "nama": "Jumlah",
-        "opsi": [
-          {
-            "label": "1 buah",
-            "tambahan": 0
-          },
-          {
-            "label": "3 buah (per buah Rp 8.000)",
-            "tambahan": 15000
-          },
-          {
-            "label": "5 buah (per buah Rp 7.500)",
-            "tambahan": 28500
-          }
-        ]
-      }
-    ],
-    "seo_title": "Brokoli Segar Segar - Matjar Sayur",
-    "seo_desc": "Brokoli hijau segar kaya vitamin C dan serat untuk tumis, sup, atau dikukus.",
-    "kategori_nama": "Sayuran Buah & Umbi"
-  },
-  {
-    "id": "24",
-    "kategori_id": "2",
-    "nama": "Jagung Manis",
-    "slug": "jagung-manis",
-    "deskripsi": "Jagung manis pilihan, manisnya alami. Cocok untuk jagung bakar, sop, atau direbus.",
-    "harga": 4000,
-    "harga_diskon": null,
-    "foto_utama": "/images/products/jagung-manis.png",
-    "foto_galeri": [],
-    "stok": 100,
-    "satuan": "2 buah",
-    "aktif": true,
-    "unggulan": true,
-    "urutan": 14,
-    "min_qty": 1,
-    "variasi": [
-      {
-        "nama": "Berat",
-        "opsi": [
-          {
-            "label": "250 gram",
-            "tambahan": 0
-          },
-          {
-            "label": "500 gram (Rp 7.000)",
-            "tambahan": 3000
-          },
-          {
-            "label": "1 kg (Rp 13.500)",
-            "tambahan": 9500
-          },
-          {
-            "label": "5 kg (Rp 64.000)",
-            "tambahan": 60000
-          }
-        ]
-      }
-    ],
-    "seo_title": "Jagung Manis Segar - Matjar Sayur",
-    "seo_desc": "Jagung manis pilihan, manisnya alami. Cocok untuk jagung bakar, sop, atau direbus.",
-    "kategori_nama": "Sayuran Buah & Umbi"
-  },
-  {
-    "id": "25",
-    "kategori_id": "2",
-    "nama": "Wortel Segar",
-    "slug": "wortel-segar",
-    "deskripsi": "Wortel oranye segar untuk jus, tumis, sup, atau campuran masakan. Manis dan renyah.",
-    "harga": 5000,
-    "harga_diskon": null,
-    "foto_utama": "/images/products/wortel.png",
-    "foto_galeri": [],
-    "stok": 100,
-    "satuan": "250g",
-    "aktif": true,
-    "unggulan": true,
-    "urutan": 15,
-    "min_qty": 1,
-    "variasi": [
-      {
-        "nama": "Berat",
-        "opsi": [
-          {
-            "label": "250 gram",
-            "tambahan": 0
-          },
-          {
-            "label": "500 gram (Rp 9.000)",
-            "tambahan": 4000
-          },
-          {
-            "label": "1 kg (Rp 17.000)",
-            "tambahan": 12000
-          },
-          {
-            "label": "5 kg (Rp 80.000)",
-            "tambahan": 75000
-          }
-        ]
-      }
-    ],
-    "seo_title": "Wortel Segar Segar - Matjar Sayur",
-    "seo_desc": "Wortel oranye segar untuk jus, tumis, sup, atau campuran masakan. Manis dan renyah.",
-    "kategori_nama": "Sayuran Buah & Umbi"
-  },
-  {
-    "id": "26",
-    "kategori_id": "2",
-    "nama": "Kentang Segar",
-    "slug": "kentang-segar",
-    "deskripsi": "Kentang berkualitas tinggi untuk perkedel, kentang goreng, atau sup. Tekstur halus.",
-    "harga": 7000,
-    "harga_diskon": null,
-    "foto_utama": "/images/products/kentang-segar.png",
-    "foto_galeri": [],
-    "stok": 100,
-    "satuan": "500g",
-    "aktif": true,
-    "unggulan": true,
-    "urutan": 16,
-    "min_qty": 1,
-    "variasi": [
-      {
-        "nama": "Berat",
-        "opsi": [
-          {
-            "label": "500 gram",
-            "tambahan": 0
-          },
-          {
-            "label": "1 kg (Rp 12.500)",
-            "tambahan": 5500
-          },
-          {
-            "label": "2 kg (Rp 23.500)",
-            "tambahan": 16500
-          }
-        ]
-      }
-    ],
-    "seo_title": "Kentang Segar Segar - Matjar Sayur",
-    "seo_desc": "Kentang berkualitas tinggi untuk perkedel, kentang goreng, atau sup. Tekstur halus.",
-    "kategori_nama": "Sayuran Buah & Umbi"
-  },
-  {
-    "id": "27",
-    "kategori_id": "2",
-    "nama": "Nangka Muda (Gori)",
-    "slug": "nangka-muda",
-    "deskripsi": "Nangka muda untuk gudeg, sayur asam, atau rendang nangka.",
-    "harga": 8000,
-    "harga_diskon": null,
-    "foto_utama": "/images/products/nangka-muda.png",
-    "foto_galeri": [],
-    "stok": 50,
-    "satuan": "250g",
-    "aktif": true,
-    "unggulan": true,
-    "urutan": 17,
-    "min_qty": 1,
-    "variasi": [
-      {
-        "nama": "Berat",
-        "opsi": [
-          {
-            "label": "250 gram",
-            "tambahan": 0
-          },
-          {
-            "label": "500 gram (Rp 14.000)",
-            "tambahan": 6000
-          },
-          {
-            "label": "1 kg (Rp 27.000)",
-            "tambahan": 19000
-          },
-          {
-            "label": "5 kg (Rp 128.000)",
-            "tambahan": 120000
-          }
-        ]
-      }
-    ],
-    "seo_title": "Nangka Muda (Gori) Segar - Matjar Sayur",
-    "seo_desc": "Nangka muda untuk gudeg, sayur asam, atau rendang nangka.",
-    "kategori_nama": "Sayuran Buah & Umbi"
-  },
-  {
-    "id": "28",
-    "kategori_id": "3",
-    "nama": "Kacang Panjang",
-    "slug": "kacang-panjang",
-    "deskripsi": "Kacang panjang muda segar untuk tumis, oseng, pecel, atau lalapan.",
-    "harga": 4000,
-    "harga_diskon": null,
-    "foto_utama": "/images/products/kacang-panjang.png",
-    "foto_galeri": [],
-    "stok": 100,
-    "satuan": "ikat",
-    "aktif": true,
-    "unggulan": true,
-    "urutan": 1,
-    "min_qty": 1,
-    "variasi": [
-      {
-        "nama": "Pilihan",
-        "opsi": [
-          {
-            "label": "1 ikat kecil",
-            "tambahan": 0
-          },
-          {
-            "label": "3 ikat kecil (per ikat Rp 3.500)",
-            "tambahan": 6500
-          },
-          {
-            "label": "20 ikat (per ikat Rp 3.000)",
-            "tambahan": 56000
-          }
-        ]
-      }
-    ],
-    "seo_title": "Kacang Panjang Segar - Matjar Sayur",
-    "seo_desc": "Kacang panjang muda segar untuk tumis, oseng, pecel, atau lalapan.",
-    "kategori_nama": "Kacang & Tauge"
-  },
-  {
-    "id": "29",
-    "kategori_id": "3",
-    "nama": "Buncis Hijau",
-    "slug": "buncis-hijau",
-    "deskripsi": "Buncis muda renyah untuk tumis, sup, atau campuran sayuran.",
-    "harga": 7000,
-    "harga_diskon": null,
-    "foto_utama": "/images/products/buncis-hijau.png",
-    "foto_galeri": [],
-    "stok": 80,
-    "satuan": "250g",
-    "aktif": true,
-    "unggulan": false,
-    "urutan": 2,
-    "min_qty": 1,
-    "variasi": [
-      {
-        "nama": "Berat",
-        "opsi": [
-          {
-            "label": "250 gram",
-            "tambahan": 0
-          },
-          {
-            "label": "500 gram (Rp 12.500)",
-            "tambahan": 5500
-          },
-          {
-            "label": "1 kg (Rp 23.500)",
-            "tambahan": 16500
-          },
-          {
-            "label": "5 kg (Rp 112.000)",
-            "tambahan": 105000
-          }
-        ]
-      }
-    ],
-    "seo_title": "Buncis Hijau Segar - Matjar Sayur",
-    "seo_desc": "Buncis muda renyah untuk tumis, sup, atau campuran sayuran.",
-    "kategori_nama": "Kacang & Tauge"
-  },
-  {
-    "id": "30",
-    "kategori_id": "3",
-    "nama": "Kacang Tanah Kupas",
-    "slug": "kacang-tanah-kupas",
-    "deskripsi": "Kacang tanah kupas bersih siap olah untuk bumbu pecel, rempeyek, atau kue.",
-    "harga": 12000,
-    "harga_diskon": null,
-    "foto_utama": "/images/products/kacang-tanah-kupas.png",
-    "foto_galeri": [],
-    "stok": 60,
-    "satuan": "250g",
-    "aktif": true,
-    "unggulan": false,
-    "urutan": 3,
-    "min_qty": 1,
-    "variasi": [
-      {
-        "nama": "Berat",
-        "opsi": [
-          {
-            "label": "250 gram",
-            "tambahan": 0
-          },
-          {
-            "label": "500 gram (Rp 21.500)",
-            "tambahan": 9500
-          },
-          {
-            "label": "1 kg (Rp 40.500)",
-            "tambahan": 28500
-          },
-          {
-            "label": "5 kg (Rp 192.000)",
-            "tambahan": 180000
-          }
-        ]
-      }
-    ],
-    "seo_title": "Kacang Tanah Kupas Segar - Matjar Sayur",
-    "seo_desc": "Kacang tanah kupas bersih siap olah untuk bumbu pecel, rempeyek, atau kue.",
-    "kategori_nama": "Kacang & Tauge"
-  },
-  {
-    "id": "31",
-    "kategori_id": "3",
-    "nama": "Tauge Kacang Hijau",
-    "slug": "tauge-kacang-hijau",
-    "deskripsi": "Tauge/kecambah kacang hijau segar dan bersih untuk tumis, bakso, atau mie.",
-    "harga": 4000,
-    "harga_diskon": null,
-    "foto_utama": "/images/products/tauge-kacang-hijau.png",
-    "foto_galeri": [],
-    "stok": 100,
-    "satuan": "250g",
-    "aktif": true,
-    "unggulan": true,
-    "urutan": 4,
-    "min_qty": 1,
-    "variasi": [
-      {
-        "nama": "Berat",
-        "opsi": [
-          {
-            "label": "250 gram",
-            "tambahan": 0
-          },
-          {
-            "label": "500 gram (Rp 7.000)",
-            "tambahan": 3000
-          },
-          {
-            "label": "1 kg (Rp 13.500)",
-            "tambahan": 9500
-          },
-          {
-            "label": "5 kg (Rp 64.000)",
-            "tambahan": 60000
-          }
-        ]
-      }
-    ],
-    "seo_title": "Tauge Kacang Hijau Segar - Matjar Sayur",
-    "seo_desc": "Tauge/kecambah kacang hijau segar dan bersih untuk tumis, bakso, atau mie.",
-    "kategori_nama": "Kacang & Tauge"
-  },
-  {
-    "id": "32",
-    "kategori_id": "3",
-    "nama": "Tauge Kedelai",
-    "slug": "tauge-kedelai",
-    "deskripsi": "Tauge kedelai (kecambah besar) untuk bakso, rawon, atau tumisan.",
-    "harga": 5000,
-    "harga_diskon": null,
-    "foto_utama": "/images/products/tauge-kedelai.png",
-    "foto_galeri": [],
-    "stok": 80,
-    "satuan": "250g",
-    "aktif": true,
-    "unggulan": false,
-    "urutan": 5,
-    "min_qty": 1,
-    "variasi": [
-      {
-        "nama": "Berat",
-        "opsi": [
-          {
-            "label": "250 gram",
-            "tambahan": 0
-          },
-          {
-            "label": "500 gram (Rp 9.000)",
-            "tambahan": 4000
-          },
-          {
-            "label": "1 kg (Rp 17.000)",
-            "tambahan": 12000
-          },
-          {
-            "label": "5 kg (Rp 80.000)",
-            "tambahan": 75000
-          }
-        ]
-      }
-    ],
-    "seo_title": "Tauge Kedelai Segar - Matjar Sayur",
-    "seo_desc": "Tauge kedelai (kecambah besar) untuk bakso, rawon, atau tumisan.",
-    "kategori_nama": "Kacang & Tauge"
-  },
-  {
-    "id": "33",
-    "kategori_id": "3",
-    "nama": "Kacang Merah Segar",
-    "slug": "kacang-merah-segar",
-    "deskripsi": "Kacang merah segar untuk sup kacang merah, semur, atau kari.",
-    "harga": 8000,
-    "harga_diskon": null,
-    "foto_utama": "/images/products/kacang-merah-segar.png",
-    "foto_galeri": [],
-    "stok": 60,
-    "satuan": "250g",
-    "aktif": true,
-    "unggulan": false,
-    "urutan": 6,
-    "min_qty": 1,
-    "variasi": [
-      {
-        "nama": "Berat",
-        "opsi": [
-          {
-            "label": "250 gram",
-            "tambahan": 0
-          },
-          {
-            "label": "500 gram (Rp 14.000)",
-            "tambahan": 6000
-          },
-          {
-            "label": "1 kg (Rp 27.000)",
-            "tambahan": 19000
-          },
-          {
-            "label": "5 kg (Rp 128.000)",
-            "tambahan": 120000
-          }
-        ]
-      }
-    ],
-    "seo_title": "Kacang Merah Segar Segar - Matjar Sayur",
-    "seo_desc": "Kacang merah segar untuk sup kacang merah, semur, atau kari.",
-    "kategori_nama": "Kacang & Tauge"
-  },
-  {
-    "id": "34",
-    "kategori_id": "4",
-    "nama": "Tempe Daun Pisang",
-    "slug": "tempe-daun-pisang",
-    "deskripsi": "Tempe premium terbungkus daun pisang tradisional. Tekstur padat, rasa gurih khas.",
-    "harga": 4000,
-    "harga_diskon": null,
-    "foto_utama": "/images/products/tempe-daun-pisang.png",
-    "foto_galeri": [],
-    "stok": 150,
-    "satuan": "papan",
-    "aktif": true,
-    "unggulan": true,
-    "urutan": 1,
-    "min_qty": 1,
-    "variasi": [
-      {
-        "nama": "Pilihan",
-        "opsi": [
-          {
-            "label": "1 bungkus",
-            "tambahan": 0
-          },
-          {
-            "label": "5 bungkus (per bungkus Rp 3.500)",
-            "tambahan": 13500
-          }
-        ]
-      }
-    ],
-    "seo_title": "Tempe Daun Pisang Segar - Matjar Sayur",
-    "seo_desc": "Tempe premium terbungkus daun pisang tradisional. Tekstur padat, rasa gurih khas.",
-    "kategori_nama": "Lauk Pauk & Protein"
-  },
-  {
-    "id": "35",
-    "kategori_id": "4",
-    "nama": "Tempe Plastik",
-    "slug": "tempe-plastik",
-    "deskripsi": "Tempe berkualitas dalam kemasan plastik. Konsisten dan higienis.",
-    "harga": 3500,
-    "harga_diskon": null,
-    "foto_utama": "/images/products/tempe-plastik.png",
-    "foto_galeri": [],
-    "stok": 150,
-    "satuan": "bungkus",
-    "aktif": true,
-    "unggulan": true,
-    "urutan": 2,
-    "min_qty": 1,
-    "variasi": [
-      {
-        "nama": "Pilihan",
-        "opsi": [
-          {
-            "label": "1 bungkus",
-            "tambahan": 0
-          },
-          {
-            "label": "5 bungkus (per bungkus Rp 3.000)",
-            "tambahan": 11500
-          }
-        ]
-      }
-    ],
-    "seo_title": "Tempe Plastik Segar - Matjar Sayur",
-    "seo_desc": "Tempe berkualitas dalam kemasan plastik. Konsisten dan higienis.",
-    "kategori_nama": "Lauk Pauk & Protein"
-  },
-  {
-    "id": "36",
-    "kategori_id": "4",
-    "nama": "Tahu Putih",
-    "slug": "tahu-putih",
-    "deskripsi": "Tahu putih segar lembut dalam kemasan 5 kotak. Enak digoreng, dibacem, atau dibuat sup.",
-    "harga": 6000,
-    "harga_diskon": null,
-    "foto_utama": "/images/products/tahu-putih.png",
-    "foto_galeri": [],
-    "stok": 150,
-    "satuan": "5 kotak",
-    "aktif": true,
-    "unggulan": true,
-    "urutan": 3,
-    "min_qty": 1,
-    "variasi": [
-      {
-        "nama": "Pilihan",
-        "opsi": [
-          {
-            "label": "1 pack (5 kotak)",
-            "tambahan": 0
-          },
-          {
-            "label": "3 pack (5 kotak) (per pack (5 kotak) Rp 5.000)",
-            "tambahan": 9000
-          }
-        ]
-      }
-    ],
-    "seo_title": "Tahu Putih Segar - Matjar Sayur",
-    "seo_desc": "Tahu putih segar lembut dalam kemasan 5 kotak. Enak digoreng, dibacem, atau dibuat sup.",
-    "kategori_nama": "Lauk Pauk & Protein"
-  },
-  {
-    "id": "37",
-    "kategori_id": "4",
-    "nama": "Tahu Kuning",
-    "slug": "tahu-kuning",
-    "deskripsi": "Tahu kuning sudah diproses dan tahan lebih lama. Enak untuk pepes, bacem, goreng.",
-    "harga": 7000,
-    "harga_diskon": null,
-    "foto_utama": "/images/products/tahu-kuning.png",
-    "foto_galeri": [],
-    "stok": 120,
-    "satuan": "5 kotak",
-    "aktif": true,
-    "unggulan": true,
-    "urutan": 4,
-    "min_qty": 1,
-    "variasi": [
-      {
-        "nama": "Pilihan",
-        "opsi": [
-          {
-            "label": "1 pack (5 kotak)",
-            "tambahan": 0
-          },
-          {
-            "label": "3 pack (5 kotak) (per pack (5 kotak) Rp 6.000)",
-            "tambahan": 11000
-          }
-        ]
-      }
-    ],
-    "seo_title": "Tahu Kuning Segar - Matjar Sayur",
-    "seo_desc": "Tahu kuning sudah diproses dan tahan lebih lama. Enak untuk pepes, bacem, goreng.",
-    "kategori_nama": "Lauk Pauk & Protein"
-  },
-  {
-    "id": "38",
-    "kategori_id": "4",
-    "nama": "Tahu Cokelat / Pong",
-    "slug": "tahu-cokelat-pong",
-    "deskripsi": "Tahu cokelat/pong bertekstur kenyal dan gurih untuk tahu bacem atau sate tahu.",
-    "harga": 6000,
-    "harga_diskon": null,
-    "foto_utama": "/images/products/tahu-cokelat-pong.png",
-    "foto_galeri": [],
-    "stok": 100,
-    "satuan": "10 buah",
-    "aktif": true,
-    "unggulan": false,
-    "urutan": 5,
-    "min_qty": 1,
-    "variasi": [
-      {
-        "nama": "Pilihan",
-        "opsi": [
-          {
-            "label": "1 pack (5 kotak)",
-            "tambahan": 0
-          },
-          {
-            "label": "3 pack (5 kotak) (per pack (5 kotak) Rp 5.000)",
-            "tambahan": 9000
-          }
-        ]
-      }
-    ],
-    "seo_title": "Tahu Cokelat / Pong Segar - Matjar Sayur",
-    "seo_desc": "Tahu cokelat/pong bertekstur kenyal dan gurih untuk tahu bacem atau sate tahu.",
-    "kategori_nama": "Lauk Pauk & Protein"
-  },
-  {
-    "id": "39",
-    "kategori_id": "4",
-    "nama": "Telur Ayam Ras",
-    "slug": "telur-ayam-ras",
-    "deskripsi": "Telur ayam ras segar pilihan, kuning telur orange, putih mengkilap. Fresh dari farm.",
-    "harga": 27000,
-    "harga_diskon": null,
-    "foto_utama": "/images/products/telur-ayam-ras.png",
-    "foto_galeri": [],
-    "stok": 200,
-    "satuan": "1kg (~6 butir)",
-    "aktif": true,
-    "unggulan": true,
-    "urutan": 6,
-    "min_qty": 1,
-    "variasi": [
-      {
-        "nama": "Berat",
-        "opsi": [
-          {
-            "label": "250 gram",
-            "tambahan": 0
-          },
-          {
-            "label": "500 gram (Rp 48.500)",
-            "tambahan": 21500
-          },
-          {
-            "label": "1 kg (Rp 91.500)",
-            "tambahan": 64500
-          },
-          {
-            "label": "5 kg (Rp 432.000)",
-            "tambahan": 405000
-          }
-        ]
-      }
-    ],
-    "seo_title": "Telur Ayam Ras Segar - Matjar Sayur",
-    "seo_desc": "Telur ayam ras segar pilihan, kuning telur orange, putih mengkilap. Fresh dari farm.",
-    "kategori_nama": "Lauk Pauk & Protein"
-  },
-  {
-    "id": "40",
-    "kategori_id": "4",
-    "nama": "Telur Puyuh Segar",
-    "slug": "telur-puyuh",
-    "deskripsi": "Telur puyuh segar dalam kemasan higienis untuk sambal telur puyuh atau campuran soto.",
-    "harga": 10000,
-    "harga_diskon": null,
-    "foto_utama": "/images/products/telur-puyuh.png",
-    "foto_galeri": [],
-    "stok": 100,
-    "satuan": "250g",
-    "aktif": true,
-    "unggulan": false,
-    "urutan": 7,
-    "min_qty": 1,
-    "variasi": [
-      {
-        "nama": "Berat",
-        "opsi": [
-          {
-            "label": "250 gram",
-            "tambahan": 0
-          },
-          {
-            "label": "500 gram (Rp 18.000)",
-            "tambahan": 8000
-          },
-          {
-            "label": "1 kg (Rp 34.000)",
-            "tambahan": 24000
-          },
-          {
-            "label": "5 kg (Rp 160.000)",
-            "tambahan": 150000
-          }
-        ]
-      }
-    ],
-    "seo_title": "Telur Puyuh Segar Segar - Matjar Sayur",
-    "seo_desc": "Telur puyuh segar dalam kemasan higienis untuk sambal telur puyuh atau campuran soto.",
-    "kategori_nama": "Lauk Pauk & Protein"
-  },
-  {
-    "id": "41",
-    "kategori_id": "4",
-    "nama": "Telur Ayam Kampung",
-    "slug": "telur-ayam-kampung",
-    "deskripsi": "Telur ayam kampung asli dengan cangkang lebih tebal dan kuning telur lebih orange.",
-    "harga": 4500,
-    "harga_diskon": null,
-    "foto_utama": "/images/products/telur-ayam-kampung.png",
-    "foto_galeri": [],
-    "stok": 80,
-    "satuan": "butir",
-    "aktif": true,
-    "unggulan": false,
-    "urutan": 8,
     "min_qty": 1,
     "variasi": [
       {
@@ -1630,6 +389,1247 @@
         ]
       }
     ],
+    "seo_title": "Kubis / Kol Segar - Matjar Sayur",
+    "seo_desc": "Kubis segar renyah untuk cap cay, coleslaw, atau sayur asam.",
+    "kategori_nama": "Sayuran Daun"
+  },
+  {
+    "id": "11",
+    "kategori_id": "2",
+    "nama": "Tomat Merah Segar",
+    "slug": "tomat-merah",
+    "deskripsi": "Tomat merah matang sempurna, manis segar. Cocok untuk masakan, sambal, jus, dan salad.",
+    "harga": 4500,
+    "harga_diskon": null,
+    "foto_utama": "/images/products/tomat-merah.png",
+    "foto_galeri": [],
+    "stok": 100,
+    "satuan": "250g",
+    "aktif": true,
+    "unggulan": true,
+    "urutan": 1,
+    "min_qty": 1,
+    "variasi": [
+      {
+        "nama": "Berat",
+        "opsi": [
+          {
+            "label": "250 gram",
+            "tambahan": 0
+          },
+          {
+            "label": "500 gram (Rp 8.000)",
+            "tambahan": 3500
+          },
+          {
+            "label": "1 kg (Rp 14.000)",
+            "tambahan": 9500
+          },
+          {
+            "label": "5 kg (Rp 60.000)",
+            "tambahan": 55500
+          }
+        ]
+      }
+    ],
+    "seo_title": "Tomat Merah Segar Segar - Matjar Sayur",
+    "seo_desc": "Tomat merah matang sempurna, manis segar. Cocok untuk masakan, sambal, jus, dan salad.",
+    "kategori_nama": "Sayuran Buah & Umbi"
+  },
+  {
+    "id": "12",
+    "kategori_id": "2",
+    "nama": "Terong Ungu",
+    "slug": "terong-ungu",
+    "deskripsi": "Terong ungu segar untuk balado terong, terong bakar, atau orak-arik. Daging lembut.",
+    "harga": 3500,
+    "harga_diskon": null,
+    "foto_utama": "/images/products/terong-ungu.png",
+    "foto_galeri": [],
+    "stok": 80,
+    "satuan": "buah",
+    "aktif": true,
+    "unggulan": true,
+    "urutan": 2,
+    "min_qty": 1,
+    "variasi": [
+      {
+        "nama": "Jumlah",
+        "opsi": [
+          {
+            "label": "1 buah",
+            "tambahan": 0
+          },
+          {
+            "label": "3 buah (per buah Rp 3.000)",
+            "tambahan": 5500
+          },
+          {
+            "label": "5 buah (per buah Rp 2.500)",
+            "tambahan": 9000
+          }
+        ]
+      }
+    ],
+    "seo_title": "Terong Ungu Segar - Matjar Sayur",
+    "seo_desc": "Terong ungu segar untuk balado terong, terong bakar, atau orak-arik. Daging lembut.",
+    "kategori_nama": "Sayuran Buah & Umbi"
+  },
+  {
+    "id": "13",
+    "kategori_id": "2",
+    "nama": "Terong Hijau",
+    "slug": "terong-hijau",
+    "deskripsi": "Terong hijau muda manis, cocok untuk lalapan atau di masak gulai.",
+    "harga": 3500,
+    "harga_diskon": null,
+    "foto_utama": "/images/products/terong-hijau.png",
+    "foto_galeri": [],
+    "stok": 70,
+    "satuan": "buah",
+    "aktif": true,
+    "unggulan": false,
+    "urutan": 3,
+    "min_qty": 1,
+    "variasi": [
+      {
+        "nama": "Jumlah",
+        "opsi": [
+          {
+            "label": "1 buah",
+            "tambahan": 0
+          },
+          {
+            "label": "3 buah (per buah Rp 3.000)",
+            "tambahan": 5500
+          },
+          {
+            "label": "5 buah (per buah Rp 2.500)",
+            "tambahan": 9000
+          }
+        ]
+      }
+    ],
+    "seo_title": "Terong Hijau Segar - Matjar Sayur",
+    "seo_desc": "Terong hijau muda manis, cocok untuk lalapan atau di masak gulai.",
+    "kategori_nama": "Sayuran Buah & Umbi"
+  },
+  {
+    "id": "14",
+    "kategori_id": "2",
+    "nama": "Labu Siam",
+    "slug": "labu-siam",
+    "deskripsi": "Labu siam segar berbentuk buah pir hijau. Enak dibuat sayur lodeh, tumis, atau sup.",
+    "harga": 3500,
+    "harga_diskon": null,
+    "foto_utama": "/images/products/labu-siam.png",
+    "foto_galeri": [],
+    "stok": 90,
+    "satuan": "buah",
+    "aktif": true,
+    "unggulan": true,
+    "urutan": 4,
+    "min_qty": 1,
+    "variasi": [
+      {
+        "nama": "Jumlah",
+        "opsi": [
+          {
+            "label": "1 buah",
+            "tambahan": 0
+          },
+          {
+            "label": "3 buah (per buah Rp 3.000)",
+            "tambahan": 5500
+          },
+          {
+            "label": "5 buah (per buah Rp 2.500)",
+            "tambahan": 9000
+          }
+        ]
+      }
+    ],
+    "seo_title": "Labu Siam Segar - Matjar Sayur",
+    "seo_desc": "Labu siam segar berbentuk buah pir hijau. Enak dibuat sayur lodeh, tumis, atau sup.",
+    "kategori_nama": "Sayuran Buah & Umbi"
+  },
+  {
+    "id": "15",
+    "kategori_id": "2",
+    "nama": "Labu Siam Baby",
+    "slug": "labu-siam-baby",
+    "deskripsi": "Labu siam baby ukuran kecil imut, empuk dan manis. Cocok untuk balita.",
+    "harga": 7000,
+    "harga_diskon": null,
+    "foto_utama": "/images/products/labu-siam-baby.png",
+    "foto_galeri": [],
+    "stok": 60,
+    "satuan": "5 buah",
+    "aktif": true,
+    "unggulan": false,
+    "urutan": 5,
+    "min_qty": 1,
+    "variasi": [
+      {
+        "nama": "Berat",
+        "opsi": [
+          {
+            "label": "250 gram",
+            "tambahan": 0
+          },
+          {
+            "label": "500 gram (Rp 13.000)",
+            "tambahan": 6000
+          },
+          {
+            "label": "1 kg (Rp 24.000)",
+            "tambahan": 17000
+          },
+          {
+            "label": "5 kg (Rp 110.000)",
+            "tambahan": 103000
+          }
+        ]
+      }
+    ],
+    "seo_title": "Labu Siam Baby Segar - Matjar Sayur",
+    "seo_desc": "Labu siam baby ukuran kecil imut, empuk dan manis. Cocok untuk balita.",
+    "kategori_nama": "Sayuran Buah & Umbi"
+  },
+  {
+    "id": "16",
+    "kategori_id": "2",
+    "nama": "Pare Segar",
+    "slug": "pare-segar",
+    "deskripsi": "Pare segar untuk tumis pare telur, pare isi, atau jus kesehatan. Pahit menyehatkan!",
+    "harga": 4000,
+    "harga_diskon": null,
+    "foto_utama": "/images/products/pare-segar.png",
+    "foto_galeri": [],
+    "stok": 70,
+    "satuan": "buah",
+    "aktif": true,
+    "unggulan": false,
+    "urutan": 6,
+    "min_qty": 1,
+    "variasi": [
+      {
+        "nama": "Jumlah",
+        "opsi": [
+          {
+            "label": "1 buah",
+            "tambahan": 0
+          },
+          {
+            "label": "3 buah (per buah Rp 3.500)",
+            "tambahan": 6500
+          },
+          {
+            "label": "5 buah (per buah Rp 3.000)",
+            "tambahan": 11000
+          }
+        ]
+      }
+    ],
+    "seo_title": "Pare Segar Segar - Matjar Sayur",
+    "seo_desc": "Pare segar untuk tumis pare telur, pare isi, atau jus kesehatan. Pahit menyehatkan!",
+    "kategori_nama": "Sayuran Buah & Umbi"
+  },
+  {
+    "id": "17",
+    "kategori_id": "2",
+    "nama": "Mentimun Segar",
+    "slug": "mentimun-segar",
+    "deskripsi": "Mentimun segar renyah dan menyegarkan untuk lalapan, acar, jus, atau salad.",
+    "harga": 3500,
+    "harga_diskon": null,
+    "foto_utama": "/images/products/mentimun-segar.png",
+    "foto_galeri": [],
+    "stok": 100,
+    "satuan": "2 buah",
+    "aktif": true,
+    "unggulan": true,
+    "urutan": 7,
+    "min_qty": 1,
+    "variasi": [
+      {
+        "nama": "Berat",
+        "opsi": [
+          {
+            "label": "250 gram",
+            "tambahan": 0
+          },
+          {
+            "label": "500 gram (Rp 6.000)",
+            "tambahan": 2500
+          },
+          {
+            "label": "1 kg (Rp 10.000)",
+            "tambahan": 6500
+          },
+          {
+            "label": "5 kg (Rp 40.000)",
+            "tambahan": 36500
+          }
+        ]
+      }
+    ],
+    "seo_title": "Mentimun Segar Segar - Matjar Sayur",
+    "seo_desc": "Mentimun segar renyah dan menyegarkan untuk lalapan, acar, jus, atau salad.",
+    "kategori_nama": "Sayuran Buah & Umbi"
+  },
+  {
+    "id": "18",
+    "kategori_id": "2",
+    "nama": "Oyong / Gambas",
+    "slug": "oyong-gambas",
+    "deskripsi": "Oyong/gambas untuk sayur bening yang segar dan menyehatkan.",
+    "harga": 3000,
+    "harga_diskon": null,
+    "foto_utama": "/images/products/oyong-gambas.png",
+    "foto_galeri": [],
+    "stok": 80,
+    "satuan": "buah",
+    "aktif": true,
+    "unggulan": false,
+    "urutan": 8,
+    "min_qty": 1,
+    "variasi": [
+      {
+        "nama": "Jumlah",
+        "opsi": [
+          {
+            "label": "1 buah",
+            "tambahan": 0
+          },
+          {
+            "label": "3 buah (per buah Rp 2.500)",
+            "tambahan": 4500
+          },
+          {
+            "label": "5 buah (per buah Rp 2.000)",
+            "tambahan": 7000
+          }
+        ]
+      }
+    ],
+    "seo_title": "Oyong / Gambas Segar - Matjar Sayur",
+    "seo_desc": "Oyong/gambas untuk sayur bening yang segar dan menyehatkan.",
+    "kategori_nama": "Sayuran Buah & Umbi"
+  },
+  {
+    "id": "19",
+    "kategori_id": "2",
+    "nama": "Paprika Merah",
+    "slug": "paprika-merah",
+    "deskripsi": "Paprika merah manis untuk tumisan, salad, pizza, atau campuran masakan.",
+    "harga": 6500,
+    "harga_diskon": null,
+    "foto_utama": "/images/products/paprika-merah.png",
+    "foto_galeri": [],
+    "stok": 50,
+    "satuan": "buah",
+    "aktif": true,
+    "unggulan": true,
+    "urutan": 9,
+    "min_qty": 1,
+    "variasi": [
+      {
+        "nama": "Jumlah",
+        "opsi": [
+          {
+            "label": "1 buah",
+            "tambahan": 0
+          },
+          {
+            "label": "3 buah (per buah Rp 6.000)",
+            "tambahan": 11500
+          },
+          {
+            "label": "5 buah (per buah Rp 5.500)",
+            "tambahan": 21000
+          }
+        ]
+      }
+    ],
+    "seo_title": "Paprika Merah Segar - Matjar Sayur",
+    "seo_desc": "Paprika merah manis untuk tumisan, salad, pizza, atau campuran masakan.",
+    "kategori_nama": "Sayuran Buah & Umbi"
+  },
+  {
+    "id": "20",
+    "kategori_id": "2",
+    "nama": "Paprika Kuning",
+    "slug": "paprika-kuning",
+    "deskripsi": "Paprika kuning manis segar untuk salad dan aneka masakan kreatif.",
+    "harga": 6500,
+    "harga_diskon": null,
+    "foto_utama": "/images/products/paprika-kuning.png",
+    "foto_galeri": [],
+    "stok": 50,
+    "satuan": "buah",
+    "aktif": true,
+    "unggulan": false,
+    "urutan": 10,
+    "min_qty": 1,
+    "variasi": [
+      {
+        "nama": "Jumlah",
+        "opsi": [
+          {
+            "label": "1 buah",
+            "tambahan": 0
+          },
+          {
+            "label": "3 buah (per buah Rp 6.000)",
+            "tambahan": 11500
+          },
+          {
+            "label": "5 buah (per buah Rp 5.500)",
+            "tambahan": 21000
+          }
+        ]
+      }
+    ],
+    "seo_title": "Paprika Kuning Segar - Matjar Sayur",
+    "seo_desc": "Paprika kuning manis segar untuk salad dan aneka masakan kreatif.",
+    "kategori_nama": "Sayuran Buah & Umbi"
+  },
+  {
+    "id": "21",
+    "kategori_id": "2",
+    "nama": "Paprika Hijau",
+    "slug": "paprika-hijau",
+    "deskripsi": "Paprika hijau sedikit pahit untuk tumisan dan masakan sayur.",
+    "harga": 5500,
+    "harga_diskon": null,
+    "foto_utama": "/images/products/paprika-hijau.png",
+    "foto_galeri": [],
+    "stok": 50,
+    "satuan": "buah",
+    "aktif": true,
+    "unggulan": false,
+    "urutan": 11,
+    "min_qty": 1,
+    "variasi": [
+      {
+        "nama": "Jumlah",
+        "opsi": [
+          {
+            "label": "1 buah",
+            "tambahan": 0
+          },
+          {
+            "label": "3 buah (per buah Rp 5.000)",
+            "tambahan": 9500
+          },
+          {
+            "label": "5 buah (per buah Rp 4.500)",
+            "tambahan": 17000
+          }
+        ]
+      }
+    ],
+    "seo_title": "Paprika Hijau Segar - Matjar Sayur",
+    "seo_desc": "Paprika hijau sedikit pahit untuk tumisan dan masakan sayur.",
+    "kategori_nama": "Sayuran Buah & Umbi"
+  },
+  {
+    "id": "22",
+    "kategori_id": "2",
+    "nama": "Kembang Kol",
+    "slug": "kembang-kol",
+    "deskripsi": "Kembang kol putih segar untuk tumiss, sup, atau kembang kol goreng tepung.",
+    "harga": 8500,
+    "harga_diskon": null,
+    "foto_utama": "/images/products/kembang-kol.png",
+    "foto_galeri": [],
+    "stok": 60,
+    "satuan": "bonggol",
+    "aktif": true,
+    "unggulan": true,
+    "urutan": 12,
+    "min_qty": 1,
+    "variasi": [
+      {
+        "nama": "Jumlah",
+        "opsi": [
+          {
+            "label": "1 buah",
+            "tambahan": 0
+          },
+          {
+            "label": "3 buah (per buah Rp 8.000)",
+            "tambahan": 15500
+          },
+          {
+            "label": "5 buah (per buah Rp 7.500)",
+            "tambahan": 29000
+          }
+        ]
+      }
+    ],
+    "seo_title": "Kembang Kol Segar - Matjar Sayur",
+    "seo_desc": "Kembang kol putih segar untuk tumiss, sup, atau kembang kol goreng tepung.",
+    "kategori_nama": "Sayuran Buah & Umbi"
+  },
+  {
+    "id": "23",
+    "kategori_id": "2",
+    "nama": "Brokoli Segar",
+    "slug": "brokoli-segar",
+    "deskripsi": "Brokoli hijau segar kaya vitamin C dan serat untuk tumis, sup, atau dikukus.",
+    "harga": 8000,
+    "harga_diskon": null,
+    "foto_utama": "/images/products/brokoli-segar.png",
+    "foto_galeri": [],
+    "stok": 70,
+    "satuan": "bonggol",
+    "aktif": true,
+    "unggulan": true,
+    "urutan": 13,
+    "min_qty": 1,
+    "variasi": [
+      {
+        "nama": "Jumlah",
+        "opsi": [
+          {
+            "label": "1 buah",
+            "tambahan": 0
+          },
+          {
+            "label": "3 buah (per buah Rp 7.500)",
+            "tambahan": 14500
+          },
+          {
+            "label": "5 buah (per buah Rp 7.000)",
+            "tambahan": 27000
+          }
+        ]
+      }
+    ],
+    "seo_title": "Brokoli Segar Segar - Matjar Sayur",
+    "seo_desc": "Brokoli hijau segar kaya vitamin C dan serat untuk tumis, sup, atau dikukus.",
+    "kategori_nama": "Sayuran Buah & Umbi"
+  },
+  {
+    "id": "24",
+    "kategori_id": "2",
+    "nama": "Jagung Manis",
+    "slug": "jagung-manis",
+    "deskripsi": "Jagung manis pilihan, manisnya alami. Cocok untuk jagung bakar, sop, atau direbus.",
+    "harga": 3500,
+    "harga_diskon": null,
+    "foto_utama": "/images/products/jagung-manis.png",
+    "foto_galeri": [],
+    "stok": 100,
+    "satuan": "2 buah",
+    "aktif": true,
+    "unggulan": true,
+    "urutan": 14,
+    "min_qty": 1,
+    "variasi": [
+      {
+        "nama": "Berat",
+        "opsi": [
+          {
+            "label": "250 gram",
+            "tambahan": 0
+          },
+          {
+            "label": "500 gram (Rp 6.000)",
+            "tambahan": 2500
+          },
+          {
+            "label": "1 kg (Rp 10.000)",
+            "tambahan": 6500
+          },
+          {
+            "label": "5 kg (Rp 40.000)",
+            "tambahan": 36500
+          }
+        ]
+      }
+    ],
+    "seo_title": "Jagung Manis Segar - Matjar Sayur",
+    "seo_desc": "Jagung manis pilihan, manisnya alami. Cocok untuk jagung bakar, sop, atau direbus.",
+    "kategori_nama": "Sayuran Buah & Umbi"
+  },
+  {
+    "id": "25",
+    "kategori_id": "2",
+    "nama": "Wortel Segar",
+    "slug": "wortel-segar",
+    "deskripsi": "Wortel oranye segar untuk jus, tumis, sup, atau campuran masakan. Manis dan renyah.",
+    "harga": 4000,
+    "harga_diskon": null,
+    "foto_utama": "/images/products/wortel.png",
+    "foto_galeri": [],
+    "stok": 100,
+    "satuan": "250g",
+    "aktif": true,
+    "unggulan": true,
+    "urutan": 15,
+    "min_qty": 1,
+    "variasi": [
+      {
+        "nama": "Berat",
+        "opsi": [
+          {
+            "label": "250 gram",
+            "tambahan": 0
+          },
+          {
+            "label": "500 gram (Rp 7.000)",
+            "tambahan": 3000
+          },
+          {
+            "label": "1 kg (Rp 12.000)",
+            "tambahan": 8000
+          },
+          {
+            "label": "5 kg (Rp 50.000)",
+            "tambahan": 46000
+          }
+        ]
+      }
+    ],
+    "seo_title": "Wortel Segar Segar - Matjar Sayur",
+    "seo_desc": "Wortel oranye segar untuk jus, tumis, sup, atau campuran masakan. Manis dan renyah.",
+    "kategori_nama": "Sayuran Buah & Umbi"
+  },
+  {
+    "id": "26",
+    "kategori_id": "2",
+    "nama": "Kentang Segar",
+    "slug": "kentang-segar",
+    "deskripsi": "Kentang berkualitas tinggi untuk perkedel, kentang goreng, atau sup. Tekstur halus.",
+    "harga": 6500,
+    "harga_diskon": null,
+    "foto_utama": "/images/products/kentang-segar.png",
+    "foto_galeri": [],
+    "stok": 100,
+    "satuan": "500g",
+    "aktif": true,
+    "unggulan": true,
+    "urutan": 16,
+    "min_qty": 1,
+    "variasi": [
+      {
+        "nama": "Berat",
+        "opsi": [
+          {
+            "label": "500 gram",
+            "tambahan": 0
+          },
+          {
+            "label": "1 kg (Rp 11.000)",
+            "tambahan": 4500
+          },
+          {
+            "label": "2 kg (Rp 20.000)",
+            "tambahan": 13500
+          }
+        ]
+      }
+    ],
+    "seo_title": "Kentang Segar Segar - Matjar Sayur",
+    "seo_desc": "Kentang berkualitas tinggi untuk perkedel, kentang goreng, atau sup. Tekstur halus.",
+    "kategori_nama": "Sayuran Buah & Umbi"
+  },
+  {
+    "id": "27",
+    "kategori_id": "2",
+    "nama": "Nangka Muda (Gori)",
+    "slug": "nangka-muda",
+    "deskripsi": "Nangka muda untuk gudeg, sayur asam, atau rendang nangka.",
+    "harga": 7500,
+    "harga_diskon": null,
+    "foto_utama": "/images/products/nangka-muda.png",
+    "foto_galeri": [],
+    "stok": 50,
+    "satuan": "250g",
+    "aktif": true,
+    "unggulan": true,
+    "urutan": 17,
+    "min_qty": 1,
+    "variasi": [
+      {
+        "nama": "Berat",
+        "opsi": [
+          {
+            "label": "250 gram",
+            "tambahan": 0
+          },
+          {
+            "label": "500 gram (Rp 13.000)",
+            "tambahan": 5500
+          },
+          {
+            "label": "1 kg (Rp 24.000)",
+            "tambahan": 16500
+          },
+          {
+            "label": "5 kg (Rp 110.000)",
+            "tambahan": 102500
+          }
+        ]
+      }
+    ],
+    "seo_title": "Nangka Muda (Gori) Segar - Matjar Sayur",
+    "seo_desc": "Nangka muda untuk gudeg, sayur asam, atau rendang nangka.",
+    "kategori_nama": "Sayuran Buah & Umbi"
+  },
+  {
+    "id": "28",
+    "kategori_id": "3",
+    "nama": "Kacang Panjang",
+    "slug": "kacang-panjang",
+    "deskripsi": "Kacang panjang muda segar untuk tumis, oseng, pecel, atau lalapan.",
+    "harga": 3500,
+    "harga_diskon": null,
+    "foto_utama": "/images/products/kacang-panjang.png",
+    "foto_galeri": [],
+    "stok": 100,
+    "satuan": "ikat",
+    "aktif": true,
+    "unggulan": true,
+    "urutan": 1,
+    "min_qty": 1,
+    "variasi": [
+      {
+        "nama": "Pilihan",
+        "opsi": [
+          {
+            "label": "1 ikat kecil",
+            "tambahan": 0
+          },
+          {
+            "label": "3 ikat kecil (per ikat Rp 3.000)",
+            "tambahan": 5500
+          },
+          {
+            "label": "20 ikat (per ikat Rp 2.500)",
+            "tambahan": 46500
+          }
+        ]
+      }
+    ],
+    "seo_title": "Kacang Panjang Segar - Matjar Sayur",
+    "seo_desc": "Kacang panjang muda segar untuk tumis, oseng, pecel, atau lalapan.",
+    "kategori_nama": "Kacang & Tauge"
+  },
+  {
+    "id": "29",
+    "kategori_id": "3",
+    "nama": "Buncis Hijau",
+    "slug": "buncis-hijau",
+    "deskripsi": "Buncis muda renyah untuk tumis, sup, atau campuran sayuran.",
+    "harga": 6500,
+    "harga_diskon": null,
+    "foto_utama": "/images/products/buncis-hijau.png",
+    "foto_galeri": [],
+    "stok": 80,
+    "satuan": "250g",
+    "aktif": true,
+    "unggulan": false,
+    "urutan": 2,
+    "min_qty": 1,
+    "variasi": [
+      {
+        "nama": "Berat",
+        "opsi": [
+          {
+            "label": "250 gram",
+            "tambahan": 0
+          },
+          {
+            "label": "500 gram (Rp 12.000)",
+            "tambahan": 5500
+          },
+          {
+            "label": "1 kg (Rp 22.000)",
+            "tambahan": 15500
+          },
+          {
+            "label": "5 kg (Rp 100.000)",
+            "tambahan": 93500
+          }
+        ]
+      }
+    ],
+    "seo_title": "Buncis Hijau Segar - Matjar Sayur",
+    "seo_desc": "Buncis muda renyah untuk tumis, sup, atau campuran sayuran.",
+    "kategori_nama": "Kacang & Tauge"
+  },
+  {
+    "id": "30",
+    "kategori_id": "3",
+    "nama": "Kacang Tanah Kupas",
+    "slug": "kacang-tanah-kupas",
+    "deskripsi": "Kacang tanah kupas bersih siap olah untuk bumbu pecel, rempeyek, atau kue.",
+    "harga": 10500,
+    "harga_diskon": null,
+    "foto_utama": "/images/products/kacang-tanah-kupas.png",
+    "foto_galeri": [],
+    "stok": 60,
+    "satuan": "250g",
+    "aktif": true,
+    "unggulan": false,
+    "urutan": 3,
+    "min_qty": 1,
+    "variasi": [
+      {
+        "nama": "Berat",
+        "opsi": [
+          {
+            "label": "250 gram",
+            "tambahan": 0
+          },
+          {
+            "label": "500 gram (Rp 19.000)",
+            "tambahan": 8500
+          },
+          {
+            "label": "1 kg (Rp 36.000)",
+            "tambahan": 25500
+          },
+          {
+            "label": "5 kg (Rp 170.000)",
+            "tambahan": 159500
+          }
+        ]
+      }
+    ],
+    "seo_title": "Kacang Tanah Kupas Segar - Matjar Sayur",
+    "seo_desc": "Kacang tanah kupas bersih siap olah untuk bumbu pecel, rempeyek, atau kue.",
+    "kategori_nama": "Kacang & Tauge"
+  },
+  {
+    "id": "31",
+    "kategori_id": "3",
+    "nama": "Tauge Kacang Hijau",
+    "slug": "tauge-kacang-hijau",
+    "deskripsi": "Tauge/kecambah kacang hijau segar dan bersih untuk tumis, bakso, atau mie.",
+    "harga": 3500,
+    "harga_diskon": null,
+    "foto_utama": "/images/products/tauge-kacang-hijau.png",
+    "foto_galeri": [],
+    "stok": 100,
+    "satuan": "250g",
+    "aktif": true,
+    "unggulan": true,
+    "urutan": 4,
+    "min_qty": 1,
+    "variasi": [
+      {
+        "nama": "Berat",
+        "opsi": [
+          {
+            "label": "250 gram",
+            "tambahan": 0
+          },
+          {
+            "label": "500 gram (Rp 6.000)",
+            "tambahan": 2500
+          },
+          {
+            "label": "1 kg (Rp 10.000)",
+            "tambahan": 6500
+          },
+          {
+            "label": "5 kg (Rp 40.000)",
+            "tambahan": 36500
+          }
+        ]
+      }
+    ],
+    "seo_title": "Tauge Kacang Hijau Segar - Matjar Sayur",
+    "seo_desc": "Tauge/kecambah kacang hijau segar dan bersih untuk tumis, bakso, atau mie.",
+    "kategori_nama": "Kacang & Tauge"
+  },
+  {
+    "id": "32",
+    "kategori_id": "3",
+    "nama": "Tauge Kedelai",
+    "slug": "tauge-kedelai",
+    "deskripsi": "Tauge kedelai (kecambah besar) untuk bakso, rawon, atau tumisan.",
+    "harga": 4500,
+    "harga_diskon": null,
+    "foto_utama": "/images/products/tauge-kedelai.png",
+    "foto_galeri": [],
+    "stok": 80,
+    "satuan": "250g",
+    "aktif": true,
+    "unggulan": false,
+    "urutan": 5,
+    "min_qty": 1,
+    "variasi": [
+      {
+        "nama": "Berat",
+        "opsi": [
+          {
+            "label": "250 gram",
+            "tambahan": 0
+          },
+          {
+            "label": "500 gram (Rp 8.000)",
+            "tambahan": 3500
+          },
+          {
+            "label": "1 kg (Rp 14.000)",
+            "tambahan": 9500
+          },
+          {
+            "label": "5 kg (Rp 60.000)",
+            "tambahan": 55500
+          }
+        ]
+      }
+    ],
+    "seo_title": "Tauge Kedelai Segar - Matjar Sayur",
+    "seo_desc": "Tauge kedelai (kecambah besar) untuk bakso, rawon, atau tumisan.",
+    "kategori_nama": "Kacang & Tauge"
+  },
+  {
+    "id": "33",
+    "kategori_id": "3",
+    "nama": "Kacang Merah Segar",
+    "slug": "kacang-merah-segar",
+    "deskripsi": "Kacang merah segar untuk sup kacang merah, semur, atau kari.",
+    "harga": 7000,
+    "harga_diskon": null,
+    "foto_utama": "/images/products/kacang-merah-segar.png",
+    "foto_galeri": [],
+    "stok": 60,
+    "satuan": "250g",
+    "aktif": true,
+    "unggulan": false,
+    "urutan": 6,
+    "min_qty": 1,
+    "variasi": [
+      {
+        "nama": "Berat",
+        "opsi": [
+          {
+            "label": "250 gram",
+            "tambahan": 0
+          },
+          {
+            "label": "500 gram (Rp 13.000)",
+            "tambahan": 6000
+          },
+          {
+            "label": "1 kg (Rp 24.000)",
+            "tambahan": 17000
+          },
+          {
+            "label": "5 kg (Rp 110.000)",
+            "tambahan": 103000
+          }
+        ]
+      }
+    ],
+    "seo_title": "Kacang Merah Segar Segar - Matjar Sayur",
+    "seo_desc": "Kacang merah segar untuk sup kacang merah, semur, atau kari.",
+    "kategori_nama": "Kacang & Tauge"
+  },
+  {
+    "id": "34",
+    "kategori_id": "4",
+    "nama": "Tempe Daun Pisang",
+    "slug": "tempe-daun-pisang",
+    "deskripsi": "Tempe premium terbungkus daun pisang tradisional. Tekstur padat, rasa gurih khas.",
+    "harga": 3500,
+    "harga_diskon": null,
+    "foto_utama": "/images/products/tempe-daun-pisang.png",
+    "foto_galeri": [],
+    "stok": 150,
+    "satuan": "papan",
+    "aktif": true,
+    "unggulan": true,
+    "urutan": 1,
+    "min_qty": 1,
+    "variasi": [
+      {
+        "nama": "Pilihan",
+        "opsi": [
+          {
+            "label": "1 bungkus",
+            "tambahan": 0
+          },
+          {
+            "label": "5 bungkus (per bungkus Rp 3.000)",
+            "tambahan": 11500
+          }
+        ]
+      }
+    ],
+    "seo_title": "Tempe Daun Pisang Segar - Matjar Sayur",
+    "seo_desc": "Tempe premium terbungkus daun pisang tradisional. Tekstur padat, rasa gurih khas.",
+    "kategori_nama": "Lauk Pauk & Protein"
+  },
+  {
+    "id": "35",
+    "kategori_id": "4",
+    "nama": "Tempe Plastik",
+    "slug": "tempe-plastik",
+    "deskripsi": "Tempe berkualitas dalam kemasan plastik. Konsisten dan higienis.",
+    "harga": 3000,
+    "harga_diskon": null,
+    "foto_utama": "/images/products/tempe-plastik.png",
+    "foto_galeri": [],
+    "stok": 150,
+    "satuan": "bungkus",
+    "aktif": true,
+    "unggulan": true,
+    "urutan": 2,
+    "min_qty": 1,
+    "variasi": [
+      {
+        "nama": "Pilihan",
+        "opsi": [
+          {
+            "label": "1 bungkus",
+            "tambahan": 0
+          },
+          {
+            "label": "5 bungkus (per bungkus Rp 2.500)",
+            "tambahan": 9500
+          }
+        ]
+      }
+    ],
+    "seo_title": "Tempe Plastik Segar - Matjar Sayur",
+    "seo_desc": "Tempe berkualitas dalam kemasan plastik. Konsisten dan higienis.",
+    "kategori_nama": "Lauk Pauk & Protein"
+  },
+  {
+    "id": "36",
+    "kategori_id": "4",
+    "nama": "Tahu Putih",
+    "slug": "tahu-putih",
+    "deskripsi": "Tahu putih segar lembut dalam kemasan 5 kotak. Enak digoreng, dibacem, atau dibuat sup.",
+    "harga": 5500,
+    "harga_diskon": null,
+    "foto_utama": "/images/products/tahu-putih.png",
+    "foto_galeri": [],
+    "stok": 150,
+    "satuan": "5 kotak",
+    "aktif": true,
+    "unggulan": true,
+    "urutan": 3,
+    "min_qty": 1,
+    "variasi": [
+      {
+        "nama": "Pilihan",
+        "opsi": [
+          {
+            "label": "1 pack (5 kotak)",
+            "tambahan": 0
+          },
+          {
+            "label": "3 pack (5 kotak) (per pack (5 kotak) Rp 4.500)",
+            "tambahan": 8000
+          }
+        ]
+      }
+    ],
+    "seo_title": "Tahu Putih Segar - Matjar Sayur",
+    "seo_desc": "Tahu putih segar lembut dalam kemasan 5 kotak. Enak digoreng, dibacem, atau dibuat sup.",
+    "kategori_nama": "Lauk Pauk & Protein"
+  },
+  {
+    "id": "37",
+    "kategori_id": "4",
+    "nama": "Tahu Kuning",
+    "slug": "tahu-kuning",
+    "deskripsi": "Tahu kuning sudah diproses dan tahan lebih lama. Enak untuk pepes, bacem, goreng.",
+    "harga": 6500,
+    "harga_diskon": null,
+    "foto_utama": "/images/products/tahu-kuning.png",
+    "foto_galeri": [],
+    "stok": 120,
+    "satuan": "5 kotak",
+    "aktif": true,
+    "unggulan": true,
+    "urutan": 4,
+    "min_qty": 1,
+    "variasi": [
+      {
+        "nama": "Pilihan",
+        "opsi": [
+          {
+            "label": "1 pack (5 kotak)",
+            "tambahan": 0
+          },
+          {
+            "label": "3 pack (5 kotak) (per pack (5 kotak) Rp 5.500)",
+            "tambahan": 10000
+          }
+        ]
+      }
+    ],
+    "seo_title": "Tahu Kuning Segar - Matjar Sayur",
+    "seo_desc": "Tahu kuning sudah diproses dan tahan lebih lama. Enak untuk pepes, bacem, goreng.",
+    "kategori_nama": "Lauk Pauk & Protein"
+  },
+  {
+    "id": "38",
+    "kategori_id": "4",
+    "nama": "Tahu Cokelat / Pong",
+    "slug": "tahu-cokelat-pong",
+    "deskripsi": "Tahu cokelat/pong bertekstur kenyal dan gurih untuk tahu bacem atau sate tahu.",
+    "harga": 5500,
+    "harga_diskon": null,
+    "foto_utama": "/images/products/tahu-cokelat-pong.png",
+    "foto_galeri": [],
+    "stok": 100,
+    "satuan": "10 buah",
+    "aktif": true,
+    "unggulan": false,
+    "urutan": 5,
+    "min_qty": 1,
+    "variasi": [
+      {
+        "nama": "Pilihan",
+        "opsi": [
+          {
+            "label": "1 pack (5 kotak)",
+            "tambahan": 0
+          },
+          {
+            "label": "3 pack (5 kotak) (per pack (5 kotak) Rp 4.500)",
+            "tambahan": 8000
+          }
+        ]
+      }
+    ],
+    "seo_title": "Tahu Cokelat / Pong Segar - Matjar Sayur",
+    "seo_desc": "Tahu cokelat/pong bertekstur kenyal dan gurih untuk tahu bacem atau sate tahu.",
+    "kategori_nama": "Lauk Pauk & Protein"
+  },
+  {
+    "id": "39",
+    "kategori_id": "4",
+    "nama": "Telur Ayam Ras",
+    "slug": "telur-ayam-ras",
+    "deskripsi": "Telur ayam ras segar pilihan, kuning telur orange, putih mengkilap. Fresh dari farm.",
+    "harga": 28000,
+    "harga_diskon": null,
+    "foto_utama": "/images/products/telur-ayam-ras.png",
+    "foto_galeri": [],
+    "stok": 200,
+    "satuan": "1kg (~6 butir)",
+    "aktif": true,
+    "unggulan": true,
+    "urutan": 6,
+    "min_qty": 1,
+    "variasi": [
+      {
+        "nama": "Berat",
+        "opsi": [
+          {
+            "label": "250 gram",
+            "tambahan": 0
+          },
+          {
+            "label": "500 gram (Rp 53.000)",
+            "tambahan": 25000
+          },
+          {
+            "label": "1 kg (Rp 100.000)",
+            "tambahan": 72000
+          },
+          {
+            "label": "5 kg (Rp 480.000)",
+            "tambahan": 452000
+          }
+        ]
+      }
+    ],
+    "seo_title": "Telur Ayam Ras Segar - Matjar Sayur",
+    "seo_desc": "Telur ayam ras segar pilihan, kuning telur orange, putih mengkilap. Fresh dari farm.",
+    "kategori_nama": "Lauk Pauk & Protein"
+  },
+  {
+    "id": "40",
+    "kategori_id": "4",
+    "nama": "Telur Puyuh Segar",
+    "slug": "telur-puyuh",
+    "deskripsi": "Telur puyuh segar dalam kemasan higienis untuk sambal telur puyuh atau campuran soto.",
+    "harga": 9500,
+    "harga_diskon": null,
+    "foto_utama": "/images/products/telur-puyuh.png",
+    "foto_galeri": [],
+    "stok": 100,
+    "satuan": "250g",
+    "aktif": true,
+    "unggulan": false,
+    "urutan": 7,
+    "min_qty": 1,
+    "variasi": [
+      {
+        "nama": "Berat",
+        "opsi": [
+          {
+            "label": "250 gram",
+            "tambahan": 0
+          },
+          {
+            "label": "500 gram (Rp 17.000)",
+            "tambahan": 7500
+          },
+          {
+            "label": "1 kg (Rp 32.000)",
+            "tambahan": 22500
+          },
+          {
+            "label": "5 kg (Rp 150.000)",
+            "tambahan": 140500
+          }
+        ]
+      }
+    ],
+    "seo_title": "Telur Puyuh Segar Segar - Matjar Sayur",
+    "seo_desc": "Telur puyuh segar dalam kemasan higienis untuk sambal telur puyuh atau campuran soto.",
+    "kategori_nama": "Lauk Pauk & Protein"
+  },
+  {
+    "id": "41",
+    "kategori_id": "4",
+    "nama": "Telur Ayam Kampung",
+    "slug": "telur-ayam-kampung",
+    "deskripsi": "Telur ayam kampung asli dengan cangkang lebih tebal dan kuning telur lebih orange.",
+    "harga": 5000,
+    "harga_diskon": null,
+    "foto_utama": "/images/products/telur-ayam-kampung.png",
+    "foto_galeri": [],
+    "stok": 80,
+    "satuan": "butir",
+    "aktif": true,
+    "unggulan": false,
+    "urutan": 8,
+    "min_qty": 1,
+    "variasi": [
+      {
+        "nama": "Jumlah",
+        "opsi": [
+          {
+            "label": "1 buah",
+            "tambahan": 0
+          },
+          {
+            "label": "3 buah (per buah Rp 4.500)",
+            "tambahan": 8500
+          },
+          {
+            "label": "5 buah (per buah Rp 4.000)",
+            "tambahan": 15000
+          }
+        ]
+      }
+    ],
     "seo_title": "Telur Ayam Kampung Segar - Matjar Sayur",
     "seo_desc": "Telur ayam kampung asli dengan cangkang lebih tebal dan kuning telur lebih orange.",
     "kategori_nama": "Lauk Pauk & Protein"
@@ -1640,7 +1640,7 @@
     "nama": "Telur Bebek Asin Matang",
     "slug": "telur-bebek-asin",
     "deskripsi": "Telur bebek asin matang siap makan. Gurih dengan kuning telur masir.",
-    "harga": 6000,
+    "harga": 6500,
     "harga_diskon": null,
     "foto_utama": "/images/products/telur-bebek-asin.png",
     "foto_galeri": [],
@@ -1659,12 +1659,12 @@
             "tambahan": 0
           },
           {
-            "label": "3 buah (per buah Rp 5.000)",
-            "tambahan": 9000
+            "label": "3 buah (per buah Rp 6.000)",
+            "tambahan": 11500
           },
           {
-            "label": "5 buah (per buah Rp 4.500)",
-            "tambahan": 16500
+            "label": "5 buah (per buah Rp 5.500)",
+            "tambahan": 21000
           }
         ]
       }
@@ -1679,7 +1679,7 @@
     "nama": "Lele Segar",
     "slug": "lele-segar",
     "deskripsi": "Ikan lele segar dari kolam, berukuran sedang siap digoreng, dibakar, atau dimasak pecel lele.",
-    "harga": 18000,
+    "harga": 17500,
     "harga_diskon": null,
     "foto_utama": "/images/products/lele-segar.png",
     "foto_galeri": [],
@@ -1698,8 +1698,8 @@
             "tambahan": 0
           },
           {
-            "label": "1 kg (Rp 32.000)",
-            "tambahan": 14000
+            "label": "1 kg (Rp 31.000)",
+            "tambahan": 13500
           }
         ]
       }
@@ -1714,7 +1714,7 @@
     "nama": "Nila Segar",
     "slug": "nila-segar",
     "deskripsi": "Ikan nila segar untuk digoreng, dibakar, atau dibuat gulai. Daging lembut dan manis.",
-    "harga": 20000,
+    "harga": 20500,
     "harga_diskon": null,
     "foto_utama": "/images/products/nila-segar.png",
     "foto_galeri": [],
@@ -1733,8 +1733,8 @@
             "tambahan": 0
           },
           {
-            "label": "1 kg (Rp 36.000)",
-            "tambahan": 16000
+            "label": "1 kg (Rp 37.000)",
+            "tambahan": 16500
           }
         ]
       }
@@ -1749,7 +1749,7 @@
     "nama": "Ikan Kembung Segar",
     "slug": "ikan-kembung",
     "deskripsi": "Ikan kembung segar untuk digoreng, dimasak balado, atau dibuat pindang.",
-    "harga": 20000,
+    "harga": 19000,
     "harga_diskon": null,
     "foto_utama": "/images/products/ikan-kembung.png",
     "foto_galeri": [],
@@ -1768,8 +1768,8 @@
             "tambahan": 0
           },
           {
-            "label": "1 kg (Rp 36.000)",
-            "tambahan": 16000
+            "label": "1 kg (Rp 34.000)",
+            "tambahan": 15000
           }
         ]
       }
@@ -1784,7 +1784,7 @@
     "nama": "Ikan Teri Medan",
     "slug": "teri-medan",
     "deskripsi": "Teri Medan pilihan, aroma khas dan gurih. Enak untuk tumis teri kacang atau nasi goreng.",
-    "harga": 14000,
+    "harga": 11500,
     "harga_diskon": null,
     "foto_utama": "/images/products/teri-medan.png",
     "foto_galeri": [],
@@ -1803,16 +1803,16 @@
             "tambahan": 0
           },
           {
-            "label": "250 gram (Rp 30.000)",
+            "label": "250 gram (Rp 27.500)",
             "tambahan": 16000
           },
           {
-            "label": "500 gram (Rp 56.000)",
-            "tambahan": 42000
+            "label": "500 gram (Rp 52.500)",
+            "tambahan": 41000
           },
           {
-            "label": "1 kg (Rp 98.000)",
-            "tambahan": 84000
+            "label": "1 kg (Rp 100.000)",
+            "tambahan": 88500
           }
         ]
       }
@@ -1827,7 +1827,7 @@
     "nama": "Bakso Sapi",
     "slug": "bakso-sapi",
     "deskripsi": "Bakso sapi kenyal dengan daging asli, siap rebus untuk mie bakso atau soto.",
-    "harga": 15000,
+    "harga": 14500,
     "harga_diskon": null,
     "foto_utama": "/images/products/bakso-sapi.png",
     "foto_galeri": [],
@@ -1846,8 +1846,8 @@
             "tambahan": 0
           },
           {
-            "label": "3 pack (per pack Rp 13.500)",
-            "tambahan": 25500
+            "label": "3 pack (per pack Rp 12.500)",
+            "tambahan": 23000
           }
         ]
       }
@@ -1862,7 +1862,7 @@
     "nama": "Sosis Sapi",
     "slug": "sosis-sapi",
     "deskripsi": "Sosis sapi halal berkualitas untuk bakar, goreng, atau campuran masakan.",
-    "harga": 18000,
+    "harga": 16000,
     "harga_diskon": null,
     "foto_utama": "/images/products/sosis-sapi.png",
     "foto_galeri": [],
@@ -1881,8 +1881,8 @@
             "tambahan": 0
           },
           {
-            "label": "3 pack (per pack Rp 16.000)",
-            "tambahan": 30000
+            "label": "3 pack (per pack Rp 14.500)",
+            "tambahan": 27500
           }
         ]
       }
@@ -1897,7 +1897,7 @@
     "nama": "Pindang Tongkol",
     "slug": "pindang-tongkol",
     "deskripsi": "Ikan pindang tongkol khas, sudah terproses sempurna. Gurih dan siap dimasak sambel.",
-    "harga": 12000,
+    "harga": 11500,
     "harga_diskon": 4000,
     "foto_utama": "/images/products/pindang-tongkol.png",
     "foto_galeri": [],
@@ -1917,11 +1917,11 @@
           },
           {
             "label": "3 buah (per buah Rp 10.500)",
-            "tambahan": 19500
+            "tambahan": 20000
           },
           {
-            "label": "5 buah (per buah Rp 10.000)",
-            "tambahan": 38000
+            "label": "5 buah (per buah Rp 9.500)",
+            "tambahan": 36000
           }
         ]
       }
@@ -1936,7 +1936,7 @@
     "nama": "Bawang Merah",
     "slug": "bawang-merah-bumbu",
     "deskripsi": "Bawang merah segar pilihan, aroma tajam dan rasa manis-gurih khas masakan Indonesia.",
-    "harga": 6000,
+    "harga": 5000,
     "harga_diskon": null,
     "foto_utama": "/images/products/bawang-merah.png",
     "foto_galeri": [],
@@ -1955,16 +1955,16 @@
             "tambahan": 0
           },
           {
-            "label": "250 gram (Rp 12.500)",
-            "tambahan": 6500
+            "label": "250 gram (Rp 11.250)",
+            "tambahan": 6250
           },
           {
-            "label": "500 gram (Rp 24.000)",
-            "tambahan": 18000
+            "label": "500 gram (Rp 20.000)",
+            "tambahan": 15000
           },
           {
-            "label": "1 kg (Rp 42.000)",
-            "tambahan": 36000
+            "label": "1 kg (Rp 35.000)",
+            "tambahan": 30000
           }
         ]
       }
@@ -1979,7 +1979,7 @@
     "nama": "Bawang Putih Kating",
     "slug": "bawang-putih-kating",
     "deskripsi": "Bawang putih kating bersiung banyak, aromanya lebih tajam dan manis untuk bumbu masak.",
-    "harga": 7000,
+    "harga": 6500,
     "harga_diskon": null,
     "foto_utama": "/images/products/bawang-putih-kating.png",
     "foto_galeri": [],
@@ -1999,15 +1999,15 @@
           },
           {
             "label": "250 gram (Rp 15.000)",
-            "tambahan": 8000
+            "tambahan": 8500
           },
           {
-            "label": "500 gram (Rp 28.000)",
+            "label": "500 gram (Rp 27.500)",
             "tambahan": 21000
           },
           {
-            "label": "1 kg (Rp 49.000)",
-            "tambahan": 42000
+            "label": "1 kg (Rp 50.000)",
+            "tambahan": 43500
           }
         ]
       }
@@ -2022,7 +2022,7 @@
     "nama": "Bawang Bombay",
     "slug": "bawang-bombay",
     "deskripsi": "Bawang bombay ukuran besar untuk tumisan, sup, atau masakan western.",
-    "harga": 8000,
+    "harga": 6500,
     "harga_diskon": null,
     "foto_utama": "/images/products/bawang-bombay.png",
     "foto_galeri": [],
@@ -2041,12 +2041,12 @@
             "tambahan": 0
           },
           {
-            "label": "3 buah (per buah Rp 7.000)",
-            "tambahan": 13000
+            "label": "3 buah (per buah Rp 6.000)",
+            "tambahan": 11500
           },
           {
-            "label": "5 buah (per buah Rp 6.500)",
-            "tambahan": 24500
+            "label": "5 buah (per buah Rp 5.500)",
+            "tambahan": 21000
           }
         ]
       }
@@ -2061,7 +2061,7 @@
     "nama": "Cabai Rawit Merah (Setan)",
     "slug": "cabai-rawit-merah",
     "deskripsi": "Cabai rawit merah super pedas untuk sambal galak. Dijamin bikin keringatan!",
-    "harga": 8000,
+    "harga": 7000,
     "harga_diskon": null,
     "foto_utama": "/images/products/cabai-rawit-merah.png",
     "foto_galeri": [],
@@ -2080,15 +2080,15 @@
             "tambahan": 0
           },
           {
-            "label": "250 gram (Rp 17.000)",
-            "tambahan": 9000
+            "label": "250 gram (Rp 16.250)",
+            "tambahan": 9250
           },
           {
-            "label": "500 gram (Rp 32.000)",
-            "tambahan": 24000
+            "label": "500 gram (Rp 30.000)",
+            "tambahan": 23000
           },
           {
-            "label": "1 kg (Rp 56.000)",
+            "label": "1 kg (Rp 55.000)",
             "tambahan": 48000
           }
         ]
@@ -2104,7 +2104,7 @@
     "nama": "Cabai Rawit Hijau",
     "slug": "cabai-rawit-hijau",
     "deskripsi": "Cabai rawit hijau segar untuk sambal hijau atau lalapan. Pedas segar khas Jawa.",
-    "harga": 7000,
+    "harga": 6500,
     "harga_diskon": null,
     "foto_utama": "/images/products/cabai-rawit-hijau.png",
     "foto_galeri": [],
@@ -2124,15 +2124,15 @@
           },
           {
             "label": "250 gram (Rp 15.000)",
-            "tambahan": 8000
+            "tambahan": 8500
           },
           {
-            "label": "500 gram (Rp 28.000)",
+            "label": "500 gram (Rp 27.500)",
             "tambahan": 21000
           },
           {
-            "label": "1 kg (Rp 49.000)",
-            "tambahan": 42000
+            "label": "1 kg (Rp 50.000)",
+            "tambahan": 43500
           }
         ]
       }
@@ -2147,7 +2147,7 @@
     "nama": "Cabai Merah Keriting",
     "slug": "cabai-merah-keriting",
     "deskripsi": "Cabai merah keriting segar untuk sambal merah, balado, atau rendang. Sedang pedas.",
-    "harga": 8000,
+    "harga": 7000,
     "harga_diskon": null,
     "foto_utama": "/images/products/cabai-merah-keriting.png",
     "foto_galeri": [],
@@ -2166,15 +2166,15 @@
             "tambahan": 0
           },
           {
-            "label": "250 gram (Rp 17.000)",
-            "tambahan": 9000
+            "label": "250 gram (Rp 16.250)",
+            "tambahan": 9250
           },
           {
-            "label": "500 gram (Rp 32.000)",
-            "tambahan": 24000
+            "label": "500 gram (Rp 30.000)",
+            "tambahan": 23000
           },
           {
-            "label": "1 kg (Rp 56.000)",
+            "label": "1 kg (Rp 55.000)",
             "tambahan": 48000
           }
         ]
@@ -2190,7 +2190,7 @@
     "nama": "Cabai Merah Besar",
     "slug": "cabai-merah-besar",
     "deskripsi": "Cabai merah besar (teropong) untuk sambal atau bumbu merah. Tingkat pedas sedang.",
-    "harga": 7000,
+    "harga": 6500,
     "harga_diskon": null,
     "foto_utama": "/images/products/cabai-merah-besar.png",
     "foto_galeri": [],
@@ -2210,15 +2210,15 @@
           },
           {
             "label": "250 gram (Rp 15.000)",
-            "tambahan": 8000
+            "tambahan": 8500
           },
           {
-            "label": "500 gram (Rp 28.000)",
+            "label": "500 gram (Rp 27.500)",
             "tambahan": 21000
           },
           {
-            "label": "1 kg (Rp 49.000)",
-            "tambahan": 42000
+            "label": "1 kg (Rp 50.000)",
+            "tambahan": 43500
           }
         ]
       }
@@ -2233,7 +2233,7 @@
     "nama": "Cabai Hijau Besar",
     "slug": "cabai-hijau-besar",
     "deskripsi": "Cabai hijau besar untuk tumis cumi, sambal hijau, atau sayur.",
-    "harga": 6000,
+    "harga": 5500,
     "harga_diskon": null,
     "foto_utama": "/images/products/cabai-hijau-besar.png",
     "foto_galeri": [],
@@ -2253,15 +2253,15 @@
           },
           {
             "label": "250 gram (Rp 12.500)",
-            "tambahan": 6500
+            "tambahan": 7000
           },
           {
-            "label": "500 gram (Rp 24.000)",
-            "tambahan": 18000
+            "label": "500 gram (Rp 22.500)",
+            "tambahan": 17000
           },
           {
-            "label": "1 kg (Rp 42.000)",
-            "tambahan": 36000
+            "label": "1 kg (Rp 40.000)",
+            "tambahan": 34500
           }
         ]
       }
@@ -2276,7 +2276,7 @@
     "nama": "Jahe Gajah Segar",
     "slug": "jahe-gajah",
     "deskripsi": "Jahe gajah segar beraroma kuat, cocok untuk minuman hangat, masakan, atau empon-empon.",
-    "harga": 5000,
+    "harga": 4000,
     "harga_diskon": null,
     "foto_utama": "/images/products/jahe-gajah-segar.png",
     "foto_galeri": [],
@@ -2295,16 +2295,16 @@
             "tambahan": 0
           },
           {
-            "label": "250 gram (Rp 10.500)",
-            "tambahan": 5500
+            "label": "250 gram (Rp 8.750)",
+            "tambahan": 4750
           },
           {
-            "label": "500 gram (Rp 20.000)",
-            "tambahan": 15000
+            "label": "500 gram (Rp 15.000)",
+            "tambahan": 11000
           },
           {
-            "label": "1 kg (Rp 35.000)",
-            "tambahan": 30000
+            "label": "1 kg (Rp 25.000)",
+            "tambahan": 21000
           }
         ]
       }
@@ -2319,7 +2319,7 @@
     "nama": "Kunyit Segar",
     "slug": "kunyit-segar",
     "deskripsi": "Kunyit segar berwarna oranye cerah, antioksidan tinggi. Untuk bumbu masak, jamu, atau minuman.",
-    "harga": 4000,
+    "harga": 3500,
     "harga_diskon": null,
     "foto_utama": "/images/products/kunyit-segar.png",
     "foto_galeri": [],
@@ -2338,16 +2338,16 @@
             "tambahan": 0
           },
           {
-            "label": "250 gram (Rp 8.500)",
-            "tambahan": 4500
+            "label": "250 gram (Rp 7.500)",
+            "tambahan": 4000
           },
           {
-            "label": "500 gram (Rp 16.000)",
-            "tambahan": 12000
+            "label": "500 gram (Rp 12.500)",
+            "tambahan": 9000
           },
           {
-            "label": "1 kg (Rp 28.000)",
-            "tambahan": 24000
+            "label": "1 kg (Rp 20.000)",
+            "tambahan": 16500
           }
         ]
       }
@@ -2362,7 +2362,7 @@
     "nama": "Lengkuas / Laos",
     "slug": "lengkuas-laos",
     "deskripsi": "Lengkuas segar untuk gulai, rendang, dan masakan berkuah santan. Aroma harum khas.",
-    "harga": 4000,
+    "harga": 3500,
     "harga_diskon": null,
     "foto_utama": "/images/products/lengkuas-laos.png",
     "foto_galeri": [],
@@ -2381,16 +2381,16 @@
             "tambahan": 0
           },
           {
-            "label": "250 gram (Rp 8.500)",
-            "tambahan": 4500
+            "label": "250 gram (Rp 7.500)",
+            "tambahan": 4000
           },
           {
-            "label": "500 gram (Rp 16.000)",
-            "tambahan": 12000
+            "label": "500 gram (Rp 12.500)",
+            "tambahan": 9000
           },
           {
-            "label": "1 kg (Rp 28.000)",
-            "tambahan": 24000
+            "label": "1 kg (Rp 20.000)",
+            "tambahan": 16500
           }
         ]
       }
@@ -2405,7 +2405,7 @@
     "nama": "Kencur Segar",
     "slug": "kencur-segar",
     "deskripsi": "Kencur segar untuk bumbu masakan dan jamu beras kencur. Aroma khas dan menyehatkan.",
-    "harga": 5000,
+    "harga": 4000,
     "harga_diskon": null,
     "foto_utama": "/images/products/kencur-segar.png",
     "foto_galeri": [],
@@ -2424,16 +2424,16 @@
             "tambahan": 0
           },
           {
-            "label": "250 gram (Rp 10.500)",
-            "tambahan": 5500
+            "label": "250 gram (Rp 8.750)",
+            "tambahan": 4750
           },
           {
-            "label": "500 gram (Rp 20.000)",
-            "tambahan": 15000
+            "label": "500 gram (Rp 15.000)",
+            "tambahan": 11000
           },
           {
-            "label": "1 kg (Rp 35.000)",
-            "tambahan": 30000
+            "label": "1 kg (Rp 25.000)",
+            "tambahan": 21000
           }
         ]
       }
@@ -2448,7 +2448,7 @@
     "nama": "Temu Kunci Segar",
     "slug": "temu-kunci",
     "deskripsi": "Temu kunci untuk bumbu pepes dan masakan Jawa. Kaya manfaat kesehatan.",
-    "harga": 5000,
+    "harga": 4000,
     "harga_diskon": null,
     "foto_utama": "/images/products/temu-kunci.png",
     "foto_galeri": [],
@@ -2467,16 +2467,16 @@
             "tambahan": 0
           },
           {
-            "label": "250 gram (Rp 10.500)",
-            "tambahan": 5500
+            "label": "250 gram (Rp 8.750)",
+            "tambahan": 4750
           },
           {
-            "label": "500 gram (Rp 20.000)",
-            "tambahan": 15000
+            "label": "500 gram (Rp 15.000)",
+            "tambahan": 11000
           },
           {
-            "label": "1 kg (Rp 35.000)",
-            "tambahan": 30000
+            "label": "1 kg (Rp 25.000)",
+            "tambahan": 21000
           }
         ]
       }
@@ -2491,7 +2491,7 @@
     "nama": "Daun Bawang (Prei)",
     "slug": "daun-bawang",
     "deskripsi": "Daun bawang segar untuk taburan bakso, mie, soto, atau tumisan. Harum dan menyegarkan.",
-    "harga": 3500,
+    "harga": 3000,
     "harga_diskon": null,
     "foto_utama": "/images/products/daun-bawang.png",
     "foto_galeri": [],
@@ -2510,8 +2510,8 @@
             "tambahan": 0
           },
           {
-            "label": "3 ikat (per ikat Rp 3.000)",
-            "tambahan": 5500
+            "label": "3 ikat (per ikat Rp 2.500)",
+            "tambahan": 4500
           }
         ]
       }
@@ -2526,7 +2526,7 @@
     "nama": "Daun Seledri",
     "slug": "daun-seledri",
     "deskripsi": "Daun seledri segar untuk taburan sup, soto, atau bakso. Aroma khas yang menggugah selera.",
-    "harga": 3500,
+    "harga": 3000,
     "harga_diskon": null,
     "foto_utama": "/images/products/daun-seledri.png",
     "foto_galeri": [],
@@ -2545,8 +2545,8 @@
             "tambahan": 0
           },
           {
-            "label": "3 ikat (per ikat Rp 3.000)",
-            "tambahan": 5500
+            "label": "3 ikat (per ikat Rp 2.500)",
+            "tambahan": 4500
           }
         ]
       }
@@ -2561,7 +2561,7 @@
     "nama": "Serai / Sereh",
     "slug": "serai-sereh",
     "deskripsi": "Serai segar untuk rendang, soto, dan minuman sereh. Aroma harum dan menyegarkan.",
-    "harga": 4000,
+    "harga": 3500,
     "harga_diskon": null,
     "foto_utama": "/images/products/serai-sereh.png",
     "foto_galeri": [],
@@ -2580,8 +2580,8 @@
             "tambahan": 0
           },
           {
-            "label": "3 ikat (per ikat Rp 3.500)",
-            "tambahan": 6500
+            "label": "3 ikat (per ikat Rp 3.000)",
+            "tambahan": 5500
           }
         ]
       }
@@ -2596,7 +2596,7 @@
     "nama": "Daun Salam",
     "slug": "daun-salam",
     "deskripsi": "Daun salam segar untuk sayur lodeh, semur, dan berbagai masakan Indonesia.",
-    "harga": 3000,
+    "harga": 2500,
     "harga_diskon": null,
     "foto_utama": "/images/products/daun-salam.png",
     "foto_galeri": [],
@@ -2615,8 +2615,8 @@
             "tambahan": 0
           },
           {
-            "label": "3 ikat (per ikat Rp 2.500)",
-            "tambahan": 4500
+            "label": "3 ikat (per ikat Rp 2.000)",
+            "tambahan": 3500
           }
         ]
       }
@@ -2701,7 +2701,7 @@
     "nama": "Kemiri Kupas",
     "slug": "kemiri-kupas",
     "deskripsi": "Kemiri kupas bersih untuk bumbu dasar masakan Indonesia. Membuat masakan lebih gurih.",
-    "harga": 5000,
+    "harga": 4000,
     "harga_diskon": null,
     "foto_utama": "/images/products/kemiri-kupas.png",
     "foto_galeri": [],
@@ -2720,16 +2720,16 @@
             "tambahan": 0
           },
           {
-            "label": "250 gram (Rp 10.500)",
-            "tambahan": 5500
+            "label": "250 gram (Rp 8.750)",
+            "tambahan": 4750
           },
           {
-            "label": "500 gram (Rp 20.000)",
-            "tambahan": 15000
+            "label": "500 gram (Rp 15.000)",
+            "tambahan": 11000
           },
           {
-            "label": "1 kg (Rp 35.000)",
-            "tambahan": 30000
+            "label": "1 kg (Rp 25.000)",
+            "tambahan": 21000
           }
         ]
       }
@@ -2744,7 +2744,7 @@
     "nama": "Ketumbar Biji",
     "slug": "ketumbar-biji",
     "deskripsi": "Ketumbar biji pilihan untuk berbagai bumbu rempah. Haluskan untuk bumbu rolade atau soto.",
-    "harga": 5000,
+    "harga": 4000,
     "harga_diskon": null,
     "foto_utama": "/images/products/ketumbar-biji.png",
     "foto_galeri": [],
@@ -2763,16 +2763,16 @@
             "tambahan": 0
           },
           {
-            "label": "250 gram (Rp 10.500)",
-            "tambahan": 5500
+            "label": "250 gram (Rp 8.750)",
+            "tambahan": 4750
           },
           {
-            "label": "500 gram (Rp 20.000)",
-            "tambahan": 15000
+            "label": "500 gram (Rp 15.000)",
+            "tambahan": 11000
           },
           {
-            "label": "1 kg (Rp 35.000)",
-            "tambahan": 30000
+            "label": "1 kg (Rp 25.000)",
+            "tambahan": 21000
           }
         ]
       }
@@ -2787,7 +2787,7 @@
     "nama": "Merica/Lada Hitam Biji",
     "slug": "merica-lada-hitam",
     "deskripsi": "Lada hitam biji pilihan untuk bumbu sup dan masakan. Bisa digiling segar.",
-    "harga": 6000,
+    "harga": 4500,
     "harga_diskon": null,
     "foto_utama": "/images/products/merica-lada-hitam.png",
     "foto_galeri": [],
@@ -2806,16 +2806,16 @@
             "tambahan": 0
           },
           {
-            "label": "250 gram (Rp 12.500)",
-            "tambahan": 6500
+            "label": "250 gram (Rp 10.000)",
+            "tambahan": 5500
           },
           {
-            "label": "500 gram (Rp 24.000)",
-            "tambahan": 18000
+            "label": "500 gram (Rp 17.500)",
+            "tambahan": 13000
           },
           {
-            "label": "1 kg (Rp 42.000)",
-            "tambahan": 36000
+            "label": "1 kg (Rp 30.000)",
+            "tambahan": 25500
           }
         ]
       }
@@ -2830,7 +2830,7 @@
     "nama": "Pala Biji Utuh",
     "slug": "pala-biji",
     "deskripsi": "Pala utuh untuk bumbu rendang dan masakan kuat. Parut langsung untuk aroma terbaik.",
-    "harga": 4000,
+    "harga": 3500,
     "harga_diskon": null,
     "foto_utama": "/images/products/pala-biji.png",
     "foto_galeri": [],
@@ -2849,12 +2849,12 @@
             "tambahan": 0
           },
           {
-            "label": "3 buah (per buah Rp 3.500)",
-            "tambahan": 6500
+            "label": "3 buah (per buah Rp 3.000)",
+            "tambahan": 5500
           },
           {
-            "label": "5 buah (per buah Rp 3.000)",
-            "tambahan": 11000
+            "label": "5 buah (per buah Rp 2.500)",
+            "tambahan": 9000
           }
         ]
       }
@@ -2869,7 +2869,7 @@
     "nama": "Asam Jawa",
     "slug": "asam-jawa",
     "deskripsi": "Asam jawa tanpa biji untuk sayur asam, rujak, atau siomay. Segar dan asam alami.",
-    "harga": 4000,
+    "harga": 3500,
     "harga_diskon": null,
     "foto_utama": "/images/products/asam-jawa.png",
     "foto_galeri": [],
@@ -2888,16 +2888,16 @@
             "tambahan": 0
           },
           {
-            "label": "250 gram (Rp 8.500)",
-            "tambahan": 4500
+            "label": "250 gram (Rp 7.500)",
+            "tambahan": 4000
           },
           {
-            "label": "500 gram (Rp 16.000)",
-            "tambahan": 12000
+            "label": "500 gram (Rp 12.500)",
+            "tambahan": 9000
           },
           {
-            "label": "1 kg (Rp 28.000)",
-            "tambahan": 24000
+            "label": "1 kg (Rp 20.000)",
+            "tambahan": 16500
           }
         ]
       }
@@ -2951,7 +2951,7 @@
     "nama": "Garam Halus Beryodium",
     "slug": "garam-halus",
     "deskripsi": "Garam halus beryodium untuk pemakaian sehari-hari. Higienis dalam kemasan.",
-    "harga": 3000,
+    "harga": 2500,
     "harga_diskon": null,
     "foto_utama": "/images/products/garam-halus.png",
     "foto_galeri": [],
@@ -2970,12 +2970,12 @@
             "tambahan": 0
           },
           {
-            "label": "3 buah (per buah Rp 2.500)",
-            "tambahan": 4500
+            "label": "3 buah (per buah Rp 2.000)",
+            "tambahan": 3500
           },
           {
-            "label": "5 buah (per buah Rp 2.000)",
-            "tambahan": 7000
+            "label": "5 buah (per buah Rp 1.500)",
+            "tambahan": 5000
           }
         ]
       }
@@ -2990,7 +2990,7 @@
     "nama": "Gula Pasir",
     "slug": "gula-pasir",
     "deskripsi": "Gula pasir putih bersih untuk masakan, kue, dan minuman. Manis alami.",
-    "harga": 14000,
+    "harga": 12500,
     "harga_diskon": null,
     "foto_utama": "/images/products/gula-pasir.png",
     "foto_galeri": [],
@@ -3009,11 +3009,11 @@
             "tambahan": 0
           },
           {
-            "label": "1 kg (Rp 25.000)",
-            "tambahan": 11000
+            "label": "1 kg (Rp 24.000)",
+            "tambahan": 11500
           },
           {
-            "label": "2 kg (Rp 47.500)",
+            "label": "2 kg (Rp 46.000)",
             "tambahan": 33500
           }
         ]
@@ -3029,7 +3029,7 @@
     "nama": "Gula Merah Aren",
     "slug": "gula-merah-aren",
     "deskripsi": "Gula merah dari aren asli untuk kolak, dawet, bumbu semur, atau rendang. Manis alami.",
-    "harga": 12000,
+    "harga": 9500,
     "harga_diskon": null,
     "foto_utama": "/images/products/gula-merah-aren.png",
     "foto_galeri": [],
@@ -3048,16 +3048,16 @@
             "tambahan": 0
           },
           {
-            "label": "500 gram (Rp 21.500)",
-            "tambahan": 9500
+            "label": "500 gram (Rp 18.000)",
+            "tambahan": 8500
           },
           {
-            "label": "1 kg (Rp 40.500)",
-            "tambahan": 28500
+            "label": "1 kg (Rp 34.000)",
+            "tambahan": 24500
           },
           {
-            "label": "5 kg (Rp 192.000)",
-            "tambahan": 180000
+            "label": "5 kg (Rp 160.000)",
+            "tambahan": 150500
           }
         ]
       }
@@ -3072,7 +3072,7 @@
     "nama": "Kaldu Ayam Bubuk",
     "slug": "kaldu-ayam-bubuk",
     "deskripsi": "Kaldu ayam bubuk untuk penyedap sup, bakso, dan tumisan. Rasa asli ayam.",
-    "harga": 5000,
+    "harga": 4500,
     "harga_diskon": null,
     "foto_utama": "/images/products/kaldu-ayam-bubuk.png",
     "foto_galeri": [],
@@ -3091,12 +3091,12 @@
             "tambahan": 0
           },
           {
-            "label": "3 buah (per buah Rp 4.500)",
-            "tambahan": 8500
+            "label": "3 buah (per buah Rp 4.000)",
+            "tambahan": 7500
           },
           {
-            "label": "5 buah (per buah Rp 4.000)",
-            "tambahan": 15000
+            "label": "5 buah (per buah Rp 3.500)",
+            "tambahan": 13000
           }
         ]
       }
@@ -3111,7 +3111,7 @@
     "nama": "Kecap Manis Botol",
     "slug": "kecap-manis",
     "deskripsi": "Kecap manis berkualitas untuk sate, nasi goreng, tumisan, dan berbagai masakan.",
-    "harga": 8000,
+    "harga": 7000,
     "harga_diskon": null,
     "foto_utama": "/images/products/kecap-manis.png",
     "foto_galeri": [],
@@ -3130,12 +3130,12 @@
             "tambahan": 0
           },
           {
-            "label": "3 buah (per buah Rp 7.000)",
-            "tambahan": 13000
+            "label": "3 buah (per buah Rp 6.500)",
+            "tambahan": 12500
           },
           {
-            "label": "5 buah (per buah Rp 6.500)",
-            "tambahan": 24500
+            "label": "5 buah (per buah Rp 6.000)",
+            "tambahan": 23000
           }
         ]
       }
@@ -3150,7 +3150,7 @@
     "nama": "Saus Sambal Pedas",
     "slug": "saus-sambal",
     "deskripsi": "Saus sambal pedas lezat untuk cocolan, campuran mie, atau bumbu masakan cepat.",
-    "harga": 8000,
+    "harga": 7000,
     "harga_diskon": null,
     "foto_utama": "/images/products/saus-sambal.png",
     "foto_galeri": [],
@@ -3169,12 +3169,12 @@
             "tambahan": 0
           },
           {
-            "label": "3 buah (per buah Rp 7.000)",
-            "tambahan": 13000
+            "label": "3 buah (per buah Rp 6.500)",
+            "tambahan": 12500
           },
           {
-            "label": "5 buah (per buah Rp 6.500)",
-            "tambahan": 24500
+            "label": "5 buah (per buah Rp 6.000)",
+            "tambahan": 23000
           }
         ]
       }
@@ -3189,7 +3189,7 @@
     "nama": "Santan Kemasan Segar",
     "slug": "santan-kemasan",
     "deskripsi": "Santan kemasan praktis 200ml untuk masakan berkuah santan. Rasa kelapa asli.",
-    "harga": 5000,
+    "harga": 4500,
     "harga_diskon": null,
     "foto_utama": "/images/products/santan-kemasan.png",
     "foto_galeri": [],
@@ -3208,12 +3208,12 @@
             "tambahan": 0
           },
           {
-            "label": "3 buah (per buah Rp 4.500)",
-            "tambahan": 8500
+            "label": "3 buah (per buah Rp 4.000)",
+            "tambahan": 7500
           },
           {
-            "label": "5 buah (per buah Rp 4.000)",
-            "tambahan": 15000
+            "label": "5 buah (per buah Rp 3.500)",
+            "tambahan": 13000
           }
         ]
       }
@@ -3228,7 +3228,7 @@
     "nama": "Kelapa Parut Segar",
     "slug": "kelapa-parut-segar",
     "deskripsi": "Kelapa parut segar untuk urap, onde-onde, kue, atau bumbu oseng. Harum dan gurih.",
-    "harga": 8000,
+    "harga": 7000,
     "harga_diskon": null,
     "foto_utama": "/images/products/kelapa-parut-segar.png",
     "foto_galeri": [],
@@ -3247,12 +3247,12 @@
             "tambahan": 0
           },
           {
-            "label": "3 buah (per buah Rp 7.000)",
-            "tambahan": 13000
+            "label": "3 buah (per buah Rp 6.500)",
+            "tambahan": 12500
           },
           {
-            "label": "5 buah (per buah Rp 6.500)",
-            "tambahan": 24500
+            "label": "5 buah (per buah Rp 6.000)",
+            "tambahan": 23000
           }
         ]
       }
